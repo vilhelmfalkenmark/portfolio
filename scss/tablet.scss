@@ -1,0 +1,97 @@
+@media (min-width: 768px) and (max-width: 1023px) {
+  @import "variables";
+
+
+  .flex-item
+  {
+    height: $tab-item-h;
+    width: 50%;
+  }
+  .port-screenshot {
+    height: 200px;
+  }
+  .port-link-btn {
+    margin-top: -50px;
+  }
+
+
+
+  .col-12-tab
+  {
+    width: percentage(12/12);
+  }
+  .col-11-tab
+  {
+    width: percentage(11/12);
+  }
+  .col-10-tab
+  {
+    width: percentage(10/12);
+  }
+  .col-9-tab
+  {
+    width: percentage(9/12);
+  }
+  .col-8-tab
+  {
+    width: percentage(8/12);
+  }
+  .col-7-tab
+  {
+    width: percentage(7/12);
+  }
+  .col-6-tab
+  {
+    width: percentage(6/12);
+  }
+  .col-5-tab
+  {
+    width: percentage(5/12);
+  }
+  .col-4-tab
+  {
+    width: percentage(4/12);
+  }
+  .col-3-tab
+  {
+    width: percentage(3/12);
+  }
+  .col-2-tab
+  {
+    width: percentage(2/12);
+  }
+  .col-1-tab
+  {
+    width: percentage(1/12);
+  }
+
+
+
+
+  .gtr-row:first-child
+  {
+    margin: $tab-gtr $tab-gtr 0 $tab-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $tab-gtr $tab-gtr  $tab-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $tab-gtr;
+  }
+
+  .gtr{
+    // width:25%;
+    // float:left;
+    padding:0;
+    margin:0;
+    > div{
+      margin:$tab-gtr;
+      min-height: $tab-gtr-min-h;
+    }
+  }
+
+
+
+}

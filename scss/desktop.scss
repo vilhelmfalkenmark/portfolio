@@ -1,0 +1,181 @@
+@media (min-width: 1024px) {
+  @import "variables";
+
+
+  .menu-button-wrapper
+  {
+    display: none;
+  }
+  .nav-container
+  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    //width: 100%;
+    ul
+    {
+      padding: 0 40px;
+    }
+    li
+    {
+      list-style-type: none;
+      display: inline-block;
+      margin: 5px 30px;
+      a
+      {
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .nav-background
+  {
+    background-color: $darkGrey;
+  }
+
+
+  .portrait
+  {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /*=================================================
+  PORTFOLIO
+  =================================================*/
+
+  .flex-item
+  {
+    height: $desk-item-h;
+    width: 50%;
+  }
+  .port-screenshot {
+    height: 340px;
+  }
+
+ .port-desc-container > div
+ {
+   position: relative;
+   background-color: $lightBeige;
+   color: $darkGrey;
+   padding: 20px;
+  // border:1px solid $darkGrey;
+ }
+  .port-desc-container:nth-child(odd) > div
+  {
+    &:after
+    {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+   content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-left-color:$lightBeige;
+    border-width: 30px;
+    margin-top: -30px;
+    }
+  }
+
+
+  .port-desc-container:nth-child(even) > div
+  {
+    &:after
+    {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+  // border:1px solid $darkGrey;
+
+    border-right-color: $lightBeige;
+    border-width: 30px;
+    margin-top: -30px;
+  }
+  }
+
+
+
+  .port-link-btn {
+    margin-top: -20px;
+  }
+
+
+
+
+  .col-12-desk
+  {
+    width: percentage(12/12);
+  }
+  .col-11-desk
+  {
+    width: percentage(11/12);
+  }
+  .col-10-desk
+  {
+    width: percentage(10/12);
+  }
+  .col-9-desk
+  {
+    width: percentage(9/12);
+  }
+  .col-8-desk
+  {
+    width: percentage(8/12);
+  }
+  .col-7-desk
+  {
+    width: percentage(7/12);
+  }
+  .col-6-desk
+  {
+    width: percentage(6/12);
+  }
+  .col-5-desk
+  {
+    width: percentage(5/12);
+  }
+  .col-4-desk
+  {
+    width: percentage(4/12);
+  }
+  .col-3-desk
+  {
+    width: percentage(3/12);
+  }
+  .col-2-desk
+  {
+    width: percentage(2/12);
+  }
+  .col-1-desk
+  {
+    width: percentage(1/12);
+  }
+  .gtr-row:first-child
+  {
+    margin: $desk-gtr $desk-gtr 0 $desk-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $desk-gtr $desk-gtr  $desk-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $desk-gtr;
+  }
+  .gtr{
+    padding:0;
+    margin:0;
+    > div{
+      margin:$desk-gtr;
+      min-height: $desk-gtr-min-h;
+    }
+  }
+}

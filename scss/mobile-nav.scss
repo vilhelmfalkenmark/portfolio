@@ -1,0 +1,122 @@
+@media (min-width: 1px) and (max-width: 1023px) {
+  @import "variables";
+  .nav-container
+  {
+    height: 100%;
+    position: fixed;
+    // left: 0;
+    transition: all 0.3s ease;
+    width: 300px;
+    background-color: $darkGrey; // darkblue
+    left: -300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    ul
+    {
+      padding: 0;
+    }
+    li
+    {
+      margin: 35px 0;
+      list-style-type: none;
+      a
+      {
+        color: white;
+      }
+    }
+  }
+  .nav-slide-in
+  {
+    left: 0;
+  }
+  .overlay //
+  {
+    transition: all 0.5s ease;
+  }
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+  }
+
+
+  .menu-button-wrapper
+  {
+    z-index: 9999;
+    background-color: $darkGrey;
+    top: 20px; //
+    left: 20px;
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .menu-button
+  {
+    width: 70%;
+    height: 28px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+  }
+  .menu-button span
+  {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    //border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  .menu-button span:nth-child(1) {
+    top: 0px;
+  }
+  .menu-button span:nth-child(2) {
+    top: 12px;
+  }
+  .menu-button span:nth-child(3) {
+    top: 24px;
+  }
+  .menu-button.open span:nth-child(1) {
+    top: 12px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  .menu-button.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  .menu-button.open span:nth-child(3) {
+    top: 12px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+}

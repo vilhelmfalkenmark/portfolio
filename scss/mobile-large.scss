@@ -1,0 +1,92 @@
+@media (min-width: 481px) and (max-width: 767px) {
+  @import "variables";
+
+  /*=================================================
+  PORTFOLIO
+  =================================================*/
+
+  .port-desc-container p
+  {
+    text-align: left;
+  }
+  .port-screenshot {
+    height: 320px;
+  }
+
+
+
+  .port-image-container {
+    height: 300px;
+  }
+  .col-12-ml
+  {
+    width: percentage(12/12);
+  }
+  .col-11-ml
+  {
+    width: percentage(11/12);
+  }
+  .col-10-ml
+  {
+    width: percentage(10/12);
+  }
+  .col-9-ml
+  {
+    width: percentage(9/12);
+  }
+  .col-8-ml
+  {
+    width: percentage(8/12);
+  }
+  .col-7-ml
+  {
+    width: percentage(7/12);
+  }
+  .col-6-ml
+  {
+    width: percentage(6/12);
+  }
+  .col-5-ml
+  {
+    width: percentage(5/12);
+  }
+  .col-4-ml
+  {
+    width: percentage(4/12);
+  }
+  .col-3-ml
+  {
+    width: percentage(3/12);
+  }
+  .col-2-ml
+  {
+    width: percentage(2/12);
+  }
+  .col-1-ml
+  {
+    width: percentage(1/12);
+  }
+
+  .gtr-row:first-child
+  {
+    margin: $ml-gtr $ml-gtr 0 $ml-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $ml-gtr $ml-gtr  $ml-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $ml-gtr;
+  }
+  .gtr{
+
+    margin:0;
+    > div{
+      margin:$ml-gtr;
+      min-height: $ml-gtr-min-h;
+    }
+  }
+
+
+}

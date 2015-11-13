@@ -1,0 +1,107 @@
+@media (min-width: 1px) and (max-width: 480px) {
+  @import "helpers";
+  @import "variables";
+  @import "modules";
+  /*=================================================
+   PORTFOLIO
+   =================================================*/
+
+  .port-image-container {
+    height: 200px;
+  }
+
+  .port-desc-container
+  {
+    > div
+    {
+      width: 90%;
+    }
+
+    p
+    {
+      text-align: left;
+
+    }
+
+  }
+  .port-screenshot {
+    height: 220px;
+  }
+
+
+  .col-12-ms
+  {
+    width: percentage(12/12);
+  }
+  .col-11-ms
+  {
+    width: percentage(11/12);
+  }
+  .col-10-ms
+  {
+    width: percentage(10/12);
+  }
+  .col-9-ms
+  {
+    width: percentage(9/12);
+  }
+  .col-8-ms
+  {
+    width: percentage(8/12);
+  }
+  .col-7-ms
+  {
+    width: percentage(7/12);
+  }
+  .col-6-ms
+  {
+    width: percentage(6/12);
+  }
+  .col-5-ms
+  {
+    width: percentage(5/12);
+  }
+  .col-4-ms
+  {
+    width: percentage(4/12);
+  }
+  .col-3-ms
+  {
+    width: percentage(3/12);
+  }
+  .col-2-ms
+  {
+    width: percentage(2/12);
+  }
+  .col-1-ms
+  {
+    width: percentage(1/12);
+  }
+
+
+
+  .gtr-row:first-child
+  {
+    margin: $ms-gtr $ms-gtr 0 $ms-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $ms-gtr $ms-gtr  $ms-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $ms-gtr;
+  }
+  .gtr{
+    padding:0;
+    margin:0;
+
+    > div{
+      margin:$ms-gtr;
+      min-height: $ms-gtr-min-h;
+    }
+  }
+
+
+
+}
