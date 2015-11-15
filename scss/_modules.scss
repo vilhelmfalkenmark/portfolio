@@ -1,9 +1,9 @@
 ::-webkit-scrollbar {
   width: 8px;
-  background: $lightGrey;
+  background: $darkGrey;
 }
 ::-webkit-scrollbar-thumb {
-  background: $darkGrey;
+  background: $lightGrey;
 }
 /*=================================================
  TEXT-ALIGNMENT
@@ -50,6 +50,7 @@
 @media (min-width: $desktop-break+1){ // Hack för att den inte ska komma med i mobilläge
   .right-arrow
   {
+    position: relative;
     &:after
     {
       left: 100%;
@@ -66,6 +67,7 @@
   }
   .left-arrow
   {
+    position: relative;
     &:after
     {
       right: 100%;
@@ -97,6 +99,40 @@
       border-width: 30px;
       margin-left: -30px;
     }
+  }
+}
+.right-arrow-flex
+{
+  position: relative;
+  &:after
+  {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-left-color:  $stripedGrey;
+    border-width: 30px;
+    margin-top: -30px;
+  }
+}
+.left-arrow
+{
+  position: relative;
+  &:after
+  {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-right-color: $stripedGrey;
+    border-width: 30px;
+    margin-top: -30px;
   }
 }
 /*=================================================
@@ -648,7 +684,7 @@
 
 .ribbon {
   min-width: 240px;
-  width: 90%;
+  width: 80%;
   max-width: 320px;
   height: 40px;
   position: relative;

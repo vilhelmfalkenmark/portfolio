@@ -17,7 +17,7 @@ a
 }
 .text-content
 {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   max-width: 800px;
 }
@@ -91,6 +91,15 @@ a
 /*=================================================
  BREAKPOINTS VISA/DÖLJ
  =================================================*/
+
+@media (min-width: 1px) and (max-width: $mobile-large-break)
+{
+ .hide-mobile-small
+ {
+   display: none;
+ }
+}
+
 @media (min-width: 1px) and (max-width: 767px)
 {
   .small-dev-show

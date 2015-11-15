@@ -1,7 +1,7 @@
 $skill-bar-height: 30px;
 #resume
 {
-  overflow: hidden;
+ // overflow: hidden;
 }
 /*================================================
  =================================================
@@ -147,6 +147,7 @@ $skill-bar-height: 30px;
  *************************************************
  =================================================
  =================================================*/
+/*
 
 .timeline-container
 {
@@ -179,7 +180,7 @@ $skill-bar-height: 30px;
 }
 
 
-/*  DESKTOP */
+/!*  DESKTOP *!/
 $timeLineLabelColor: white;
 .timelineIconPhone
 {
@@ -257,7 +258,7 @@ $timeLineLabelColor: white;
   border-right-color: $timeLineLabelColor;
   border-width: 30px;
   margin-top: -30px;
-  box-shadow: inset 10px 10px 2px 12px black; /* X Y BLUR SPANBREDD FÄRG*/
+  box-shadow: inset 10px 10px 2px 12px black; /!* X Y BLUR SPANBREDD FÄRG*!/
 }
 .third_col
 {
@@ -303,3 +304,4 @@ $timeLine-Circle-Size: 70px;
 
 
 
+*/

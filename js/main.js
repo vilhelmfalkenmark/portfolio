@@ -3,11 +3,9 @@
  */
 $( document ).ready(function() {
 
-
-
-
-
-
+    var mobileLargeBreak = 400;
+    var tabletBreak= 768;
+    var desktopBreak = 1025;
 
     /*=================================================
      MENY-KNAPPEN I MOBILLÄGE
@@ -50,13 +48,13 @@ $( document ).ready(function() {
     $( window ).resize(function() {
 
       var screenWidth =  $(window).width();
-        if(screenWidth<=480) {
+        if(screenWidth<=mobileLargeBreak) {
             deviceInfo.html(screenWidth+" px = mobile-small");
         }
-        else if(screenWidth>480 && screenWidth<768) {
+        else if(screenWidth>mobileLargeBreak && screenWidth<tabletBreak) {
             deviceInfo.html(screenWidth+" px =mobile-large");
         }
-        else if(screenWidth>=768 && screenWidth<1024) {
+        else if(screenWidth>=tabletBreak && screenWidth<desktopBreak) {
             deviceInfo.html(screenWidth+" px =Tablet");
         }
         else {
@@ -78,7 +76,12 @@ $( document ).ready(function() {
         var windowHeight = $(window).height();
         var screenWidth = $(window).width();
 
-        timeLine(screenWidth, windowHeight);
+        if(screenWidth>=mobileLargeBreak)
+        {
+             timeLine(screenWidth, windowHeight);
+        }
+
+
         skillBars(windowHeight);
         flip();
         navBar(screenWidth);
@@ -86,7 +89,7 @@ $( document ).ready(function() {
     function navBar(screenWidth)
     {
         var scrollTop = $(window).scrollTop();
-        console.log(scrollTop);
+       // console.log(scrollTop);
 
         if(scrollTop>100 && screenWidth>1024)
         {
@@ -134,7 +137,7 @@ $( document ).ready(function() {
                         PARALLAX
      =================================================*/
     var screenWidth = $(document).width();
-    if (screenWidth > 1024) {
+    if (screenWidth > desktopBreak) {
         if ("ontouchstart" in window) {
             document.documentElement.className = document.documentElement.className + " touch";
         }
@@ -283,7 +286,7 @@ $( document ).ready(function() {
 
     function timeLine(windowWidth, windowHeight)
     {
-    if(windowWidth>560) // Animationen såg för taskig ut på smartphones.
+    if(windowWidth>mobileLargeBreak) // Animationen såg för taskig ut på smartphones.
     {
         // Scrolla in Diven från Vänster
         $('.slide-left').each(function()
@@ -302,15 +305,40 @@ $( document ).ready(function() {
 
             var $scrollInFromLeft = (distanceBottom-200)*2; // Öka till cirka (distanceBottom-200)*4;
 
-            if(windowWidth<1025 && $scrollInFromLeft>=0)
+
+
+            if($scrollInFromLeft>=-30 && windowWidth>desktopBreak)
             {
-                $scrollInFromLeft = 0;
+                $scrollInFromLeft = -30;
             }
-            if($scrollInFromLeft>=-42)
-            {
-                $scrollInFromLeft = -42;
-            }
+
+
             $(this).css({"opacity":$opacity, "margin-left":$scrollInFromLeft});
+
+
+            if(windowWidth<desktopBreak && windowWidth>mobileLargeBreak) {
+
+                if(windowWidth>tabletBreak)
+                {
+                        if($scrollInFromLeft > -120)
+                        {
+                            $scrollInFromLeft = -120;
+                        }
+                }
+                else
+                {
+                    if($scrollInFromLeft > -10)
+                    {
+                        $scrollInFromLeft = -10;
+                    }
+                }
+
+                $(this).css({
+                    "opacity": $opacity,
+                    "margin-left": $scrollInFromLeft * (-1)
+                });
+
+            }
         });
         // Scrolla in Diven från Höger
         $('.slide-right').each(function()
@@ -327,17 +355,41 @@ $( document ).ready(function() {
             }
             var $scrollInFromRight = ((distanceBottom-200)*2)*-1;
 
-            if(windowWidth<1025 && $scrollInFromRight<=0)
+            if($scrollInFromRight<=30 && windowWidth>=desktopBreak)
             {
-                $scrollInFromRight = 0;
+                $scrollInFromRight = 30;
             }
-            if($scrollInFromRight<=80 && windowWidth>=1025)
-            {
-                $scrollInFromRight = 80;
-            }
-            $(this).css({"opacity":$opacity, "margin-left":$scrollInFromRight});
-        });
 
+            if(windowWidth>=desktopBreak)
+            {
+                $(this).css({"opacity":$opacity, "margin-right":-$scrollInFromRight});
+            }
+
+            /*  TABLET AND LARGE-PHONE  */
+            if(windowWidth<desktopBreak && windowWidth>mobileLargeBreak)
+            {
+
+                if(windowWidth>tabletBreak)
+                {
+                    if($scrollInFromRight<=120)
+                    {
+                        $scrollInFromRight = 120;
+                    }
+                }
+                else if(windowWidth<=tabletBreak)
+                {
+                    if($scrollInFromRight<=10)
+                    {
+                        $scrollInFromRight = 10;
+                    }
+
+                }
+
+                $(this).css({"opacity":$opacity, "margin-left":$scrollInFromRight});
+
+            }
+
+        });
         // Animera ikonens opacity
         $('.fadeIn-Icon').each(function()
         {

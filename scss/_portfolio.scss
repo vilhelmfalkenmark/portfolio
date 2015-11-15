@@ -15,6 +15,9 @@
   }
   .port-desc-container
   {
+
+    margin-top: 15px;
+
     > div
     {
       padding: 10px;
@@ -112,6 +115,12 @@
                     DESKTOP
 =================================================*/
 @include respond-to(desktop) {
+
+  .flex-row
+  {
+   // min-width: 1200px;
+  }
+
   .flex-item
   {
     height: $desk-item-h;
