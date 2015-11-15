@@ -1,4 +1,10 @@
 @import "normalize";
-@import "main.scss";
-
-
+@import "_variables";
+@import "_modules";
+@import "_helpers";
+@import "_main";
+@import "_header";
+@import "_mobile-nav";
+@import "_portfolio";
+@import "_about";
+@import "_cv";

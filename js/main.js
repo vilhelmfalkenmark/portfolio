@@ -3,11 +3,17 @@
  */
 $( document ).ready(function() {
 
-    parallax();
 
+
+
+
+
+
+    /*=================================================
+     MENY-KNAPPEN I MOBILLÄGE
+     =================================================*/
     var menuButton = $(".menu-button");
     var overLay = $(".overlay");
-
     menuButton.click(function() {
 
         $(this).toggleClass("open");
@@ -21,6 +27,20 @@ $( document ).ready(function() {
          $(this).toggleClass("dark-overlay");
         });
 
+    /*=================================================
+     SMOOTH-SCROLLING
+     =================================================*/
+
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top-65
+        }, 500, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
 
 
     /*=================================================
@@ -28,6 +48,7 @@ $( document ).ready(function() {
      =================================================*/
     var deviceInfo = $(".device-info");
     $( window ).resize(function() {
+
       var screenWidth =  $(window).width();
         if(screenWidth<=480) {
             deviceInfo.html(screenWidth+" px = mobile-small");
@@ -50,94 +71,39 @@ $( document ).ready(function() {
     });
 
     /*=================================================
-                       SKROLL-BASERADE EFFEKTER!
+                SKROLL-BASERADE EFFEKTER!
      =================================================*/
-
-
     $(window).on('scroll', function () {
 
-        parallax();
-        focus();
+        var windowHeight = $(window).height();
+        var screenWidth = $(window).width();
+
+        timeLine(screenWidth, windowHeight);
+        skillBars(windowHeight);
         flip();
-        navBar();
-
+        navBar(screenWidth);
     });
-    $(window).on('resize', function () {
-        parallax();
-        console.log("HEJ!")
-    });
-
-
-    function navBar()
+    function navBar(screenWidth)
     {
         var scrollTop = $(window).scrollTop();
         console.log(scrollTop);
 
-        if(scrollTop>100)
+        if(scrollTop>100 && screenWidth>1024)
         {
-            $('.nav-container').addClass("nav-background")
+            $('.desktop-menu-background').fadeIn(300);
+            $(".name-container").fadeIn("slow");
         }
         else
         {
-            $('.nav-container').removeClass("nav-background")
+            $('.desktop-menu-background').fadeOut(300);
+            $(".name-container").fadeOut("slow");
+
 
         }
-
-
-
     }
-
-
-
-    function focus()
-    {
-
-    $('.in-focus').each(function() {
-        var windowHeight = $(window).height(); // Höjd på viewport
-        var windowWidth = $( window).width();  // Bredd på viewport
-
-        var scrollTop = $(window).scrollTop();
-        var elementOffsetTop = $(this).offset().top;
-        var distanceTop = ((elementOffsetTop - scrollTop)); // DET HÄR ELEMENTS ÖVRE AVSTÅND TILL TOPPEN AV VIEWPORT
-
-        if(distanceTop<windowHeight)
-        {
-            $(this).addClass("parallax");
-        }
-        else
-        {
-            $(this).removeClass("parallax");
-        }
-    });
-    }
-
-        function parallax()
-        {
-        $('.parallax').each(function() {
-            var windowHeight = $(window).height(); // Höjd på viewport
-
-            var scrollTop = $(window).scrollTop();
-            var elementOffsetTop = $(this).offset().top;
-            var imgWidth = $(this).attr("data-img-width");
-            var imgHeight = $(this).attr("data-img-height");
-            var imageRatio = imgWidth/imgHeight;
-            var scrollSpeed = 2.5; // Ju lägre siffra i desto snabbare scrollar den. Obs! Är siffran under 1 scrollar den åt motsats håll.
-            var elementWidth = $(this).width(); // ELEMENTES BREDD
-            var distanceTop = ((elementOffsetTop - scrollTop)); // DET HÄR ELEMENTS ÖVRE AVSTÅND TILL TOPPEN AV VIEWPORT
-
-
-            var scroll = (distanceTop * (-1))/scrollSpeed;
-            $(this).find(".x-counter").html(scrollSpeed+ " är scrollSpeed "+ distanceTop + " är distanceTop " + windowHeight+ " är windowHeight");
-
-
-                $(this).css({
-                    "background-position": "50%" + ((scroll) + "px"),
-                    "background-size": (elementWidth +"px "+elementWidth/imageRatio+"px"),
-                    "height": elementWidth/imageRatio
-                });
-        });
-    } // Slut på parallax funktionen
-
+    /*=================================================
+                ROTERA BAKGRUND PÅ X-AXELN
+     =================================================*/
     function flip()
     {
         $('.flip').each(function() {
@@ -163,47 +129,232 @@ $( document ).ready(function() {
                 "opacity": opacity
             });
         });
+    }
+    /*=================================================
+                        PARALLAX
+     =================================================*/
+    var screenWidth = $(document).width();
+    if (screenWidth > 1024) {
+        if ("ontouchstart" in window) {
+            document.documentElement.className = document.documentElement.className + " touch";
+        }
+        if (!$("html").hasClass("touch")) {
+            $(".parallax").css("background-attachment", "fixed");
+        }
+        function fullscreenFix() {
+            var h = $('body').height();
+            // set .fullscreen height
+            $(".content-b").each(function (i) {
+                if ($(this).innerHeight() <= h) {
+                    $(this).closest(".fullscreen").addClass("not-overflow");
+                }
+            });
+        }
+        $(window).resize(fullscreenFix);
+        fullscreenFix();
+        function backgroundResize() {
+            var windowH = $(window).height();
+            $(".background").each(function (i) {
+                var path = $(this);
+                var contW = path.width();
+                var contH = path.height();
+                var imgW = path.attr("data-img-width");
+                var imgH = path.attr("data-img-height");
+                var ratio = imgW / imgH;
+                var diff = parseFloat(path.attr("data-diff"));
+                diff = diff ? diff : 0;
+                var remainingH = 0;
+                if (path.hasClass("parallax") && !$("html").hasClass("touch")) {
+                    remainingH = windowH - contH;
+                }
+                imgH = contH + remainingH + diff;
+                imgW = imgH * ratio;
+                // fix when too large
+                if (contW > imgW) {
+                    imgW = contW;
+                    imgH = imgW / ratio;
+                }
+                //
+                path.data("resized-imgW", imgW);
+                path.data("resized-imgH", imgH);
+                path.css("background-size", imgW + "px " + imgH + "px");
+            });
+        }
+        $(window).resize(backgroundResize);
+        $(window).focus(backgroundResize);
+        backgroundResize();
 
+        function parallaxPosition(e) {
+            var heightWindow = $(window).height();
+            var topWindow = $(window).scrollTop();
+            var bottomWindow = topWindow + heightWindow;
+            var currentWindow = (topWindow + bottomWindow) / 2;
+            $(".parallax").each(function (i) {
+                var path = $(this);
+                var height = path.height();
+                var top = path.offset().top;
+                var bottom = top + height;
+                if (bottomWindow > top && topWindow < bottom) {
+                    var imgW = path.data("resized-imgW");
+                    var imgH = path.data("resized-imgH");
+                    var min = 0;
+                    var max = -imgH + heightWindow;
+                    var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow; // fix height on overflow
+                    top = top - overflowH;
+                    bottom = bottom + overflowH;
+                    var value = (min + (max - min) * (currentWindow - top) / (bottom - top));
+
+
+                  /*  var scrollTop = $(window).scrollTop(),
+                        parentElementOffsetTop = $(this).parent().offset().top,
+                        parentDistanceTop = (parentElementOffsetTop - scrollTop);
+                    var elementHeight = $(this).height();
+                    var distanceBottom = (parentDistanceTop + elementHeight);
+                    var opacity = (distanceBottom / elementHeight);
+                    var rotateSpeed = ((parentDistanceTop / 8).toFixed(2) * -1);*/
+
+
+
+                  //  var value = 20;
+                    var horizontalPosition = path.attr("data-oriz-pos");
+                    horizontalPosition = horizontalPosition ? horizontalPosition : "50%";
+                    $(this).css("background-position",horizontalPosition + " " + value + "px");
+                }
+            });
+        }
+        if (!$("html").hasClass("touch")) {
+            $(window).resize(parallaxPosition);
+            //$(window).focus(parallaxPosition);
+            $(window).scroll(parallaxPosition);
+            parallaxPosition();
+        }
+    }
+
+
+    /*=================================================
+                    OM-MIG SEKTIONEN
+     =================================================*/
+
+    $(".hide").hide();
+
+    $('#aboutButton').click(function () {
+        $('#aboutMeContent').show("slow");
+        $('#servicesContent').hide("slow");
+        $("#interestContent").hide("slow");
+    });
+    $('#servicesButton').click(function () {
+        $('#servicesContent').show("slow");
+        $('#interestContent').hide("slow");
+        $("#aboutMeContent").hide("slow");
+    });
+    $('#interestButton').click(function () {
+        $('#interestContent').show("slow");
+        $('#servicesContent').hide("slow");
+        $("#aboutMeContent").hide("slow");
+    });
+
+    /*=================================================
+     SKILLBARS SEKTIONEN
+     =================================================*/
+
+    function skillBars(windowHeight)
+    {
+        $('.skill-percentage').each(function()
+        {
+            var scrollTop = $(window).scrollTop(),
+                elementOffsetTop = $(this).offset().top,
+                distanceTop   = (elementOffsetTop - scrollTop);
+            var elementHeight = $(this).innerHeight();
+            var distanceBottom = (windowHeight - (distanceTop+elementHeight));
+
+            $("#distanceBottom").html(distanceBottom);
+
+            if(distanceBottom>100) // Hur långt från botten ska animationen börja?!
+            {
+                $(this).find('.skill-meter-container').css({"width": jQuery(this).attr('data-percent'), "transition":"width 2s ease-in-out;"});
+            }
+            else if(distanceBottom<-100)
+            {
+                $(this).find('.skill-meter-container').css({"width":0});
+            }
+        });
+    }
+
+
+    function timeLine(windowWidth, windowHeight)
+    {
+    if(windowWidth>560) // Animationen såg för taskig ut på smartphones.
+    {
+        // Scrolla in Diven från Vänster
+        $('.slide-left').each(function()
+        {
+            var scrollTop = $(window).scrollTop(),
+                elementOffsetTop = $(this).offset().top,
+                distanceTop   = (elementOffsetTop - scrollTop);
+            var elementHeight = $(this).innerHeight(); // Höjden på elementet. I det här fallet Den vita diven som ska flyga in
+            var distanceBottom = (windowHeight - (distanceTop+elementHeight));
+            var $opacity = (distanceBottom+50)/200; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
+
+            if($opacity>= 0.999)
+            {
+                $opacity = 0.999; // Flaggan försvinner av jätteoklar anledning när opacity sätts till 1. Kan bero på position absolute?
+            }
+
+            var $scrollInFromLeft = (distanceBottom-200)*2; // Öka till cirka (distanceBottom-200)*4;
+
+            if(windowWidth<1025 && $scrollInFromLeft>=0)
+            {
+                $scrollInFromLeft = 0;
+            }
+            if($scrollInFromLeft>=-42)
+            {
+                $scrollInFromLeft = -42;
+            }
+            $(this).css({"opacity":$opacity, "margin-left":$scrollInFromLeft});
+        });
+        // Scrolla in Diven från Höger
+        $('.slide-right').each(function()
+        {
+            var scrollTop = $(window).scrollTop(),
+                elementOffsetTop = $(this).offset().top,
+                distanceTop   = (elementOffsetTop - scrollTop);
+            var elementHeight = $(this).innerHeight(); // Höjden på elementet. I det här fallet Den vita diven som ska flyga in
+            var distanceBottom = (windowHeight - (distanceTop+elementHeight));
+            var $opacity = (distanceBottom+50)/200; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
+            if($opacity>= 0.999)
+            {
+                $opacity = 0.999; // Flaggan försvinner av jätteoklar anledning när opacity sätts till 1.
+            }
+            var $scrollInFromRight = ((distanceBottom-200)*2)*-1;
+
+            if(windowWidth<1025 && $scrollInFromRight<=0)
+            {
+                $scrollInFromRight = 0;
+            }
+            if($scrollInFromRight<=80 && windowWidth>=1025)
+            {
+                $scrollInFromRight = 80;
+            }
+            $(this).css({"opacity":$opacity, "margin-left":$scrollInFromRight});
+        });
+
+        // Animera ikonens opacity
+        $('.fadeIn-Icon').each(function()
+        {
+            var scrollTop = $(window).scrollTop(),
+                elementOffsetTop = $(this).offset().top,
+                distanceTop   = (elementOffsetTop - scrollTop);
+            var elementHeight = $(this).innerHeight();
+            var distanceBottom = (windowHeight - (distanceTop+elementHeight));
+            var $opacity = (distanceBottom)/280;
+            $(this).css({"opacity":$opacity});
+        });
+
+    } // End if statment för att kolla skärmbredd
 
     }
 
 
 
-
 }); // End jQuery
 
-
-
-
-
-/*=================================================
- ROTERA X!
- =================================================*/
-
-
-//$('.rotate-x').each(function(){
-//    var rotateStartX = 2;
-//    var elementOffsetTop = $(this).parent().offset().top;
-//    var elementHeight = $(this).height(); // ELEMENTETS HÖJD
-//    var distanceTop   = (elementOffsetTop - scrollTop); // DET HÄR ELEMENTS ÖVRE AVSTÅND TILL TOPPEN AV VIEWPORT
-//    var middleDistanceTop = (distanceTop+(elementHeight/rotateStartX)); // DET HÄR ELEMENTS ÖVRE AVSTÅND TILL TOPPEN AV VIEWPORT
-//
-//    var bottomDistanceTop = distanceTop+elementHeight; // DET HÄR ELEMENTS NEDRE AVSTÅND TILL TOPPEN AV VIEWPORT
-//    // var elementHeight = $(this).height();
-//    // / var distanceBottom = (windowHeight - (distanceTop+elementHeight));
-//
-//    var rotateSpeed = middleDistanceTop*(1);
-//    $(this).find(".x-counter").html(rotateSpeed);
-//
-//    console.log(rotateSpeed);
-//
-//    if(bottomDistanceTop < elementHeight/rotateStartX)
-//    {
-//        if(rotateSpeed<-180)
-//        {
-//            rotateSpeed = -180;
-//        }
-//        $(this).css("transform", "rotateX("+rotateSpeed+"deg)");
-//        // console.log("NU HAR HALVA PASSERAT!")
-//    }
-//});

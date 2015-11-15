@@ -15,95 +15,266 @@
 
 <div class="container">
     <div class="nav-container">
-        <div class="menu-button-wrapper">
-            <div class="menu-button">
-                <span></span>
-                <span></span>
-                <span></span>
+
+        <div class="desktop-menu-background"></div>
+
+        <div class="nav-container-inner">
+            <div class="menu-button-wrapper">
+                <div class="menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#top">Hem</a></li>
+                    <li><a href="#about">Om mig</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#resume">CV</a></li>
+                    <li><a href="#">Nav 5</a></li>
+                </ul>
+            </nav>
+            <div class="name-container">Vilhelm Falkenmark</div>
         </div>
-
-        <nav>
-            <ul>
-                <li><a href="#">Nav 1</a></li>
-                <li><a href="#">Nav 2</a></li>
-                <li><a href="#">Nav 3</a></li>
-                <li><a href="#">Nav 4</a></li>
-                <li><a href="#">Nav 5</a></li>
-            </ul>
-        </nav>
     </div>
+
+
+    <div class="overlay"></div>
     <header>
-        <section>
-         <div class="flip-parent">
-             <div class="header-background flip" data-img-width="1500" data-img-height="1000" data-diff="100">
-
-
-                 <div class="overlay"></div>
+        <section id="top">
+            <div class="flip-parent">
+                <div class="header-background flip" data-img-width="1500" data-img-height="1000" data-diff="100">
                     <div class="header-content">
                         <div class="portrait"></div>
                         <h1>Vilhelm Falkenmark</h1>
 
                         <p class="medium-text">Frilansande Front-End Utvecklare</p>
-                        <p class="small-text">Verksam i Stockholm med en stor passion för design, användarvänlighet & enkelhet.</p>
-                        <p class="small-text"><a href="#">Klicka här</a> för att läsa mer om vad jag kan hjälpa mer med.</p>
+
+                        <p class="small-text">Verksam i Stockholm med en stor passion för design, användarvänlighet &
+                            enkelhet.</p>
+
+                        <p class="small-text"><a href="#">Klicka här</a> för att läsa mer om vad jag kan hjälpa mer med.
+                        </p>
                     </div>
-             </div>
-         </div>
-        </section>
-
-
-    </header>
-    <main>
-
-        <section class="section-light-grey">
-            <div class="arrow-hole"></div>
-            <h2 class="section-header">Om mig</h2>
-
-
-        </section>
-
-        <section>
-            <div class="flip-parent">
-                <div class="first-background-divider flip">
-
-                 </div>
+                </div>
             </div>
         </section>
+    </header>
+    <!--*********************** END HEAD ****************************-->
 
 
+    <!--*********************** START ABOUT ****************************-->
+    <main>
+        <section id="about" class="section-light-grey">
 
-
-
-
-
-        <section class="section-light-grey">
             <div class="arrow-hole"></div>
-            <h2 class="section-header">Portfolio</h2>
-            <div class="flex-row">
-                <div class="flex-item port-desc-container">
-                        <div>
-                            <h3>Ballbusters</h3>
-                            <p>Kategori: Skolarbete - Javascript 2</p>
-                            <p>Använda tekniker: Javascript, HTML5</p>
 
-                            <p>Ett spel som jag har programmerat och designat tillsammans med Fredrik Löfgren.
-                                Spelet är inspirerat av ett gammalt arkadspel som heter Pang.
-                                Spelmotorn utgår från prototypbaserad och objektorienterad Javascript.
-                                Exempelvis genereras samtliga bollar som man ska skjuta sönder utifrån en och
-                                samma boll-prototyp. Samma sak gäller givetvis för skotten, uppgraderingarna osv.
-                                Spelet är helt och hållet skrivet i Javascript utan något ramverk eller dylikt.
-                                Vi har även kopplat på PHP och MySQL för att kunna spara och visa High Scores.
-                            </p>
+
+            <h2 class="section-header">Om mig</h2>
+
+            <div class="hex-container">
+
+                <div class="hexagon-outer">
+                    <a href="#aboutMeTarget">
+                        <div class="hexagon rotate" id="interestButton">
+                            <div class="hex-header">Mina intressen</div>
+                            <div class="hex-subheader">Min livshistoria i sammandrag</div>
                         </div>
+                    </a>
                 </div>
 
+                <div class="hexagon-outer">
+                    <a href="#aboutMeTarget">
+                        <div class="hexagon rotate" id="aboutButton">
+                            <div class="hex-header">Om mig</div>
+                            <div class="hex-subheader">Min livshistoria i sammandrag</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hexagon-outer">
+                    <a href="#aboutMeTarget">
+                        <div class="hexagon rotate" id="servicesButton">
+                            <div class="hex-header">Mina tjänster</div>
+                            <div class="hex-subheader">Min livshistoria i sammandrag</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="aboutMeTarget">
+                <div class="text-content hide" id="interestContent">
+                    <h2>Mina Intressen</h2>
+
+                    <p>Uppebarligen är kod och programmering det roligaste som finns men det finns även andra roliga
+                        saker man kan göra när man behöver ta en paus från editorn. Exempelvis: </p>
+
+                    <h3>Musik</h3>
+
+                    <p>Musik har alltid legat mig väldigt varmt om hjärtat och varit min huvudsakliga hobby hela mitt
+                        liv.
+                    </p>
+
+                    <h3>Gitarr</h3>
+
+                    <p>Jag har spelat gitarr sen jag var 13 år gammal och är lycklig ägare till tre fina gitarrer som
+                        jag spelar på tills min flickvän ber mig sluta</p>
+
+                    <h3>Cykling</h3>
+
+                    <p>Jag cyklar vart jag än ska. Speciellt landsvägscykling i medvind är roligt.</p>
+
+                    <h3>Mat</h3>
+
+                    <p>Min mamma är antagligen den bästa kocken jag träffat. Jag har henne och hennes fantastiska mat
+                        att tacka för mitt matintresse.</p>
+
+                    <h3>Resa</h3>
+
+                    <p>Lite klyschigt intresse ja. Men det är kul att resa. </p>
+
+                    <h3>Dator & TV-spel</h3>
+
+                    <p>Jag fick mitt första Nintendo 8-bitars när jag var fyra år gammal och på den vägen är det. För
+                        tillfället spelar jag framförallt på mitt Playstation 4 så ofta jag hinner.</p>
+
+                    <h3>De fem bästa Spelen</h3>
+                    <ol>
+                        <li>Last of Us - Playstation 4</li>
+                        <li>Super Mario 3 - Nintendo 8 Bitar</li>
+                        <li>Starcraft 2 - PC</li>
+                        <li>Halflife 2 - PC</li>
+                        <li>GTA Vice City - Playstation 2</li>
+                    </ol>
+                </div>
+
+                <div class="text-content hide" id="servicesContent">
+                    <h2>Mina tjänster</h2>
+
+                    <h3>Front-End Utveckling</h3>
+
+                    <p>Jag älskar att koda Front-End. För de flesta är begreppet är <i>Front-End</i> något
+                        diffust men det kan kortfattat beskrivas som allt man ser på en hemsida. Med andra ord
+                        färgerna, strukturen & effekterna på en hemsida.
+                        Jag har goda kunskaper HTML5, CSS3 och JavaScript, dvs. det som utgör modern Front-End
+                        utveckling. Jag behärskar även back-end programmering (det man som besökare inte ser).
+                        Exempelvis är hela den här portfoliosidan byggd på
+                        PHP med ett tillhörande egenkomponerat admin-system.
+                        Min ambition är att skapa lättanvända, estetiskt tilltalande och välfungerande hemsidor
+                        och webbtjänster</p>
+
+                    <h3>Responsivitet</h3>
+
+                    <p>Hemsidor besöks mer och mer från andra enheter än datorer, exempelvis mobiltelefoner,
+                        surfplattor, tv-spelskonsoller etc. Därför krävs det att en hemsida kan anpassa
+                        presentationen av innehållet efter vilken enhet besökaren använder. Detta kallas
+                        <i>responsiv design.</i> Alla seriösa moderna hemsidor ska vara responsiva.</p>
+
+                    <h3>Content Management System</h3>
+
+                    <p>Jag har arbetat profesionellt med Wordpress men har även arbetat med andra CMS-system,
+                        exempelvis Joomla. Dessa är väldigt praktiska då man snabbt vill skapa en sida som ser
+                        bra ut och som kunden kan administrera själv.
+                        Exempelvis lägga till bilder, redigera texter, lägga till nya undersidor etc.
+                        Jag har även profesionell erfarenhet av diverse affärsprogram, exempelvis Visma Mamut,
+                        Specter, Askås Internetbutik etc.
+                    </p>
+
+                    <h3>Grafisk Layout</h3>
+
+                    <p>Jag har haft en passion för estetik och design så länge jag minnas. Jag kan sitta i
+                        timmar med en liten detalj tills jag blir nöjd. Jag har arbetat profesionellt med
+                        Photoshop där jag gör 99 % av allt grafiskt arbete.
+                    </p>
+                    <h4><i>Vill du skapa en hemsida, uppdatera en befintlig, göra något grafiskt eller bara
+                        prata lite om front-end utveckling och allt därikring så får ni hemskt gärna
+                        kontakta mig! Jag är alltid sugen på nya uppdrag och eftersom jag fortfarande är
+                        student
+                        så är jag billigare än om ni skulle kontakta en webbyrå.</i>
+                    </h4>
+                </div>
+
+                <div class="text-content hide" id="aboutMeContent">
+                    <h2>Jag heter Vilhelm Falkenmark och jag är för tillfället 29 år gammal.</h2>
+
+                    <p>Jag föddes i Stockholm den 22 juni 1986. Jag har tre syskon varav jag är näst äldst
+                        <br><br>
+                        När jag var liten var jag besatt av Lego och Turtles. När jag fyllde 10 fick jag min
+                        första stereo och en skiva med Kiss (bandet). Detta skulle komma att förändra mitt liv.
+                        Jag började spela gitarr när jag var 13 och det har
+                        varit min huvudsakliga hobby sedan dess. Under högstadietiden och gymnasiet spelade jag
+                        i diverse band och andra lösare musikaliska sammanslutningar.
+                        <br><br>
+                        Efter att jag slutat gymnasiet åkte jag till Australien med en av mina bästa kompisar
+                        för att "hitta mig själv" och "ta reda på vad jag ville göra med livet". Tyvärr så
+                        lyckades jag inte med något av dem sakerna. Istället ansökte jag
+                        till ekonomiutbildningen vid Uppsala Universitet. Jag flyttade till Uppsala när jag
+                        precis fyllt 20 och pluggade där i fyra år och ett halvår utomlands i Maastricht
+                        (Nederländerna).
+                        Jag fick ut min <i>Masters in Business and Economics</i> examen i januari 2011.
+                        <br><br>
+                        Efter min examen flyttade jag tillbaka till Stockholm och blev sambo med min kära
+                        flickvän. Jag började jobba vid en e-handelsbutik som webbadministratör och i deras
+                        kundtjänst. Efter drygt ett år där började jag bli rastlös och kände att jag
+                        inte blev tillräckligt utmanad. Jag blev då erbjuden en tjänst på ett annat företag i
+                        samma koncern som <i>Content Manager</i>, dvs. ansvarig för allt innehåll på sidan. Det
+                        här var min första kontakt med programmering sen jag ändrade färger på
+                        min Lunarstorm sida när jag var 15. Förutsatt då att man kan kolla extremt grundläggande
+                        HTML och CSS för "programmering". Jag fortsatte jobba där i ytterligare ett drygt år
+                        tills jag bestämde mig för att gå ner på halvtid för att gå en 6 månader
+                        lång kurs i webbutveckling vid Folkuniversitet.
+                        <br><br>
+                        Under det halvåret blev mitt mål i livet tydligare för var dag. Jag ville hålla på med
+                        programmering, det fanns inga frågetecken kvar. Det fanns något fantastiskt stimulerande
+                        i såväl problemlösningen
+                        kombinerat med den estetiska utmaningen. Efter att jag fick mitt i diplom från kursen i
+                        juni 2014 bestämde jag mig för att jag ville fortsätta utveckla mina nyvunna kunskaper.
+                        Jag ansökte till utbildningen Front-End utveckling vid Nackademin
+                        i absolut sista sekund och kom in. Det är ett av de absolut bästa besluten jag någonsin
+                        tagit.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-50"></div>
+
+        </section>
+        <!--*********************** END ABOUT ****************************-->
+        <section>
+            <div class="first-background-divider fullscreen background parallax" data-diff="100" data-img-width="1500"
+                 data-img-height="1000"></div>
+        </section>
+        <!--*********************** START PORTFOLIO ****************************-->
+        <section id="portfolio" class="section-light-grey">
+            <div class="arrow-hole"></div>
+            <h2 class="section-header">Portfolio</h2>
+
+            <div class="flex-row">
+                <div class="flex-item port-desc-container">
+                    <div class="light-striped-background">
+                        <h3 class="medium-text">Ballbusters</h3>
+
+                        <p class="small-text">Kategori: Skolarbete - <i>Javascript 2</i></p>
+
+                        <p class="small-text">Använda tekniker: <i>Javascript, HTML5</i></p>
+
+                        <p>Ett spel som jag har programmerat och designat tillsammans med Fredrik Löfgren.
+                            Spelet är inspirerat av ett gammalt arkadspel som heter Pang.
+                            Spelmotorn utgår från prototypbaserad och objektorienterad Javascript.
+                            Exempelvis genereras samtliga bollar som man ska skjuta sönder utifrån en och
+                            samma boll-prototyp. Samma sak gäller givetvis för skotten, uppgraderingarna osv.
+                            Spelet är helt och hållet skrivet i Javascript utan något ramverk eller dylikt.
+                            Vi har även kopplat på PHP och MySQL för att kunna spara och visa High Scores.
+                        </p>
+                    </div>
+                </div>
                 <div class="flex-item port-image-container">
                     <div class="port-image-inner">
                         <div class="macbook-image">
                             <div class="port-screenshot">
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -114,17 +285,18 @@
                 <div class="flex-item port-image-container">
                     <div class="port-image-inner">
                         <div class="macbook-image">
-                            <div class="port-screenshot">
-                            </div>
+                            <div class="port-screenshot"></div>
                         </div>
                     </div>
                 </div>
-
                 <div class="flex-item port-desc-container">
-                    <div>
-                        <h3>Ballbusters</h3>
-                        <p>Kategori: Skolarbete - Javascript 2</p>
-                        <p>Använda tekniker: Javascript, HTML5</p>
+                    <div class="light-striped-background">
+                        <h3 class="medium-text">Ballbusters</h3>
+
+                        <p class="small-text">Kategori: Skolarbete - <i>Javascript 2</i></p>
+
+                        <p class="small-text">Använda tekniker: <i>Javascript, HTML5</i></p>
+
                         <p>Ett spel som jag har programmerat och designat tillsammans med Fredrik Löfgren.
                             Spelet är inspirerat av ett gammalt arkadspel som heter Pang.
                             Spelmotorn utgår från prototypbaserad och objektorienterad Javascript.
@@ -139,184 +311,149 @@
 
             <div class="btn light-btn port-link-btn">Till Projekt</div>
             <div class="port-line-divider"></div>
+            <div class="space-100"></div>
+            <div class="clear"></div>
+        </section>
+        <!--*********************** END PORTFOLIO ****************************-->
+        <section>
+            <div class="second-background-divider fullscreen background parallax" data-diff="100" data-img-width="1500"
+                 data-img-height="1000"></div>
+        </section>
+        <!--*********************** START CV ****************************-->
+        <section class="section-light-grey" id="resume">
 
+            <h2 class="section-header">Färdigheter</h2>
 
+            <!--=======FÄRDIGHETER=======-->
+            <div class="skill-container">
 
-            <!--<div class="flex-row">
-                    <div class="flex-item port-info-container">
-                        <div class="port-head-container large-device-right-text">
-                            <div>
-                                <h3>Ballbusters</h3>
-                                <p>Kategori: Skolarbete - Javascript 2</p>
-                                <p>Använda tekniker: Javascript, HTML5</p>
-                            </div>
-                        </div>
-
-                        <div class="port-desc-container large-device-right-text">
-                            <div>
-                                <p>Ett spel som jag har programmerat och designat tillsammans med Fredrik Löfgren.
-                                    Spelet är inspirerat av ett gammalt arkadspel som heter Pang.
-                                    Spelmotorn utgår från prototypbaserad och objektorienterad Javascript.
-                                    Exempelvis genereras samtliga bollar som man ska skjuta sönder utifrån en och
-                                    samma boll-prototyp. Samma sak gäller givetvis för skotten, uppgraderingarna osv.
-                                    Spelet är helt och hållet skrivet i Javascript utan något ramverk eller dylikt.
-                                    Vi har även kopplat på PHP och MySQL för att kunna spara och visa High Scores.
-                                </p>
-                            </div>
-                        </div>
-
+                <div class="inner-skill-container">
+                    <div class="inline-block skill-label">
+                        <div>Javascript</div>
                     </div>
-                    <div class="flex-item port-image-container">
-                        <div class="port-image-inner">
-                            <div class="macbook-image">
-                                <div class="port-screenshot"></div>
-
+                    <div class="skill-bar inline-block">
+                        <div class="skill-percentage" data-percent="70%">
+                            <div class="skill-meter-container">
+                                <div class="skill-meter">
+                                    <span class="skillCounter">7/10</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="inner-skill-container">
+                    <div class="inline-block skill-label">
+                        <div>SASS</div>
+                    </div>
+                    <div class="skill-bar inline-block">
+                        <div class="skill-percentage" data-percent="50%">
+                            <div class="skill-meter-container">
+                                <div class="skill-meter">
+                                    <span class="skillCounter">5/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--=======SLUT FÄRDIGHETER=======-->
 
-            <div class="flex-row">
-                <div class="flex-item port-image-container">
-                    <div class="port-image-inner">
-                        <div class="macbook-image">
-                            <div class="port-screenshot"></div>
+            <!--=======TIDSLINJE=======-->
+            <h2 class="section-header">Min Tidslinje</h2>
 
+
+            <div class="timeline-container">
+
+                <div class="timeline-row">
+                    <div class="third_col">
+                        <div class="left-timeline-label slide-left">
+
+                            <div class="width-90">
+                                <div class="timelineIconPhone timelineIcon"><i class="flaticon-code1"></i></div>
+
+                                <div class="ribbon-space"></div>
+                                <div class="ribbon"><strong class="ribbon-content"><h3>Ottoboni</h3></strong></div>
+                                <h4>LIA - Praktikant<br>September 2015 - December 2015</h4>
+
+                                <p>Jag är för tillfället ute som Front-End praktikant hos den digitala byrån Ottoboni.
+                                    De sysslar med all form av digital kommunikation och jag jobbar i ett
+                                    utvecklingsteam som består av Front-End såväl som Back-End utvecklare.</p>
+
+                                <div class="timeline-link-container"><a href="#" target="_blank">
+                                    <div class="experience-transparent-box-button">
+                                        <div>www.ottoboni.se</div>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="ten_col">
+                        <div class="timeLine">
+                            <div class="timeLine-Circle fadeIn-Icon">
+                                <div class="timelineIcon"><i class="flaticon-code1"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third_col"></div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="third_col"></div>
+                    <div class="ten_col">
+                        <div class="timeLine">
+                            <div class="timeLine-Circle fadeIn-Icon">
+                                <div class="timelineIcon"><i class="flaticon-head7"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third_col">
+                        <div class="right-timeline-label slide-right">
+                            <div class="width-90">
+                                <div class="timelineIconPhone timelineIcon"><i class="flaticon-head7"></i></div>
+                                <div class="ribbon-space"></div>
+                                <div class="ribbon"><strong class="ribbon-content"><h3>Vilhelm F. Enskild Firma</h3>
+                                </strong></div>
+                                <h4>Front-End Utvecklare/Grafiker<br>2015 ff.</h4>
+
+                                <p>Jag startade en enskild firma under våren 2015 för att kunna åta mig frilans uppdrag
+                                    under min studietid på Nackademin. För tillfället har jag avverkat två uppdrag och
+                                    är ständigt på jakt efter nya uppdrag att tänderna i!</p>
+
+                                <div class="timeline-link-container"><a href="#" target="_blank">
+                                    <div class="experience-transparent-box-button">
+                                        <div>www.vilhelmfalkenmark.se</div>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex-item port-info-container">
-                    <div class="port-head-container large-device-left-text">
-                        <div>
-                            <h3>Ballbusters</h3>
-                            <p>Kategori: Skolarbete - Javascript 2</p>
-                            <p>Använda tekniker: Javascript, HTML5</p>
-                        </div>
-                    </div>
-                    <div class="port-desc-container large-device-left-text">
-                        <div>
-                            <p>Ett spel som jag har programmerat och designat tillsammans med Fredrik Löfgren.
-                                Spelet är inspirerat av ett gammalt arkadspel som heter Pang.
-                                Spelmotorn utgår från prototypbaserad och objektorienterad Javascript.
-                                Exempelvis genereras samtliga bollar som man ska skjuta sönder utifrån en och
-                                samma boll-prototyp. Samma sak gäller givetvis för skotten, uppgraderingarna osv.
-                                Spelet är helt och hållet skrivet i Javascript utan något ramverk eller dylikt.
-                                Vi har även kopplat på PHP och MySQL för att kunna spara och visa High Scores.
-                            </p>
-                        </div>
-                    </div>
                 </div>
-            </div>-->
+            <div class="space-100"></div>
+            <div class="space-100"></div>
+            <div class="space-100"></div>
+            <div class="space-100"></div>
+
+            <!--=======SLUT TIDSLINJE=======-->
 
             <div class="space-100"></div>
 
-
-
-
-
-
-            <div class="gtr-container">
-
-
-
-            <div class="gtr-row">
-                <div class="gtr col-7-desk col-5-tab col-3-ml col-5-ms">
-                    <div class="flex-center"></div>
-                </div>
-                <div class="gtr col-5-desk col-1-tab col-3-ml col-7-ms">
-                    <div class="flex-center"></div>
-                </div>
-                <div class="gtr col-4-desk col-3-tab col-6-ml col-8-ms">
-                    <div class="flex-center"></div>
-                </div>
-                <div class="gtr col-8-desk col-3-tab col-12-ml col-4-ms">
-                    <div class="flex-center"></div>
-                </div>
-            </div>
-
-                <div class="gtr-row">
-                    <div class="gtr col-3-desk col-4-tab col-6-ml col-8-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-4-desk col-4-tab col-2-ml col-4-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-3-desk col-4-tab col-2-ml col-12-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-2-desk col-12-tab col-2-ml col-12-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-
-
-
-
-
-            <div class="gtr-container">
-                <div class="gtr-row">
-                    <div class="gtr col-3-desk col-5-tab col-4-ml col-8-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-3-desk col-2-tab col-8-ml col-4-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-3-desk col-3-tab col-12-ml col-12-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-3-desk col-2-tab col-12-ml col-12-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                </div>
-
-                <div class="gtr-row">
-                    <div class="gtr col-7-desk col-5-tab col-3-ml col-5-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-5-desk col-1-tab col-3-ml col-7-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-4-desk col-3-tab col-6-ml col-8-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-8-desk col-3-tab col-12-ml col-4-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                </div>
-
-                <div class="gtr-row">
-                    <div class="gtr col-3-desk col-4-tab col-6-ml col-8-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-4-desk col-4-tab col-2-ml col-4-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-3-desk col-4-tab col-2-ml col-12-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                    <div class="gtr col-2-desk col-12-tab col-2-ml col-12-ms">
-                        <div class="flex-center"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="btn light-btn">Ljus knapp</div>
-            <div class="btn dark-btn">Mörk Knapp</div>
-            <!--<div class="clear"></div>-->
-            <div class="space-50"></div>
-
-            <div class="device-info-container">
-                <div class="device-info"></div>
-            </div>
         </section>
     </main>
     <footer>
         <section>
         </section>
     </footer>
+    <div class="device-info-container">
+        <div class="device-info"></div>
+    </div>
 </div>
 <!--build:js js/main.min.js -->
 <script src="js/jquery-2.1.4.min.js"></script>

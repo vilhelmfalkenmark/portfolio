@@ -1,0 +1,699 @@
+::-webkit-scrollbar {
+  width: 8px;
+  background: $lightGrey;
+}
+::-webkit-scrollbar-thumb {
+  background: $darkGrey;
+}
+/*=================================================
+ TEXT-ALIGNMENT
+ =================================================*/
+.light-striped-background
+{
+  background: repeating-linear-gradient(
+   135deg,
+   white,
+   lighten($lightGrey,3%) 1px,
+   lighten($lightGrey,3%) 2px,
+   white 4px
+  );
+}
+.dark-striped-background
+{
+  background: repeating-linear-gradient(
+                  135deg,
+                  black,
+                  $darkGrey 1px,
+                  $darkGrey 2px,
+                  black 4px
+  );
+}
+/*=================================================
+ STRIPED BACKGROUND
+ =================================================*/
+
+@media (min-width: 767px) {
+
+  .large-device-left-text
+  {
+    // text-align: left;
+  }
+  .large-device-right-text
+  {
+    // text-align: right;
+  }
+}
+/*=================================================
+  ARROWS
+=================================================*/
+
+@media (min-width: $desktop-break+1){ // Hack för att den inte ska komma med i mobilläge
+  .right-arrow
+  {
+    &:after
+    {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      border-left-color:  $stripedGrey;
+      border-width: 30px;
+      margin-top: -30px;
+    }
+  }
+  .left-arrow
+  {
+    &:after
+    {
+      right: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      border-right-color: $stripedGrey;
+      border-width: 30px;
+      margin-top: -30px;
+    }
+  }
+}
+@media (min-width: 1px) and (max-width: $desktop-break) {
+  .down-arrow {
+    &:after {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-top-color: $stripedGrey;
+      border-width: 30px;
+      margin-left: -30px;
+    }
+  }
+}
+/*=================================================
+  SECTION GENERELLA REGLER
+ =================================================*/
+.section-header
+{
+  text-align: center;
+  color: $darkGrey;
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  padding: 30px 0;
+}
+.section-light-grey
+{
+  background-color: $lightGrey;
+}
+.arrow-hole
+{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #e5e3e0;
+}
+.arrow-hole:after
+{
+  left: 50%;
+  border-bottom: 20px solid #e5e3e0;
+  border-left: 20px solid transparent;
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  width: 50%;
+  box-sizing: border-box;
+}
+.arrow-hole:before
+{
+  right: 50%;
+  border-bottom: 20px solid #e5e3e0;
+  border-right: 20px solid transparent;
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  width: 50%;
+  box-sizing: border-box;
+}
+/*=================================================
+  NAV BAR-LÄNKAR!
+ =================================================*/
+.nav-container {
+  z-index: 999;
+  a {
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    position: relative;
+  }
+  a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  a:hover {
+    color: darken(white, 10%);
+  }
+}
+/*================================================
+ =================================================
+ **************************************************
+                 GRIDS + GUTTERS!
+ *************************************************
+ =================================================
+ =================================================*/
+
+
+/*=================================================
+ LITEN-TELEFON - UPP TILL 400px
+ =================================================*/
+
+@include respond-to(mobile-small) {
+  .col-12-ms
+  {
+    width: percentage(12/12);
+  }
+  .col-11-ms
+  {
+    width: percentage(11/12);
+  }
+  .col-10-ms
+  {
+    width: percentage(10/12);
+  }
+  .col-9-ms
+  {
+    width: percentage(9/12);
+  }
+  .col-8-ms
+  {
+    width: percentage(8/12);
+  }
+  .col-7-ms
+  {
+    width: percentage(7/12);
+  }
+  .col-6-ms
+  {
+    width: percentage(6/12);
+  }
+  .col-5-ms
+  {
+    width: percentage(5/12);
+  }
+  .col-4-ms
+  {
+    width: percentage(4/12);
+  }
+  .col-3-ms
+  {
+    width: percentage(3/12);
+  }
+  .col-2-ms
+  {
+    width: percentage(2/12);
+  }
+  .col-1-ms
+  {
+    width: percentage(1/12);
+  }
+
+  .gtr-row:first-child
+  {
+    margin: $ms-gtr $ms-gtr 0 $ms-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $ms-gtr $ms-gtr  $ms-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $ms-gtr;
+  }
+  .gtr{
+    padding:0;
+    margin:0;
+
+    > div{
+      margin:$ms-gtr;
+      min-height: $ms-gtr-min-h;
+    }
+  }
+}
+/*=================================================
+ STOR-TELEFON - UPP TILL 768px
+ =================================================*/
+
+@include respond-to(mobile-large) {
+  .col-12-ml
+  {
+    width: percentage(12/12);
+  }
+  .col-11-ml
+  {
+    width: percentage(11/12);
+  }
+  .col-10-ml
+  {
+    width: percentage(10/12);
+  }
+  .col-9-ml
+  {
+    width: percentage(9/12);
+  }
+  .col-8-ml
+  {
+    width: percentage(8/12);
+  }
+  .col-7-ml
+  {
+    width: percentage(7/12);
+  }
+  .col-6-ml
+  {
+    width: percentage(6/12);
+  }
+  .col-5-ml
+  {
+    width: percentage(5/12);
+  }
+  .col-4-ml
+  {
+    width: percentage(4/12);
+  }
+  .col-3-ml
+  {
+    width: percentage(3/12);
+  }
+  .col-2-ml
+  {
+    width: percentage(2/12);
+  }
+  .col-1-ml
+  {
+    width: percentage(1/12);
+  }
+
+  .gtr-row:first-child
+  {
+    margin: $ml-gtr $ml-gtr 0 $ml-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $ml-gtr $ml-gtr  $ml-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $ml-gtr;
+  }
+  .gtr{
+
+    margin:0;
+    > div{
+      margin:$ml-gtr;
+      min-height: $ml-gtr-min-h;
+    }
+  }
+}
+/*=================================================
+ PLATTA - UPP TILL 1024px
+ =================================================*/
+
+@include respond-to(tablet) {
+  .col-12-tab
+  {
+    width: percentage(12/12);
+  }
+  .col-11-tab
+  {
+    width: percentage(11/12);
+  }
+  .col-10-tab
+  {
+    width: percentage(10/12);
+  }
+  .col-9-tab
+  {
+    width: percentage(9/12);
+  }
+  .col-8-tab
+  {
+    width: percentage(8/12);
+  }
+  .col-7-tab
+  {
+    width: percentage(7/12);
+  }
+  .col-6-tab
+  {
+    width: percentage(6/12);
+  }
+  .col-5-tab
+  {
+    width: percentage(5/12);
+  }
+  .col-4-tab
+  {
+    width: percentage(4/12);
+  }
+  .col-3-tab
+  {
+    width: percentage(3/12);
+  }
+  .col-2-tab
+  {
+    width: percentage(2/12);
+  }
+  .col-1-tab
+  {
+    width: percentage(1/12);
+  }
+
+  .gtr-row:first-child
+  {
+    margin: $tab-gtr $tab-gtr 0 $tab-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $tab-gtr $tab-gtr  $tab-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $tab-gtr;
+  }
+
+  .gtr{
+    // width:25%;
+    // float:left;
+    padding:0;
+    margin:0;
+    > div{
+      margin:$tab-gtr;
+      min-height: $tab-gtr-min-h;
+    }
+  }
+}
+/*=================================================
+ Dator - STÖRRE ÄN 1024px
+ =================================================*/
+@include respond-to(desktop) {
+  .col-12-desk
+  {
+    width: percentage(12/12);
+  }
+  .col-11-desk
+  {
+    width: percentage(11/12);
+  }
+  .col-10-desk
+  {
+    width: percentage(10/12);
+  }
+  .col-9-desk
+  {
+    width: percentage(9/12);
+  }
+  .col-8-desk
+  {
+    width: percentage(8/12);
+  }
+  .col-7-desk
+  {
+    width: percentage(7/12);
+  }
+  .col-6-desk
+  {
+    width: percentage(6/12);
+  }
+  .col-5-desk
+  {
+    width: percentage(5/12);
+  }
+  .col-4-desk
+  {
+    width: percentage(4/12);
+  }
+  .col-3-desk
+  {
+    width: percentage(3/12);
+  }
+  .col-2-desk
+  {
+    width: percentage(2/12);
+  }
+  .col-1-desk
+  {
+    width: percentage(1/12);
+  }
+  .gtr-row:first-child
+  {
+    margin: $desk-gtr $desk-gtr 0 $desk-gtr;
+  }
+  .gtr-row:last-child
+  {
+    margin: 0 $desk-gtr $desk-gtr  $desk-gtr;
+  }
+  .gtr-row
+  {
+    margin: 0 $desk-gtr;
+  }
+  .gtr{
+    padding:0;
+    margin:0;
+    > div{
+      margin:$desk-gtr;
+      min-height: $desk-gtr-min-h;
+    }
+  }
+}
+
+.row
+{
+  width: 100%;
+}
+.row:after
+{
+  clear: both;
+}
+[class*="col"] {
+  //float: left;
+}
+.gtr-row:before,
+.gtr-row:after {
+  content: " "; /* 1 */
+  display: block; /* 2 */
+}
+.gtr-row:after {
+  clear: both;
+}
+.gtr-row {
+  *zoom: 1;
+}
+.gtr{
+  background:white;
+  > div{
+    font-size: 14px;
+    background:$darkBlue;
+    color: $beige;
+  }
+}
+
+/*=================================================
+  SLUT PÅ GUTTER + GRIDS
+ =================================================*/
+
+
+/*=================================================
+ KNAPPAR!
+ =================================================*/
+.btn
+{
+ // display: inline-block;
+  margin: 20px auto;
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  @extend .flex-center;
+  @extend .medium-trans;
+}
+.light-btn
+{
+  border: 1px solid $darkGrey;
+  color: $darkGrey;
+}
+.light-btn:hover {
+  background-color: $darkGrey;
+  color: $lightGrey;
+}
+.dark-btn
+{
+  background-color: $darkGrey;
+  border: 1px solid $darkGrey;
+  color: $lightGrey;
+}
+.dark-btn:hover {
+  background-color: transparent;
+  color: $darkGrey;
+}
+
+/*=================================================
+ PORTFOLIO FLEX!
+ =================================================*/
+
+.flex-row {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  @extend .max-width-content;
+}
+
+.flex-item {
+  // color: white;
+  text-align: center;
+  width: 50%;
+  flex-flow: row wrap;
+  flex-direction: column;
+}
+@media (min-width:1px) and (max-width: $desktop-break) {
+  .flex-item {
+    flex: 1 100%;
+  }
+  .port-desc-container { order: 1; }
+  .port-image-container    { order: 2; }
+}
+
+/*=================================================
+ VIEWPORT INFO!
+ =================================================*/
+.device-info-container
+{
+  @extend .flex-center;
+  font-size: 14px;
+  color: white;
+  background-color: $darkGrey;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+}
+/*=================================================
+ FLIP - RELATED
+ =================================================*/
+
+.flip-parent
+{
+  position: relative;
+  perspective: 1200px;
+  vertical-align: baseline;
+  margin-bottom: -0px;
+}
+.flip
+{
+  -webkit-transform-origin: center bottom;
+  -moz-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  -o-transform-origin: center bottom;
+  /* transform-origin: center bottom; */
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  scale:(1);
+  transform:  translateY(0px);
+  @extend .flex-center;
+}
+.flip:before {
+  //position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 20px;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #6a7083;
+}
+/*=================================================
+ RIBBONS (Som exempelvis används på tidslinjen
+ =================================================*/
+
+.ribbon {
+  min-width: 240px;
+  width: 90%;
+  max-width: 320px;
+  height: 40px;
+  position: relative;
+  background: $red;
+  color: #fff;
+  text-align: center;
+  padding-top: 5px;
+  margin: 10px auto 30px auto; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.ribbon:before, .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -16px;
+  border: 20px solid darken($red,2%);
+  z-index: -1;
+}
+.ribbon:before {
+  left: -28px;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.ribbon:after {
+  right: -28px;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #cb382a transparent transparent transparent;
+  bottom: -16px; // 16px i det här fallet är 1em
+}
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+.ribbon-space
+{
+  width: 100%;
+  height: 1px;
+}

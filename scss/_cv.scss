@@ -1,0 +1,305 @@
+$skill-bar-height: 30px;
+#resume
+{
+  overflow: hidden;
+}
+/*================================================
+ =================================================
+ **************************************************
+                SKILLBARS!
+ *************************************************
+ =================================================
+ =================================================*/
+
+
+.skill-container
+{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.skill-meter
+{
+  color: white;
+  @extend .flex-center;
+}
+.skill-label, .skill-bar
+{
+ vertical-align: top;
+}
+
+.skill-meter-container
+{
+  width: 0;
+  transition: width 0.8s ease-in-out;
+}
+
+.skillContainer
+{
+  text-align: left !important;
+}
+.inner-skill-container
+{
+  margin: 45px auto;
+}
+.skill-meter
+{
+  transition: all 0.6s ease;
+}
+.skill-label
+{
+  margin-left: 15px;
+  width: 160px;
+}
+.skill-label div
+{
+  font-size: 20px;
+}
+.skill-bar
+{
+  cursor: pointer;
+  height: $skill-bar-height;
+  @extend .light-striped-background;
+
+}
+.skill-meter
+{
+  height: $skill-bar-height;
+  background-color: $green;
+}
+.skillCounter
+{
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.skill-bar:hover
+{
+
+.skill-meter
+{
+  background-color: darken($green,10%);
+}
+  .skillCounter
+  {
+    opacity: 1;
+  }
+}
+@include respond-to(mobile-small) {
+  .inner-skill-container
+  {
+    margin: 25px auto;
+    text-align: center;
+  }
+  .skill-label
+  {
+    margin: 0 auto 14px auto;
+    text-align: center;
+  }
+  .skill-label div
+  {
+    margin-top: 2px;
+  }
+  .skill-bar
+  {
+    width: 90%;
+  }
+}
+@include respond-to(mobile-large) {
+  .inner-skill-container
+  {
+    margin: 25px auto;
+    text-align: center;
+  }
+  .skill-label
+  {
+    margin: 0 auto 14px auto;
+  }
+  .skill-label div
+  {
+    font-size: 16px;
+    margin-top: 2px;
+  }
+  .skill-bar
+  {
+    width: 90%;
+  }
+
+}
+@include respond-to(tablet) {
+  .skill-label {
+    margin-left: 25px;
+  }
+  .skill-bar {
+     margin-left: 10px;
+     width: 65%;
+   }
+}
+@include respond-to(desktop) {
+  .skill-bar {
+    margin-left: 10px;
+    width: 600px;
+  }
+}
+/*================================================
+ =================================================
+ **************************************************
+                TIDSLINJEN
+ *************************************************
+ =================================================
+ =================================================*/
+
+.timeline-container
+{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.left-timeline-label, .right-timeline-label
+{
+  font-size: 16px;
+  width: 100%;
+  opacity: 0.999;
+  background-color: white; //hej
+  margin: 20px auto;
+  position: relative;
+}
+
+.left-timeline-label h3, .right-timeline-label h3
+{
+  margin: 2px auto;
+}
+.timelineIcon
+{
+  font-size: 40px;
+  margin-top: 6px;
+  color: lighten($darkGrey,0%);
+}
+.timelineIconPhone
+{
+  float: left; //
+}
+
+
+/*  DESKTOP */
+$timeLineLabelColor: white;
+.timelineIconPhone
+{
+  display: none;
+}
+#timeLineContainer
+{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.timeline-row
+{
+  margin: 0 auto;
+  height: 320px;
+  width: 100%;
+}
+.timeLine
+{
+  height: 105%;
+  width: 8px;
+  margin: 0 auto;
+  align-self: center;
+  background-color: $darkGrey; // hej
+}
+.left-timeline-label, .right-timeline-label
+{
+  vertical-align: top;
+  height: 320px;
+  width:450px;
+  background-color: $timeLineLabelColor;
+  position: relative;
+  margin-top:20px;
+}
+.left-timeline-label
+{
+  margin-left: 15px;
+}
+.right-timeline-label
+{
+  margin-left: 60px;
+}
+.left-timeline-label h3, .right-timeline-label h3
+{
+  padding-top: 0;
+}
+.left-timeline-label div, .right-timeline-label div
+{
+  padding-top: 5px;
+}
+.left-timeline-label:after
+{
+  left: 100%;
+  top: 47%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-left-color: $timeLineLabelColor;
+  border-width: 30px;
+  margin-top: -30px;
+}
+.right-timeline-label:after
+{
+  right: 100%;
+  top: 47%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  //border-color: rgba(136, 183, 213, 0);
+  border-right-color: $timeLineLabelColor;
+  border-width: 30px;
+  margin-top: -30px;
+  box-shadow: inset 10px 10px 2px 12px black; /* X Y BLUR SPANBREDD FÄRG*/
+}
+.third_col
+{
+  vertical-align:top;
+  height: 100%;
+  width: 47.9%;
+  display: inline-block;
+}
+.ten_col
+{
+  vertical-align:top;
+  height: 100%;
+  width: 2.9%;
+  display: inline-block;
+//  background: red;
+}
+
+$timeLine-Circle-Size: 70px;
+
+.timeLine-Circle
+{
+  height: $timeLine-Circle-Size;
+  width: $timeLine-Circle-Size;
+  border-radius: $timeLine-Circle-Size/2;
+  //border: 5px solid $darkText;
+  border: 5px solid $darkBlue;
+  background-color: white;
+  float: left;
+  margin-top: 130px;
+  margin-left: -31px;
+}
+.timeline-link-container
+{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+.ribbon-space
+{
+  display: none;
+}
+
+
+
+

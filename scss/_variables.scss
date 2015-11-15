@@ -1,0 +1,92 @@
+/*=================================================
+ BREAKPOINTS
+ =================================================*/
+$mobile-large-break:400px;
+$tablet-break:767px;
+$desktop-break:1024px;
+
+@mixin respond-to($breakpoint) {
+
+ @if $breakpoint == "mobile-small" {
+  @media (min-width: 1px) and (max-width:$mobile-large-break) {
+   @content;
+  }
+ }
+ @else if $breakpoint == "mobile-large" {
+  @media (min-width: $mobile-large-break+1) and (max-width:$tablet-break) {
+   @content;
+  }
+ }
+ @else if $breakpoint == "tablet" {
+  @media (min-width: $tablet-break) and (max-width:$desktop-break) {
+   @content;
+  }
+ }
+ @else if $breakpoint == "desktop" {
+  @media (min-width: $desktop-break+1) {
+   @content;
+  }
+ }
+
+
+
+ @else if $breakpoint == "large-device" {
+  @media (min-width: $tablet-break+1) {
+   @content;
+  }
+ }
+
+ @else if $breakpoint == "phone-device" {
+  @media (min-width: 1px) and (max-width: $tablet-break) {
+   @content;
+  }
+ }
+}
+
+/*=================================================
+ FÄRGER
+ =================================================*/
+// Najs färg #ff6567;
+
+$green: #1BBC9B;
+$red: #D64541;
+$purple: #8E44AD;
+$blue: #446CB3;
+$darkGrey: rgb(40,40,40);
+$beige: rgb(254,248,227);
+$lightBeige: rgb(251,249,245);
+$lightGrey: rgb(229,227,224);
+$darkBlue: #1a3742;
+$stripedGrey: #f5f5f5;
+/*=================================================
+ GUTTER GRIDS!
+ =================================================*/
+$ms-gtr: 3px;
+$ml-gtr: 0.5px;
+$tab-gtr: 5px;
+$desk-gtr: 8px; //
+/*=================================================
+HÖJD PÅ GUTTER GRIDS!
+ =================================================*/
+$ms-gtr-min-h:120px;
+$ml-gtr-min-h:150px;
+$tab-gtr-min-h:190px;
+$desk-gtr-min-h:250px;
+
+/*=================================================
+KNAPPAR
+ =================================================*/
+$ms-btn:120px;
+$ml-btn:150px;
+$tab-btn:190px;
+$desk-btn:250px;
+
+/*=================================================
+ PORTFOLIO-FLEX
+ =================================================*/
+
+$desk-item-h: 500px;
+$tab-item-h: 500px;
+$ml-item-h: 300px;
+$ms-item-h: 300px;
+

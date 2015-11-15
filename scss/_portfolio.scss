@@ -1,0 +1,140 @@
+/*=================================================
+                   MOBILE-SMALL
+=================================================*/
+@media (min-width: 1px) and (max-width: $mobile-large-break) {
+
+  .macbook-image
+  {
+    margin-top: 60px;
+    width: 97%;
+    max-width: 315px;
+  }
+
+  .port-image-container {
+    height: 200px;
+  }
+  .port-desc-container
+  {
+    > div
+    {
+      padding: 10px;
+      margin: 0 auto;
+      position: relative;
+    }
+    p
+    {
+      margin: 10px auto;
+     // width: 90%;
+      text-align: left;
+    }
+  }
+  .port-screenshot {
+    height: 180px;
+  }
+  .port-link-btn
+  {
+    margin-top: 40px;
+  }
+}
+/*=================================================
+                   MOBILE-LARGE
+=================================================*/
+
+@include respond-to(mobile-large) {
+  .port-desc-container p
+  {
+    text-align: left;
+  }
+  .port-desc-container > div
+  {
+    width: 85%;
+    padding: 20px;
+    margin: 20px auto 30px auto;
+    position: relative;
+    @extend .down-arrow;
+  }
+  .macbook-image
+  {
+    width: 90%;
+    max-width: 560px;
+  }
+  .port-screenshot {
+    height: 330px;
+  }
+
+  .port-image-container {
+    height: 340px;
+  }
+  .port-link-btn
+  {
+    margin-top: 20px;
+  }
+
+}
+/*=================================================
+                    TABLET
+=================================================*/
+@include respond-to(tablet) {
+  .flex-item {
+    width:100%;
+  }
+  .port-desc-container
+  {
+    margin: 30px 0;
+  }
+  .port-desc-container > div
+  {
+    position: relative;
+    background-color: $lightBeige;
+    padding: 20px;
+  }
+
+  .macbook-image
+  {
+    background-size: 100%;
+  }
+
+
+
+  .port-screenshot {
+    height: 400px;
+  }
+  .port-image-container {
+    margin-top: 60px;
+
+    height: 400px;
+  }
+  .port-link-btn {
+    margin-top: 30px;
+  }
+}
+/*=================================================
+                    DESKTOP
+=================================================*/
+@include respond-to(desktop) {
+  .flex-item
+  {
+    height: $desk-item-h;
+    width: 50%;
+  }
+  .port-screenshot {
+    height: 390px;
+  }
+  .port-desc-container > div
+  {
+    position: relative;
+    background-color: $lightBeige;
+    padding: 30px;
+  }
+  .port-desc-container:nth-child(odd) > div
+  {
+     @extend .right-arrow;
+  }
+  .port-desc-container:nth-child(even) > div
+  {
+    @extend .left-arrow;
+  }
+  .port-link-btn {
+    margin-top: 0px;
+  }
+}
