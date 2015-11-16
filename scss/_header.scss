@@ -1,32 +1,45 @@
+.nav-container
+{
+  .underline-link
+  {
+    font-size: 20px;
+  }
+  .underline-link:before {
+    background-color: white;
+  }
+  .underline-link:hover {
+    color: darken(white, 10%);
+  }
+}
+
 @include respond-to(desktop) {
 
-  .menu-button-wrapper
-  {
+  .menu-button-wrapper {
     display: none;
   }
-  .nav-container
-  {
+  .nav-container {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     transition: all 0.3s ease;
-    ul
-    {
+    ul {
       padding: 0 40px;
     }
-    li
-    {
+    li {
       list-style-type: none;
       display: inline-block;
       margin: 5px 30px;
-      a
-      {
+      a {
         color: white;
         font-size: 20px;
       }
     }
   }
+
+
+
+
   .nav-background
   {
   background-color: $darkGrey;

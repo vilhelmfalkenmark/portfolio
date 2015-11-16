@@ -7,11 +7,8 @@ $timeline-row-height: 350px;
 {
   opacity: 0.999;
 }
-
-
 .timeline-container
 {
-  overflow: hidden;
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -35,11 +32,23 @@ $timeline-row-height: 350px;
 }
 .vertical-line
 {
+  position: relative;
   height: $timeline-row-height;
   width: 10px;
   margin: 0 auto;
-  background: black;
+  background: $darkGrey;
 }
+.timeline-icon-circle
+{
+  right: -38px;
+  position: absolute;
+  width: $timeLine-circle-size;
+  height: $timeLine-circle-size;
+  border-radius: $timeLine-circle-size/2;
+  @extend .light-striped-background;
+}
+
+
 .timeline-card
 {
   height: $timeline-row-height;
@@ -58,8 +67,11 @@ $timeline-row-height: 350px;
  STYLING AV KORTEN
  =================================================*/
 
+
+
 .right-card, .left-card
 {
+  position: relative;
   @extend .light-striped-background;
 }
 
@@ -79,21 +91,48 @@ $timeline-row-height: 350px;
 }
 .timeline-description
 {
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
+}
+
+.timeline-row
+{
+  .underline-link
+  {
+    font-size: 18px;
+    color: $darkGrey;
+  }
+    .underline-link:before {
+      background-color: $darkGrey;
+    }
+    .underline-link:hover {
+      color: darken($darkGrey, 10%);
+    }
 }
 
 
 
+.timeline-link-container
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 140px;
+  bottom: 10px;
 
+
+
+}
+
+
+/*========= mobile-small ========= */
 @include respond-to(mobile-small)
 {
   .timeline-row
   {
    margin-top: 20px;
   }
-
-
   .timeline-left-block-container, .timeline-right-block-container
   {
    width: 100%;
@@ -102,45 +141,41 @@ $timeline-row-height: 350px;
   {
     float: none;
   }
-
-
   .timeline-card
   {
-    width: 315px;
+    width: 90%;
+    min-width: 210px;
     height: auto;
-    //max-height: 600px;
     margin: 0 auto !important;
+    opacity: 0.999 !important;
+    padding: 0 10px;
   }
   .timeline-vertical-line-container
   {
     display: none;
   }
-
   .timeline-description
   {
     padding-bottom: 70px;
+    width: 100%;
   }
-
-
 }
-
-
-
+/*========= mobile-large ========= */
 @include respond-to(mobile-large)
 {
   .timeline-row
   {
     margin-bottom: 20px;
   }
-
-
   .timeline-left-block-container, .timeline-right-block-container
   {
     width: 100%;
   }
   .timeline-card
   {
-    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    width: 97%;
   }
   .timeline-vertical-line-container
   {
@@ -152,22 +187,23 @@ $timeline-row-height: 350px;
     width: 6%;
     position: absolute;
   }
-
   .right-card
   {
     float: none;
   }
-
-
   .timeline-empty-block, .hide-mobile-small
   {
     display: none;
   }
-}
+  .timeline-description
+  {
+    padding-bottom: 70px;
+  }
 
+}
+/*========= Tablet ========= */
 @include respond-to(tablet)
 {
-
   .timeline-left-block-container, .timeline-right-block-container
   {
     margin-bottom: 40px;
@@ -182,6 +218,11 @@ $timeline-row-height: 350px;
     position: absolute;
     left:20px;
   }
+
+  .timeline-icon-circle
+  {
+    top: 30%;
+  }
   .right-card
   {
     float: none;
@@ -191,23 +232,23 @@ $timeline-row-height: 350px;
     display: none;
   }
 }
+/*========= Desktop ========= */
 @include respond-to(desktop)
 {
-
-
+  .timeline-icon-circle
+  {
+    top: 38%;
+  }
   .timeline-container
   {
-    width: 70%;
-    min-width: 1100px;
+
+  width: 1100px;
   }
 }
-
-
 /*=================================================
    FULHACK FÖR PILARNA SOM STRULADE I OVAN BREAKPOINTS
  =================================================*/
 @media (min-width: $tablet-break) and (max-width: $desktop-break) {
-
   .right-card
   {
     position: relative;
@@ -262,7 +303,6 @@ $timeline-row-height: 350px;
       border-width: 30px;
       margin-top: -30px;
     }
-
   }
   .left-card
   {
@@ -280,9 +320,7 @@ $timeline-row-height: 350px;
       border-width: 30px;
       margin-top: -30px;
     }
-
   }
-
 }
 
 

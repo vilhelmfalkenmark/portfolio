@@ -23,6 +23,11 @@ body
   margin: 0 auto;
   position: relative;
 }
+a
+{
+  text-decoration: none;
+  @extend .smooth-transition;
+}
 
 /*=================================================
 HEADER
@@ -67,6 +72,16 @@ HEADER
   background-size: cover;
   height: 400px;
   width: 100%; //
+}
+.third-background-divider
+{
+  background: url(../images/niceStuff.jpg) no-repeat center center; //
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
 }
 .header-content
 {

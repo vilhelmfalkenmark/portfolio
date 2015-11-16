@@ -19,11 +19,15 @@ $( document ).ready(function() {
         overLay.toggleClass("dark-overlay");
         });
 
-    overLay.click(function() {
+        overLay.click(function() {
          menuButton.toggleClass("open");
          $(".nav-container").toggleClass("nav-slide-in");
          $(this).toggleClass("dark-overlay");
         });
+
+
+
+
 
     /*=================================================
      SMOOTH-SCROLLING
@@ -39,7 +43,6 @@ $( document ).ready(function() {
             window.location.hash = target;
         });
     });
-
 
     /*=================================================
      KOLLA SKÄRMBREDD OCH AVGÖR VILKEN DEVICE SOM KÖRS!
@@ -61,6 +64,7 @@ $( document ).ready(function() {
             deviceInfo.html(screenWidth+" px =Desktop");
         }
     });
+
     /*=================================================
                     NY FUNKTION HÄR!!!!
      =================================================*/
@@ -79,13 +83,22 @@ $( document ).ready(function() {
         if(screenWidth>=mobileLargeBreak)
         {
              timeLine(screenWidth, windowHeight);
+            flip();
+
         }
-
-
         skillBars(windowHeight);
-        flip();
         navBar(screenWidth);
     });
+
+    /*=================================================
+                JUSTERING AV FÖNSTERSTORLEK
+     =================================================*/
+    $(window).on('resize', function () {
+        timeLine($(window).width(), $(window).height());
+        fullscreenFix();
+        backgroundResize();
+    });
+
     function navBar(screenWidth)
     {
         var scrollTop = $(window).scrollTop();
@@ -100,8 +113,6 @@ $( document ).ready(function() {
         {
             $('.desktop-menu-background').fadeOut(300);
             $(".name-container").fadeOut("slow");
-
-
         }
     }
     /*=================================================
@@ -154,7 +165,10 @@ $( document ).ready(function() {
             });
         }
         $(window).resize(fullscreenFix);
+        $(window).resize(backgroundResize);
+
         fullscreenFix();
+
         function backgroundResize() {
             var windowH = $(window).height();
             $(".background").each(function (i) {
@@ -183,7 +197,6 @@ $( document ).ready(function() {
                 path.css("background-size", imgW + "px " + imgH + "px");
             });
         }
-        $(window).resize(backgroundResize);
         $(window).focus(backgroundResize);
         backgroundResize();
 
@@ -216,9 +229,6 @@ $( document ).ready(function() {
                     var opacity = (distanceBottom / elementHeight);
                     var rotateSpeed = ((parentDistanceTop / 8).toFixed(2) * -1);*/
 
-
-
-                  //  var value = 20;
                     var horizontalPosition = path.attr("data-oriz-pos");
                     horizontalPosition = horizontalPosition ? horizontalPosition : "50%";
                     $(this).css("background-position",horizontalPosition + " " + value + "px");
@@ -232,7 +242,6 @@ $( document ).ready(function() {
             parallaxPosition();
         }
     }
-
 
     /*=================================================
                     OM-MIG SEKTIONEN
@@ -283,7 +292,6 @@ $( document ).ready(function() {
         });
     }
 
-
     function timeLine(windowWidth, windowHeight)
     {
     if(windowWidth>mobileLargeBreak) // Animationen såg för taskig ut på smartphones.
@@ -296,33 +304,38 @@ $( document ).ready(function() {
                 distanceTop   = (elementOffsetTop - scrollTop);
             var elementHeight = $(this).innerHeight(); // Höjden på elementet. I det här fallet Den vita diven som ska flyga in
             var distanceBottom = (windowHeight - (distanceTop+elementHeight));
-            var $opacity = (distanceBottom+50)/200; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
+            var $opacity = (distanceBottom+100)/200; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
 
             if($opacity>= 0.999)
             {
                 $opacity = 0.999; // Flaggan försvinner av jätteoklar anledning när opacity sätts till 1. Kan bero på position absolute?
             }
-
-            var $scrollInFromLeft = (distanceBottom-200)*2; // Öka till cirka (distanceBottom-200)*4;
-
-
-
-            if($scrollInFromLeft>=-30 && windowWidth>desktopBreak)
+            else if($opacity<0)
             {
-                $scrollInFromLeft = -30;
+                $opacity = 0;
             }
 
 
+            var $scrollInFromLeft = (distanceBottom-200)*1.5; // Öka till cirka (distanceBottom-200)*4;
+
+            /* Så att den inte fortsätter räkna och laggar */
+            if($scrollInFromLeft < -1000 )
+            {
+                $scrollInFromLeft = -1000;
+            }
+
+            if($scrollInFromLeft>=-45 && windowWidth>desktopBreak)
+            {
+                $scrollInFromLeft = -45;
+            }
             $(this).css({"opacity":$opacity, "margin-left":$scrollInFromLeft});
-
-
             if(windowWidth<desktopBreak && windowWidth>mobileLargeBreak) {
 
                 if(windowWidth>tabletBreak)
                 {
-                        if($scrollInFromLeft > -120)
+                        if($scrollInFromLeft > -145)
                         {
-                            $scrollInFromLeft = -120;
+                            $scrollInFromLeft = -145;
                         }
                 }
                 else
@@ -332,13 +345,17 @@ $( document ).ready(function() {
                         $scrollInFromLeft = -10;
                     }
                 }
-
                 $(this).css({
                     "opacity": $opacity,
                     "margin-left": $scrollInFromLeft * (-1)
                 });
-
             }
+
+          //  console.log($scrollInFromLeft);
+
+
+
+
         });
         // Scrolla in Diven från Höger
         $('.slide-right').each(function()
@@ -348,16 +365,27 @@ $( document ).ready(function() {
                 distanceTop   = (elementOffsetTop - scrollTop);
             var elementHeight = $(this).innerHeight(); // Höjden på elementet. I det här fallet Den vita diven som ska flyga in
             var distanceBottom = (windowHeight - (distanceTop+elementHeight));
-            var $opacity = (distanceBottom+50)/200; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
+            var $opacity = (distanceBottom+100)/200; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
             if($opacity>= 0.999)
             {
                 $opacity = 0.999; // Flaggan försvinner av jätteoklar anledning när opacity sätts till 1.
             }
-            var $scrollInFromRight = ((distanceBottom-200)*2)*-1;
-
-            if($scrollInFromRight<=30 && windowWidth>=desktopBreak)
+            else if($opacity<=0)
             {
-                $scrollInFromRight = 30;
+                $opacity = 0;
+            }
+
+            var $scrollInFromRight = ((distanceBottom-200)*1.5)*-1;
+
+
+            if($scrollInFromRight > 1000)
+            {
+                $scrollInFromRight = 1000;
+            }
+
+            if($scrollInFromRight<=45 && windowWidth>=desktopBreak)
+            {
+                $scrollInFromRight = 45;
             }
 
             if(windowWidth>=desktopBreak)
@@ -371,9 +399,9 @@ $( document ).ready(function() {
 
                 if(windowWidth>tabletBreak)
                 {
-                    if($scrollInFromRight<=120)
+                    if($scrollInFromRight<=145)
                     {
-                        $scrollInFromRight = 120;
+                        $scrollInFromRight = 145;
                     }
                 }
                 else if(windowWidth<=tabletBreak)
@@ -391,7 +419,7 @@ $( document ).ready(function() {
 
         });
         // Animera ikonens opacity
-        $('.fadeIn-Icon').each(function()
+        $('.timeline-icon-circle').each(function()
         {
             var scrollTop = $(window).scrollTop(),
                 elementOffsetTop = $(this).offset().top,

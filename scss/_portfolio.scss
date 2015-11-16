@@ -5,7 +5,7 @@
 
   .macbook-image
   {
-    margin-top: 60px;
+    margin-top: 85px;
     width: 97%;
     max-width: 315px;
   }
@@ -15,11 +15,12 @@
   }
   .port-desc-container
   {
-
+    width: 95%;
     margin-top: 15px;
-
     > div
     {
+      width: 90%;
+      min-width: 210px;
       padding: 10px;
       margin: 0 auto;
       position: relative;
@@ -36,7 +37,7 @@
   }
   .port-link-btn
   {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 }
 /*=================================================
@@ -97,8 +98,6 @@
     background-size: 100%;
   }
 
-
-
   .port-screenshot {
     height: 400px;
   }
@@ -147,3 +146,6 @@
     margin-top: 0px;
   }
 }
+
+
+

@@ -1,0 +1,59 @@
+.contact-info-container
+{
+  color: white;
+ // @extend .dark-striped-background;
+}
+
+
+/*=================================================
+ GOOGLE MAPS
+ =================================================*/
+.map-content
+{
+  display:block;
+}
+#map-canvas, .contact-info-container
+{
+  height: 500px;
+  width: 100%;
+}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display:none;
+}
+.gmnoprint div {
+  background:none !important;
+} // Tar bort copyright + Google loggan från kartan
+
+#zoomInButton, #zoomOutButton
+{
+  background: $darkGrey;
+  color: $lightGrey;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: $zoomButtonSize;
+  height: $zoomButtonSize;
+  @extend %hovertransition;
+}
+#zoomInButton:hover, #zoomOutButton:hover
+{
+  @extend %hovertransition;
+  background: $lightGrey;
+  color: $darkGrey;
+  cursor: pointer;
+}
+#zoomInButton:active, #zoomOutButton:active
+{
+  background: white;
+}
+#zoomInButton
+{
+  font-size: 26px;
+}
+#zoomOutButton
+{
+  font-size: 38px;
+}
