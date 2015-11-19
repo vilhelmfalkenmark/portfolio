@@ -10,7 +10,7 @@
 #about {
   p {
     margin: 0;
-    padding: 10px;
+   // padding: 10px;
   }
   h4
   {
@@ -217,6 +217,7 @@
 }
 .to-about-me
 {
-  margin: 20px 0 0 0;
+  background-color: $lightGrey;
+  padding: 20px 0 0 0;
   display: none;
 }

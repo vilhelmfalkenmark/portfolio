@@ -1,0 +1,294 @@
+#blog article
+{
+  @extend .text-content;
+
+  a
+  {
+    color: inherit;
+  }
+  a:hover
+  {
+    text-decoration: underline;
+  }
+
+}
+#blog
+{
+  .low-dashed
+  {
+    margin-top: 0 !important;
+  }
+}
+
+
+#blog .sub-header
+{
+  padding: 50px 0 0 0;
+}
+.blog-post-container
+{
+  display: block;
+  margin-top: -40px;
+  padding-bottom: 40px;
+}
+.blog-info-container
+{
+ // background-color: red;
+ // width: 200px;
+}
+.dark-blog-post
+{
+  background-color: $grey;
+  color: white;
+
+  .comment-toggle
+  {
+    border: 2px dashed white;
+  }
+  .comment-toggle:hover
+  {
+    border: 2px dashed transparent;
+    background-color: $lightGrey;
+    color: $darkGrey;
+  }
+  .dashed-line-divider
+  {
+    border-bottom: 2px dashed white;
+  }
+}
+
+
+
+
+/*=================================================
+            BLOGG BILDER!
+ =================================================*/
+.blog-image-container
+{
+  width: 80%;
+  max-width: 640px;
+  min-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+.blog-image
+{
+  cursor: pointer;
+  position: relative;
+  margin: 25px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding: 34% 0;
+  max-width: 700px;
+}
+
+@include respond-to(phone-device) {
+  .blog-image
+  {
+    cursor: pointer;
+    position: relative;
+    margin: 25px auto 55px auto;
+  }
+  .blog-image-caption
+  {
+    opacity: 1;
+    @extend .flex-center;
+    color: white;
+    position: absolute;
+    bottom:-30px;
+    height: 30px;
+    width: 100%;
+    background-color: $grey;
+  }
+  .dark-blog-post
+  {
+    .blog-image-caption
+    {
+      background-color: $lightGrey;
+      color: $darkGrey;
+
+    }
+  }
+
+
+
+  .blog-image:hover
+  {
+    .blog-image-caption
+    {
+      opacity: 1;
+    }
+  }
+}
+@include respond-to(large-device) {
+  .blog-image-caption
+  {
+    opacity: 0;
+    @extend .fast-trans;
+    @extend .flex-center;
+    color: white;
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: $transGrey;
+  }
+
+  .blog-image:hover
+  {
+    .blog-image-caption
+    {
+      opacity: 1;
+    }
+  }
+}
+/*=================================================
+              KOMMENTARS SEKTION
+ =================================================*/
+.comment-toggle
+{
+  margin: 30px auto 0 auto;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.comment-toggle:hover
+{
+  border: 2px solid transparent;
+}
+.comment-section
+{
+ @extend .text-content;
+
+}
+.form-container
+{
+margin: 0 auto;
+width: 70%;
+min-width: 310px;
+}
+
+textarea
+{
+  height: 200px;
+  resize: none;
+}
+form
+{
+  width: 100%;
+//  background-color: blue;
+  color: $darkGrey;
+  text-align: center;
+  margin: 0 auto;
+}
+
+input
+{
+  height: 50px;
+}
+
+input, textarea
+{
+  margin-bottom: 15px;
+  display: block;
+  width: 100%;
+}
+button[type="submit"]
+{
+  transition: all 0.3s ease;
+  position: relative;
+  width: 101%;
+  padding: 2px;
+  height: 50px;
+  background: transparent;
+  border: 1px solid $darkGrey;
+  color: $darkGrey;
+  span
+  {
+    position: absolute;
+    bottom: 2px;
+    right: 20px;
+    font-size: 30px;
+    color: inherit;
+  }
+
+  &:hover
+  {
+    border: 1px solid $lightGrey;
+    color: $lightGrey;
+    background: $darkGrey;
+  }
+}
+.dark-blog-post
+{
+  button[type="submit"]
+  {
+    border: 1px solid white;
+    color: white;
+    &:hover
+    {
+      border: 1px solid $darkGrey;
+      color: $darkGrey;
+      background: $lightGrey;
+    }
+  }
+}
+/*=================================================
+             POP-UP
+ =================================================*/
+.pop-up
+{
+  display: none;
+  text-align: center;
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $transGrey;
+  >div
+  {
+   // @extend .flex-center;
+  }
+  .success-container, .fail-container
+  {
+    top: 15%;
+    display: none;
+    margin: 0 auto;
+    //opacity: 0;
+    position: relative;
+    min-width: 250px;
+    width: 70%;
+    max-width: 600px;
+    height: 320px;
+    background-color: white;
+    @extend .light-striped-background;
+    h2
+    {
+      padding-top: 40px;
+    }
+    p
+    {
+      max-width: 400px;
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+}
+.success-container
+{
+  color: $green;
+}
+.fail-container
+{
+  color: $red;
+}
+.close-pop-up
+{
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}

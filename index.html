@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Vilhelm Falkenmark. Front-End Utvecklare">
     <meta name="author" content="Vilhelm Falkenmark">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
     <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="icons/flaticon.css">
     <link rel="stylesheet" href="css/stylesheet.css">
@@ -13,7 +13,30 @@
     <title>Vilhelm Falkenmark</title>
 </head>
 <body>
+<div class="pop-up">
+    <div class="success-container">
+        <h2>Hej!</h2>
+        <p>Sorry. Jag vet att Pop-ups är fruktansvärt störiga men jag vill bara tacka för din kommentar!
+            <br><br>För ordningens skull måste den godkännas innan den publiceras!
+            <br><br>
+            Ha en kanondag! <i class="flaticon-heart13"> </i>
+        </p>
+        <div class="space-20"></div>
+        <p>/ Vilhelm Falkenmark</p>
+        <div class="close-pop-up">Stäng fönster</div>
+    </div>
+    <div class="fail-container">
+        <h2>Hej!</h2>
+        <p>Något gick tyvärr fel när du la in din kommentar.
+            Sannolikt missade du att fylla i ett av fälten.
+            <br><br>Försök gärna igen och ha en kanondag! <i class="flaticon-heart13"> </i>
+        </p>
+        <div class="space-20"></div>
+            <p>/ Vilhelm Falkenmark</p>
+        <div class="close-pop-up">Stäng fönster</div>
+    </div>
 
+</div>
 <div class="container">
     <div class="nav-container">
 
@@ -30,11 +53,12 @@
 
             <nav>
                 <ul>
-                    <li><a class="underline-link" href="#top">Hem</a></li>
-                    <li><a class="underline-link" href="#about">Om mig</a></li>
-                    <li><a class="underline-link" href="#portfolio">Portfolio</a></li>
-                    <li><a class="underline-link" href="#resume">CV</a></li>
-                    <li><a class="underline-link" href="#footer">Kontakt</a></li>
+                    <li class="nav-link chosen"><a class="underline-link" href="#top">Hem</a></li>
+                    <li class="nav-link chosen"><a class="underline-link" href="#about">Om mig</a></li>
+                    <li class="nav-link chosen"><a class="underline-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-link chosen"><a class="underline-link" href="#resume">CV</a></li>
+                    <li class="nav-link chosen"><a class="underline-link" href="#blog">Blogg</a></li>
+                    <li class="nav-link chosen"><a class="underline-link" href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
             <div class="name-container">Vilhelm Falkenmark</div>
@@ -44,21 +68,28 @@
 
     <div class="overlay"></div>
     <header>
-        <section id="top">
+        <section id="top" class="section-focus">
+
             <div class="flip-parent">
-                <div class="header-background flip" data-img-width="1500" data-img-height="1000" data-diff="100">
+                <div class="header-background flip2" data-img-width="1500" data-img-height="1000" data-diff="100">
                     <div class="header-content">
-                       <div class="portrait"></div>
+                        <div class="portrait"></div>
                         <h1>Vilhelm Falkenmark</h1>
+
                         <p class="medium-text">Frilansande Front-End Utvecklare</p>
+
                         <p class="small-text">Verksam i Stockholm med en stor passion för design, användarvänlighet &
                             enkelhet.</p>
+
                         <div class="center header-btn">
                             <a href="#aboutMeTarget" class="btn dark-btn hire-me-btn">Anlita mig</a>
                         </div>
                     </div>
+
                 </div>
+
             </div>
+
         </section>
     </header>
     <!--*********************** END HEAD ****************************-->
@@ -66,11 +97,8 @@
 
     <!--*********************** START ABOUT ****************************-->
     <main>
-        <section id="about" class="section-light-grey">
-
+        <section id="about" class="section-light-grey section-focus">
             <div class="arrow-hole"></div>
-
-
             <h2 class="section-header">Om mig</h2>
 
             <div class="hex-container">
@@ -105,141 +133,151 @@
 
             <div id="aboutMeTarget">
                 <div class="text-content hide" id="interestContent">
-                    <h2>Mina Intressen</h2>
+                    <article>
+                        <h2>Mina Intressen</h2>
 
-                    <p>Uppebarligen är kod och programmering det roligaste som finns men det finns även andra roliga
-                        saker man kan göra när man behöver ta en paus från editorn. Exempelvis: </p>
+                        <p>Uppebarligen är kod och programmering det roligaste som finns men det finns även andra roliga
+                            saker man kan göra när man behöver ta en paus från editorn. Exempelvis: </p>
 
-                    <h3>Musik</h3>
+                        <h3>Musik</h3>
 
-                    <p>Musik har alltid legat mig väldigt varmt om hjärtat och varit min huvudsakliga hobby hela mitt
-                        liv.
-                    </p>
+                        <p>Musik har alltid legat mig väldigt varmt om hjärtat och varit min huvudsakliga hobby hela
+                            mitt
+                            liv.
+                        </p>
 
-                    <h3>Gitarr</h3>
+                        <h3>Gitarr</h3>
 
-                    <p>Jag har spelat gitarr sen jag var 13 år gammal och är lycklig ägare till tre fina gitarrer som
-                        jag spelar på tills min flickvän ber mig sluta</p>
+                        <p>Jag har spelat gitarr sen jag var 13 år gammal och är lycklig ägare till tre fina gitarrer
+                            som
+                            jag spelar på tills min flickvän ber mig sluta</p>
 
-                    <h3>Cykling</h3>
+                        <h3>Cykling</h3>
 
-                    <p>Jag cyklar vart jag än ska. Speciellt landsvägscykling i medvind är roligt.</p>
+                        <p>Jag cyklar vart jag än ska. Speciellt landsvägscykling i medvind är roligt.</p>
 
-                    <h3>Mat</h3>
+                        <h3>Mat</h3>
 
-                    <p>Min mamma är antagligen den bästa kocken jag träffat. Jag har henne och hennes fantastiska mat
-                        att tacka för mitt matintresse.</p>
+                        <p>Min mamma är antagligen den bästa kocken jag träffat. Jag har henne och hennes fantastiska
+                            mat
+                            att tacka för mitt matintresse.</p>
 
-                    <h3>Resa</h3>
+                        <h3>Resa</h3>
 
-                    <p>Lite klyschigt intresse ja. Men det är kul att resa. </p>
+                        <p>Lite klyschigt intresse ja. Men det är kul att resa. </p>
 
-                    <h3>Dator & TV-spel</h3>
+                        <h3>Dator & TV-spel</h3>
 
-                    <p>Jag fick mitt första Nintendo 8-bitars när jag var fyra år gammal och på den vägen är det. För
-                        tillfället spelar jag framförallt på mitt Playstation 4 så ofta jag hinner.</p>
+                        <p>Jag fick mitt första Nintendo 8-bitars när jag var fyra år gammal och på den vägen är det.
+                            För
+                            tillfället spelar jag framförallt på mitt Playstation 4 så ofta jag hinner.</p>
 
-                    <h3>De fem bästa Spelen</h3>
-                    <ol>
-                        <li>Last of Us - Playstation 4</li>
-                        <li>Super Mario 3 - Nintendo 8 Bitar</li>
-                        <li>Starcraft 2 - PC</li>
-                        <li>Halflife 2 - PC</li>
-                        <li>GTA Vice City - Playstation 2</li>
-                    </ol>
+                        <h3>De fem bästa Spelen</h3>
+                        <ol>
+                            <li>Last of Us - Playstation 4</li>
+                            <li>Super Mario 3 - Nintendo 8 Bitar</li>
+                            <li>Starcraft 2 - PC</li>
+                            <li>Halflife 2 - PC</li>
+                            <li>GTA Vice City - Playstation 2</li>
+                        </ol>
+                    </article>
                 </div>
 
                 <div class="text-content hide" id="servicesContent">
-                    <h2>Mina tjänster</h2>
+                    <article>
+                        <h2>Mina tjänster</h2>
 
-                    <h3>Front-End Utveckling</h3>
+                        <h3>Front-End Utveckling</h3>
 
-                    <p>Jag älskar att koda Front-End. För de flesta är begreppet är <i>Front-End</i> något
-                        diffust men det kan kortfattat beskrivas som allt man ser på en hemsida. Med andra ord
-                        färgerna, strukturen & effekterna på en hemsida.
-                        Jag har goda kunskaper HTML5, CSS3 och JavaScript, dvs. det som utgör modern Front-End
-                        utveckling. Jag behärskar även back-end programmering (det man som besökare inte ser).
-                        Exempelvis är hela den här portfoliosidan byggd på
-                        PHP med ett tillhörande egenkomponerat admin-system.
-                        Min ambition är att skapa lättanvända, estetiskt tilltalande och välfungerande hemsidor
-                        och webbtjänster</p>
+                        <p>Jag älskar att koda Front-End. För de flesta är begreppet är <i>Front-End</i> något
+                            diffust men det kan kortfattat beskrivas som allt man ser på en hemsida. Med andra ord
+                            färgerna, strukturen & effekterna på en hemsida.
+                            Jag har goda kunskaper HTML5, CSS3 och JavaScript, dvs. det som utgör modern Front-End
+                            utveckling. Jag behärskar även back-end programmering (det man som besökare inte ser).
+                            Exempelvis är hela den här portfoliosidan byggd på
+                            PHP med ett tillhörande egenkomponerat admin-system.
+                            Min ambition är att skapa lättanvända, estetiskt tilltalande och välfungerande hemsidor
+                            och webbtjänster</p>
 
-                    <h3>Responsivitet</h3>
+                        <h3>Responsivitet</h3>
 
-                    <p>Hemsidor besöks mer och mer från andra enheter än datorer, exempelvis mobiltelefoner,
-                        surfplattor, tv-spelskonsoller etc. Därför krävs det att en hemsida kan anpassa
-                        presentationen av innehållet efter vilken enhet besökaren använder. Detta kallas
-                        <i>responsiv design.</i> Alla seriösa moderna hemsidor ska vara responsiva.</p>
+                        <p>Hemsidor besöks mer och mer från andra enheter än datorer, exempelvis mobiltelefoner,
+                            surfplattor, tv-spelskonsoller etc. Därför krävs det att en hemsida kan anpassa
+                            presentationen av innehållet efter vilken enhet besökaren använder. Detta kallas
+                            <i>responsiv design.</i> Alla seriösa moderna hemsidor ska vara responsiva.</p>
 
-                    <h3>Content Management System</h3>
+                        <h3>Content Management System</h3>
 
-                    <p>Jag har arbetat profesionellt med Wordpress men har även arbetat med andra CMS-system,
-                        exempelvis Joomla. Dessa är väldigt praktiska då man snabbt vill skapa en sida som ser
-                        bra ut och som kunden kan administrera själv.
-                        Exempelvis lägga till bilder, redigera texter, lägga till nya undersidor etc.
-                        Jag har även profesionell erfarenhet av diverse affärsprogram, exempelvis Visma Mamut,
-                        Specter, Askås Internetbutik etc.
-                    </p>
+                        <p>Jag har arbetat profesionellt med Wordpress men har även arbetat med andra CMS-system,
+                            exempelvis Joomla. Dessa är väldigt praktiska då man snabbt vill skapa en sida som ser
+                            bra ut och som kunden kan administrera själv.
+                            Exempelvis lägga till bilder, redigera texter, lägga till nya undersidor etc.
+                            Jag har även profesionell erfarenhet av diverse affärsprogram, exempelvis Visma Mamut,
+                            Specter, Askås Internetbutik etc.
+                        </p>
 
-                    <h3>Grafisk Layout</h3>
+                        <h3>Grafisk Layout</h3>
 
-                    <p>Jag har haft en passion för estetik och design så länge jag minnas. Jag kan sitta i
-                        timmar med en liten detalj tills jag blir nöjd. Jag har arbetat profesionellt med
-                        Photoshop där jag gör 99 % av allt grafiskt arbete.
-                    </p>
-                    <h4><i>Vill du skapa en hemsida, uppdatera en befintlig, göra något grafiskt eller bara
-                        prata lite om front-end utveckling och allt därikring så får ni hemskt gärna
-                        kontakta mig! Jag är alltid sugen på nya uppdrag och eftersom jag fortfarande är
-                        student
-                        så är jag billigare än om ni skulle kontakta en webbyrå.</i>
-                    </h4>
+                        <p>Jag har haft en passion för estetik och design så länge jag minnas. Jag kan sitta i
+                            timmar med en liten detalj tills jag blir nöjd. Jag har arbetat profesionellt med
+                            Photoshop där jag gör 99 % av allt grafiskt arbete.
+                        </p>
+                        <h4><i>Vill du skapa en hemsida, uppdatera en befintlig, göra något grafiskt eller bara
+                            prata lite om front-end utveckling och allt därikring så får ni hemskt gärna
+                            kontakta mig! Jag är alltid sugen på nya uppdrag och eftersom jag fortfarande är
+                            student
+                            så är jag billigare än om ni skulle kontakta en webbyrå.</i>
+                        </h4>
+                    </article>
                 </div>
 
                 <div class="text-content hide" id="aboutMeContent">
-                    <h2>Jag heter Vilhelm Falkenmark och jag är för tillfället 29 år gammal.</h2>
+                    <article>
+                        <h2>Jag heter Vilhelm Falkenmark och jag är för tillfället 29 år gammal.</h2>
 
-                    <p>Jag föddes i Stockholm den 22 juni 1986. Jag har tre syskon varav jag är näst äldst
-                        <br><br>
-                        När jag var liten var jag besatt av Lego och Turtles. När jag fyllde 10 fick jag min
-                        första stereo och en skiva med Kiss (bandet). Detta skulle komma att förändra mitt liv.
-                        Jag började spela gitarr när jag var 13 och det har
-                        varit min huvudsakliga hobby sedan dess. Under högstadietiden och gymnasiet spelade jag
-                        i diverse band och andra lösare musikaliska sammanslutningar.
-                        <br><br>
-                        Efter att jag slutat gymnasiet åkte jag till Australien med en av mina bästa kompisar
-                        för att "hitta mig själv" och "ta reda på vad jag ville göra med livet". Tyvärr så
-                        lyckades jag inte med något av dem sakerna. Istället ansökte jag
-                        till ekonomiutbildningen vid Uppsala Universitet. Jag flyttade till Uppsala när jag
-                        precis fyllt 20 och pluggade där i fyra år och ett halvår utomlands i Maastricht
-                        (Nederländerna).
-                        Jag fick ut min <i>Masters in Business and Economics</i> examen i januari 2011.
-                        <br><br>
-                        Efter min examen flyttade jag tillbaka till Stockholm och blev sambo med min kära
-                        flickvän. Jag började jobba vid en e-handelsbutik som webbadministratör och i deras
-                        kundtjänst. Efter drygt ett år där började jag bli rastlös och kände att jag
-                        inte blev tillräckligt utmanad. Jag blev då erbjuden en tjänst på ett annat företag i
-                        samma koncern som <i>Content Manager</i>, dvs. ansvarig för allt innehåll på sidan. Det
-                        här var min första kontakt med programmering sen jag ändrade färger på
-                        min Lunarstorm sida när jag var 15. Förutsatt då att man kan kolla extremt grundläggande
-                        HTML och CSS för "programmering". Jag fortsatte jobba där i ytterligare ett drygt år
-                        tills jag bestämde mig för att gå ner på halvtid för att gå en 6 månader
-                        lång kurs i webbutveckling vid Folkuniversitet.
-                        <br><br>
-                        Under det halvåret blev mitt mål i livet tydligare för var dag. Jag ville hålla på med
-                        programmering, det fanns inga frågetecken kvar. Det fanns något fantastiskt stimulerande
-                        i såväl problemlösningen
-                        kombinerat med den estetiska utmaningen. Efter att jag fick mitt i diplom från kursen i
-                        juni 2014 bestämde jag mig för att jag ville fortsätta utveckla mina nyvunna kunskaper.
-                        Jag ansökte till utbildningen Front-End utveckling vid Nackademin
-                        i absolut sista sekund och kom in. Det är ett av de absolut bästa besluten jag någonsin
-                        tagit.
-                    </p>
+                        <p>Jag föddes i Stockholm den 22 juni 1986. Jag har tre syskon varav jag är näst äldst
+                            <br><br>
+                            När jag var liten var jag besatt av Lego och Turtles. När jag fyllde 10 fick jag min
+                            första stereo och en skiva med Kiss (bandet). Detta skulle komma att förändra mitt liv.
+                            Jag började spela gitarr när jag var 13 och det har
+                            varit min huvudsakliga hobby sedan dess. Under högstadietiden och gymnasiet spelade jag
+                            i diverse band och andra lösare musikaliska sammanslutningar.
+                            <br><br>
+                            Efter att jag slutat gymnasiet åkte jag till Australien med en av mina bästa kompisar
+                            för att "hitta mig själv" och "ta reda på vad jag ville göra med livet". Tyvärr så
+                            lyckades jag inte med något av dem sakerna. Istället ansökte jag
+                            till ekonomiutbildningen vid Uppsala Universitet. Jag flyttade till Uppsala när jag
+                            precis fyllt 20 och pluggade där i fyra år och ett halvår utomlands i Maastricht
+                            (Nederländerna).
+                            Jag fick ut min <i>Masters in Business and Economics</i> examen i januari 2011.
+                            <br><br>
+                            Efter min examen flyttade jag tillbaka till Stockholm och blev sambo med min kära
+                            flickvän. Jag började jobba vid en e-handelsbutik som webbadministratör och i deras
+                            kundtjänst. Efter drygt ett år där började jag bli rastlös och kände att jag
+                            inte blev tillräckligt utmanad. Jag blev då erbjuden en tjänst på ett annat företag i
+                            samma koncern som <i>Content Manager</i>, dvs. ansvarig för allt innehåll på sidan. Det
+                            här var min första kontakt med programmering sen jag ändrade färger på
+                            min Lunarstorm sida när jag var 15. Förutsatt då att man kan kolla extremt grundläggande
+                            HTML och CSS för "programmering". Jag fortsatte jobba där i ytterligare ett drygt år
+                            tills jag bestämde mig för att gå ner på halvtid för att gå en 6 månader
+                            lång kurs i webbutveckling vid Folkuniversitet.
+                            <br><br>
+                            Under det halvåret blev mitt mål i livet tydligare för var dag. Jag ville hålla på med
+                            programmering, det fanns inga frågetecken kvar. Det fanns något fantastiskt stimulerande
+                            i såväl problemlösningen
+                            kombinerat med den estetiska utmaningen. Efter att jag fick mitt i diplom från kursen i
+                            juni 2014 bestämde jag mig för att jag ville fortsätta utveckla mina nyvunna kunskaper.
+                            Jag ansökte till utbildningen Front-End utveckling vid Nackademin
+                            i absolut sista sekund och kom in. Det är ett av de absolut bästa besluten jag någonsin
+                            tagit.
+                        </p>
+                    </article>
                 </div>
 
             </div>
 
-             <div class="center to-about-me">
-                    <div class="space-50">
+            <div class="center to-about-me">
+                <div class="space-50">
 
                     <a href="#about">Tillbaka upp</a>
                 </div>
@@ -252,19 +290,21 @@
                  data-img-height="1000"></div>
         </section>
         <!--*********************** START PORTFOLIO ****************************-->
-        <div id="portfolio" class="section-light-grey">
+        <section id="portfolio" class="section-light-grey section-focus">
+
             <div class="arrow-hole"></div>
 
-          <!--  <div class="dashed-circle">
-                <h2>Portfolio</h2>
-            </div>-->
-          <!--  <div class="outline-circle">
-                <div>
-                    <h2>Portfolio</h2>
-                </div>
-            </div>-->
+            <!--  <div class="dashed-circle">
+                  <h2>Portfolio</h2>
+              </div>-->
+            <!--  <div class="outline-circle">
+                  <div>
+                      <h2>Portfolio</h2>
+                  </div>
+              </div>-->
 
             <h2 class="section-header">Portfolio</h2>
+
             <div class="flex-row">
                 <div class="flex-item port-desc-container">
                     <div class="light-striped-background">
@@ -325,9 +365,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--<div class="btn light-btn port-link-btn">Till Projekt</div>-->
-
             <div class="center">
                 <a href="#" class="btn dark-btn port-link-btn">Till projekt</a>
             </div>
@@ -335,7 +372,7 @@
 
             <div class="space-100"></div>
             <div class="clear"></div>
-       
+
         </section>
         <!--*********************** END PORTFOLIO ****************************-->
         <section>
@@ -344,12 +381,15 @@
                  data-img-height="1000"></div>
         </section>
         <!--*********************** START CV ****************************-->
-        <section class="section-light-grey" id="resume">
+        <section class="section-light-grey section-focus" id="resume">
+
             <div class="arrow-hole"></div>
             <h2 class="section-header">CV</h2>
+
             <!--=======FÄRDIGHETER=======-->
 
             <h3 class="sub-header">Färdigheter</h3>
+
             <div class="skill-container">
                 <div class="inner-skill-container">
                     <div class="inline-block skill-label">
@@ -411,13 +451,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="dashed-line-divider"></div>
 
             <!--=======SLUT FÄRDIGHETER=======-->
 
             <!--=======SNURRISNURR=======-->
             <h3 class="sub-header">Front-End Komponenter</h3>
+
             <div class="venn-container">
                 <div class="venn-name"></div>
                 <div class="dashed-circle venn-circle ux-circle">
@@ -432,12 +473,8 @@
                 <div class="venn-info">Man behöver allt för Front-End Utveckling</div>
             </div>
             <div class="dashed-line-divider"></div>
-
-
-
             <!--=======TIDSLINJE=======-->
             <h3 class="sub-header">Erfarenheter</h3>
-
             <!--=======SLIDE VÄNSTER=======-->
             <div class="overflow-hidden">
                 <div class="timeline-container">
@@ -458,9 +495,8 @@
                                     består
                                     jag jobbar i ett utvecklingsteam som består.</p>
 
-                                <div class="timeline-link-container"><a class="underline-link"
-                                                                        href="#">www.ottoboni.se</a></div>
-
+                                <div class="timeline-link-container">
+                                    <a class="underline-link" href="#">www.ottoboni.se</a></div>
                             </div>
                         </div>
                         <div class="timeline-vertical-line-container">
@@ -510,88 +546,276 @@
                         </div>
                     </div>
                     <!--=======SLIDE VÄNSTER=======-->
-                        <div class="timeline-row">
-                            <div class="timeline-left-block-container">
-                                <div class="timeline-card left-card slide-left">
-                                    <div class="space-20"></div>
-                                    <div class="ribbon"><h3>Internet Retail holding</h3></div>
-                                    <p class="timeline-title">Front Endutvecklare</p>
+                    <div class="timeline-row">
+                        <div class="timeline-left-block-container">
+                            <div class="timeline-card left-card slide-left">
+                                <div class="space-20"></div>
+                                <div class="ribbon"><h3>Internet Retail holding</h3></div>
+                                <p class="timeline-title">Front Endutvecklare</p>
 
-                                    <p class="timeline-years">2011 - 2014</p>
+                                <p class="timeline-years">2011 - 2014</p>
 
-                                    <p class="timeline-description">Jag är för tillfället ute som Front-End praktikant
-                                        hos den
-                                        digitala byrån Ottoboni. De sysslar med all form av digital
-                                        kommunikation och jag jobbar i ett utvecklingsteam som består
-                                        av Front-End såväl som Back-End utvecklare jag jobbar i ett utvecklingsteam som
-                                        består
-                                        jag jobbar i ett utvecklingsteam som består.</p>
+                                <p class="timeline-description">Jag är för tillfället ute som Front-End praktikant
+                                    hos den
+                                    digitala byrån Ottoboni. De sysslar med all form av digital
+                                    kommunikation och jag jobbar i ett utvecklingsteam som består
+                                    av Front-End såväl som Back-End utvecklare jag jobbar i ett utvecklingsteam som
+                                    består
+                                    jag jobbar i ett utvecklingsteam som består.</p>
 
-                                    <div class="timeline-link-container"><a class="underline-link" href="#">www.ottoboni.se</a>
-                                    </div>
-
+                                <div class="timeline-link-container"><a class="underline-link"
+                                                                        href="#">www.ottoboni.se</a>
                                 </div>
-                            </div>
-                            <div class="timeline-vertical-line-container">
-                                <div class="vertical-line">
-                                    <div class="timeline-icon-circle"></div>
 
-                                </div>
                             </div>
-                            <div class="timeline-right-block-container timeline-empty-block hide-mobile-small"></div>
                         </div>
+                        <div class="timeline-vertical-line-container">
+                            <div class="vertical-line">
+                                <div class="timeline-icon-circle"></div>
+
+                            </div>
+                        </div>
+                        <div class="timeline-right-block-container timeline-empty-block hide-mobile-small"></div>
+                    </div>
                 </div>
             </div>
+
             <div class="clear"></div>
             <div class="space-100"></div>
         </section>
-        <!--*********************** END TIMELINE ****************************-->
+        <!--*********************** END CV ****************************-->
         <section>
             <div class="third-background-divider fullscreen background parallax" data-diff="100" data-img-width="1500"
                  data-img-height="1000"></div>
         </section>
         <!--*********************** START BLOG ****************************-->
+        <section id="blog" class="section-light-grey section-focus">
+
+            <div class="arrow-hole"></div>
+            <h2 class="section-header">Blogg</h2>
+
+            <div class="dashed-line-divider low-dashed"></div>
+            <div class="blog-post-container">
+                <h3 class="sub-header">Blogginlägg 1</h3>
+
+
+                <article>
+                    <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
+                        truck tacos.
+                        Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
+                        cold-pressed kogi. Bitters stumptown crucifix plaid beard. Lumbersexual chicharrones tote bag,
+                        portland williamsburg venmo wolf chia shabby chic distillery next level occupy stumptown
+                        sartorial.
+                        Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                        scenester
+                        vinyl, echo park pabst mlkshk retro humblebrag.
+                    </p>
+
+                    <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
+                        truck tacos.
+                        Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
+                        cold-pressed kogi. Bitters stumptown crucifix plaid beard. Lumbersexual chicharrones tote bag,
+                        portland williamsburg venmo wolf chia shabby chic distillery next level occupy stumptown
+                        sartorial.
+                        Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                        scenester
+                        vinyl, echo park pabst mlkshk retro humblebrag.
+                    </p>
+                    <!--=======BLOG-IMAGE=======-->
+                    <a href="http://hipsum.co/?paras=4&type=hipster-centric" target="_blank">
+                        <div class="blog-image-container">
+                            <div class="blog-image" style="background-image:url(images/blogPhotos/newYork.png);">
+                                <div class="blog-image-caption">En fin bild på New York!</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
+                        truck tacos.
+                        Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
+                        cold-pressed kogi. Bitters stumptown crucifix plaid beard. Lumbersexual chicharrones tote bag,
+                        portland williamsburg venmo wolf chia shabby chic distillery next level occupy stumptown
+                        sartorial.
+                        Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                        scenester
+                        vinyl, echo park pabst mlkshk retro humblebrag.
+                    </p>
+
+                    <div class="blog-info-container">
+                        <div class="category-label">Skrivet i <a href="#">Kategori 2</a></div>
+                        <div class="date-label">Publicerat den 2015-11-19</div>
+                    </div>
+
+                </article>
+
+                <div class="dashed-circle comment-toggle">Kommentera?</div>
+                <div class="comment-section">
+                    <h3 class="sub-header">Kommentera inlägg <i>Blogginlägg 1</i></h3>
+
+                    <div class="form-container">
+                        <form method="get" action="#blog">
+                            <input type="text" placeholder="Ditt namn">
+                            <textarea placeholder="Din kommentar"></textarea>
+
+                            <button type="submit" class="form-btn">Lämna kommentar <span><i class="flaticon-clouds54"></i></span></button>
+                        </form>
+                    </div>
+
+                    <div class="dashed-line-divider"></div>
+                    <h2 class="">Kommenterar:</h2>
+
+                    <div class="dashed-line-divider"></div>
+                    <div class="comment-container">
+                        <p><i>Ville Falkenmark:</i></p>
+
+                        <p>Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                            scenester
+                            vinyl, echo park pabst mlkshk retro humblebrag.</p>
+
+                        <div class="dashed-line-divider"></div>
+                    </div>
+
+                    <div class="comment-container">
+                        <p><i>Ville Falkenmark:</i></p>
+
+                        <p>Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                            scenester
+                            vinyl, echo park pabst mlkshk retro humblebrag.</p>
+                    </div>
+                    <div class="dashed-line-divider"></div>
+                </div>
+
+            </div>
+
+            <div class="blog-post-container dark-blog-post">
+                <h3 class="sub-header">Blogginlägg 1</h3>
+
+                <article>
+                    <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
+                        truck tacos.
+                        Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
+                        cold-pressed kogi. Bitters stumptown crucifix plaid beard. Lumbersexual chicharrones tote bag,
+                        portland williamsburg venmo wolf chia shabby chic distillery next level occupy stumptown
+                        sartorial.
+                        Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                        scenester
+                        vinyl, echo park pabst mlkshk retro humblebrag.
+                    </p>
+
+                    <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
+                        truck tacos.
+                        Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
+                        cold-pressed kogi. Bitters stumptown crucifix plaid beard. Lumbersexual chicharrones tote bag,
+                        portland williamsburg venmo wolf chia shabby chic distillery next level occupy stumptown
+                        sartorial.
+                        Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                        scenester
+                        vinyl, echo park pabst mlkshk retro humblebrag.
+                    </p>
+                    <!--=======BLOG-IMAGE=======-->
+                    <a href="http://hipsum.co/?paras=4&type=hipster-centric" target="_blank">
+                        <div class="blog-image-container">
+                            <div class="blog-image" style="background-image:url(images/blogPhotos/newYork.png);">
+                                <div class="blog-image-caption">En fin bild på New York!</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="blog-info-container">
+                        <div class="category-label">Publicerat i <a href="#">Kategori 2</a></div>
+                        <div class="date-label">Skrivet 2015-11-19</div>
+                    </div>
+                </article>
+                <div class="dashed-circle comment-toggle">Kommentera?</div>
+                <div class="comment-section">
+                    <h3 class="sub-header">Kommentera inlägg <i>Blogginlägg 1</i></h3>
+
+                    <div class="form-container">
+                        <form method="get" action="#blog">
+                            <input type="text" placeholder="Ditt namn">
+                            <textarea placeholder="Din kommentar"></textarea>
+                            <button type="submit" class="form-btn">Lämna kommentar <span><i class="flaticon-clouds54"></i></span></button>
+                        </form>
+                    </div>
+
+                    <div class="dashed-line-divider"></div>
+                    <h2 class="">Kommenterar:</h2>
+
+                    <div class="dashed-line-divider"></div>
+                    <div class="comment-container">
+                        <p><i>Ville Falkenmark:</i></p>
+
+                        <p>Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                            scenester
+                            vinyl, echo park pabst mlkshk retro humblebrag.</p>
+
+                        <div class="dashed-line-divider"></div>
+                    </div>
+
+                    <div class="comment-container">
+                        <p><i>Ville Falkenmark:</i></p>
+
+                        <p>Semiotics kale chips tacos bushwick ramps, cardigan irony fap lomo banh mi. Poutine celiac
+                            scenester
+                            vinyl, echo park pabst mlkshk retro humblebrag.</p>
+                    </div>
+                    <div class="dashed-line-divider"></div>
+                </div>
+            </div>
+
+
+            <!--***********************POP-UP ****************************-->
+
+        </section>
+        <!--*********************** END BLOG ****************************-->
+
+        <section>
+            <div class="third-background-divider fullscreen background parallax" data-diff="100" data-img-width="1500"
+                 data-img-height="1000"></div>
+        </section>
+
     </main>
     <!--*********************** END MAIN ****************************-->
 
     <!--*********************** START FOOTER ****************************-->
     <footer>
-        <section class="" id="footer">
-
-                <div class="row">
-                    <div class="col-6-desk col-6-tab col-12-ml col-12-ms">
-                        <div class="flex-center contact-info-container">
-                            <div>
+        <section class="section-focus" id="footer">
+            <div class="row">
+                <div class="col-6-desk col-6-tab col-12-ml col-12-ms">
+                    <div class="flex-center contact-info-container">
+                        <div>
                             <h2>Kontakt</h2>
-                            <p><a href="#"><i class="flaticon-email5 footer-icon"></i> info@vilhelmfalkenmark.se</a></p>
-                            <p><a href="#"><i class="flaticon-iphone26 footer-icon"></i> 0705-580198</a></p>
+
+                            <p><a href="mailto:info@vilhelmfalkenmark.se"><i class="flaticon-email5 footer-icon"></i> hello@vilhelmfalkenmark.se</a></p>
+
+                            <p><a href="tel:0705580198"><i class="flaticon-iphone26 footer-icon"></i> 0705-580198</a></p>
+
                             <p><a href="#"><i class="flaticon-facebook30 footer-icon"></i> Stockholm</a></p>
+
                             <p>Jag finns på:</p>
+
                             <p>
-                            <a href="#"><i class="flaticon-3d80 footer-icon"></i></a>
-                            <a href="#"><i class="flaticon-github10 footer-icon"></i></a>
-                            <a href="#"><i class="flaticon-linkedin1 footer-icon"></i></a>
-                            <a href="#"><i class="flaticon-facebook3 footer-icon"></i></a>
-
-
-
+                                <a href="#"><i class="flaticon-3d80 footer-icon"></i></a>
+                                <a href="#"><i class="flaticon-github10 footer-icon"></i></a>
+                                <a href="#"><i class="flaticon-linkedin1 footer-icon"></i></a>
+                                <a href="#"><i class="flaticon-facebook3 footer-icon"></i></a>
                             </p>
 
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6-desk col-6-tab col-12-ml col-12-ms">
-                        <div class="map-content">
-                            <div id="map-canvas"></div>
                         </div>
                     </div>
                 </div>
+                <div class="col-6-desk col-6-tab col-12-ml col-12-ms">
+                    <div class="map-content">
+                        <div id="map-canvas"></div>
+                    </div>
+                </div>
+            </div>
 
         </section>
     </footer>
     <!--<div class="device-info-container">-->
-        <!--<div class="device-info"></div>-->
+    <!--<div class="device-info"></div>-->
     <!--</div>-->
 </div>
 

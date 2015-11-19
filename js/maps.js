@@ -28,7 +28,7 @@ function ZoomControl(controlDiv, map) {
 //  var deviceWidth = screen.width;
 var mapStyleLayout = [{
     "elementType": "labels.text",
-    "stylers": [{"visibility": "simplified"}, {"invert_lightness": false}, {"color": "#414141"}]}
+    "stylers": [{"visibility": "simplified"}, {"invert_lightness": false}, {"color": "#E5E3E0"}]}
     , {"featureType": "landscape", "stylers": [{"color": "#E5E3E0"}]}
     , {"featureType": "landscape", "elementType": "labels", "stylers": [{"visibility": "off"}]}
     , {"featureType": "road", "stylers": [{"color": "#b1b0b0"}]}
@@ -40,7 +40,7 @@ var mapStyleLayout = [{
 
 var myLatlng = new google.maps.LatLng(59.349063, 18.064843);
 var  myMapOption = {
-    zoom: 13,
+    zoom: 12,
     center: myLatlng,
     disableDefaultUI: true,
     zoomControl: false,
