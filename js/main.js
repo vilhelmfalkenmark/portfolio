@@ -83,8 +83,10 @@ $( document ).ready(function() {
         if(screenWidth>=mobileLargeBreak)
         {
              timeLine(screenWidth, windowHeight);
+        }
+        if(screenWidth>desktopBreak)
+        {
             flip();
-
         }
         skillBars(windowHeight);
         navBar(screenWidth);
@@ -121,21 +123,20 @@ $( document ).ready(function() {
     function flip()
     {
         $('.flip').each(function() {
-
             var scrollTop = $(window).scrollTop(),
                 parentElementOffsetTop = $(this).parent().offset().top,
                 parentDistanceTop = (parentElementOffsetTop - scrollTop);
             var elementHeight = $(this).height();
             var distanceBottom = (parentDistanceTop + elementHeight);
-            var opacity = (distanceBottom / elementHeight);
+            var opacity = (distanceBottom / elementHeight)-0.2;
             var rotateSpeed = ((parentDistanceTop / 8).toFixed(2) * -1);
 
             if (rotateSpeed <= 0) {
                 rotateSpeed = 0;
             }
-            else if (rotateSpeed >= 90)
+            else if (rotateSpeed >= 115)
             {
-                rotateSpeed = 90;
+                rotateSpeed = 115;
             }
         //    $(this).find(".pixel-counter").html(distanceBottom);
             $(this).css({
@@ -254,7 +255,7 @@ $( document ).ready(function() {
         $('#servicesContent').hide("slow");
         $("#interestContent").hide("slow");
     });
-    $('#servicesButton').click(function () {
+    $('.hire-me-btn').click(function () {
         $('#servicesContent').show("slow");
         $('#interestContent').hide("slow");
         $("#aboutMeContent").hide("slow");
@@ -263,6 +264,28 @@ $( document ).ready(function() {
         $('#interestContent').show("slow");
         $('#servicesContent').hide("slow");
         $("#aboutMeContent").hide("slow");
+    });
+
+    $('.hexagon-outer').click(function () {
+        $(".to-about-me").show();
+    });
+    $('.hire-me-btn').click(function () {
+        $(".to-about-me").show();
+    });
+
+
+    /*=================================================
+     KUGGHJULS SEKTIONEN
+     =================================================*/
+    $('.venn-circle').each(function()
+    {
+        $(this).mouseover(function() {
+       //     $(".venn-circle").addClass("rotating");
+        });
+        $(this).mouseout(function() {
+         //   $(".venn-circle").removeClass("rotating");
+
+        });
     });
 
     /*=================================================
@@ -291,6 +314,11 @@ $( document ).ready(function() {
             }
         });
     }
+
+
+    /*=================================================
+     FLYGA-IN-DIVAR SEKTIONEN
+     =================================================*/
 
     function timeLine(windowWidth, windowHeight)
     {

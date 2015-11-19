@@ -3,6 +3,7 @@ $timeline-row-height: 350px;
 /*=================================================
  GENERELLT FÖR ATT FÅ SCROLLET ATT FUNKA
  =================================================*/
+
 .left-card, .right-card
 {
   opacity: 0.999;
@@ -165,7 +166,8 @@ $timeline-row-height: 350px;
 {
   .timeline-row
   {
-    margin-bottom: 20px;
+    height: auto;
+    margin-bottom: 30px;
   }
   .timeline-left-block-container, .timeline-right-block-container
   {
@@ -174,7 +176,7 @@ $timeline-row-height: 350px;
   .timeline-card
   {
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     width: 97%;
   }
   .timeline-vertical-line-container
@@ -204,6 +206,12 @@ $timeline-row-height: 350px;
 /*========= Tablet ========= */
 @include respond-to(tablet)
 {
+
+  .timeline-row
+  {
+    height: 400px;
+  }
+
   .timeline-left-block-container, .timeline-right-block-container
   {
     margin-bottom: 40px;

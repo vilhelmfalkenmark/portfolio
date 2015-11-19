@@ -147,8 +147,15 @@
   font-weight: 400;
   padding: 30px 0;
 }
+.sub-header
+{
+  font-size: 22px;
+  text-align: center;
+  margin: 40px 0;
+}
 .section-light-grey
 {
+ // background-color: w;
   background-color: $lightGrey;
 }
 .arrow-hole
@@ -157,12 +164,12 @@
   bottom: 0;
   width: 100%;
   height: 20px;
-  background-color: #e5e3e0;
+  background-color: $lightGrey;
 }
 .arrow-hole:after
 {
   left: 50%;
-  border-bottom: 20px solid #e5e3e0;
+  border-bottom: 20px solid $lightGrey;
   border-left: 20px solid transparent;
   content: '';
   position: absolute;
@@ -173,7 +180,7 @@
 .arrow-hole:before
 {
   right: 50%;
-  border-bottom: 20px solid #e5e3e0;
+  border-bottom: 20px solid $lightGrey;
   border-right: 20px solid transparent;
   content: '';
   position: absolute;
@@ -181,6 +188,18 @@
   width: 50%;
   box-sizing: border-box;
 }
+
+.dashed-line-divider
+{
+  margin: 60px auto 0 auto;
+  min-width: 280px;
+  width: 60%;
+  max-width: 700px;
+  height: 1px;
+  border-bottom: 2px dashed $darkGrey;
+}
+
+
 /*=================================================
   NAV BAR-LÄNKAR!
  =================================================*/
@@ -570,9 +589,13 @@
 /*=================================================
  KNAPPAR!
  =================================================*/
-.btn
+.box-shadow
 {
- // display: inline-block;
+  box-shadow: 0px 0px 15px 2px grey;
+}
+
+/*.btn
+{
   margin: 20px auto;
   cursor: pointer;
   height: 50px;
@@ -598,7 +621,36 @@
 .dark-btn:hover {
   background-color: transparent;
   color: $grey;
+}*/
+
+.btn
+{
+  display: block;
+  text-align: center;
+  max-width: 180px;
+  padding: 17px 45px;
+  border-radius: 8px;
+  border: 1px solid $darkGrey;
 }
+.dark-btn
+{
+  background-color: $grey;
+  border: 1px solid $grey;
+  color: $lightGrey;
+}
+.dark-btn:hover {
+  background-color: $lightGrey;
+  color: $grey;
+}
+.dark-btn:active {
+  @extend .box-shadow;
+
+  background-color: lighten($darkGrey,5%);
+  color: $lightGrey;
+
+}
+
+
 
 /*=================================================
  PORTFOLIO FLEX!
@@ -668,7 +720,7 @@
   box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
   scale:(1);
   transform:  translateY(0px);
-  @extend .flex-center;
+ // @extend .flex-center;
 }
 .flip:before {
   //position: absolute;
@@ -681,6 +733,17 @@
   text-transform: uppercase;
   color: #6a7083;
 }
+@media (min-width: 1px) and (max-width: $desktop-break)
+{
+  .flip
+  {
+    opacity: 1 !important;
+    transform: translateY(0px) rotateX(0deg) !important;
+  }
+}
+
+
+
 /*=================================================
  RIBBONS (Som exempelvis används på tidslinjen
  =================================================*/
@@ -735,4 +798,99 @@
 {
   width: 100%;
   height: 1px;
+}
+/*=================================================
+  DE STYLIGA CIRKLARNA
+ =================================================*/
+$big-circle-size: 300px;
+$small-circle-size: 180px;
+$inner-circle-size: 280px;
+.dashed-circle
+ {
+   cursor: pointer;
+   @extend .flex-center;
+   @extend .fast-trans;
+  // height: $big-circle-size;
+  // width: $big-circle-size;
+  // border-radius: $big-circle-size/2;
+   border: 2px dashed $darkGrey;
+ }
+.large-circle
+{
+  height: $big-circle-size;
+  width: $big-circle-size;
+  border-radius: $big-circle-size/2;
+}
+.small-circle
+{
+  height: $small-circle-size;
+  width: $small-circle-size;
+  border-radius: $small-circle-size/2;
+}
+
+
+.dashed-circle:hover
+{
+  background-color: $transGrey;
+  color: $lightGrey;
+}
+
+.outline-circle
+{
+  @extend .flex-center;
+  height: $big-circle-size;
+  width: $big-circle-size;
+  border-radius: $big-circle-size/2;
+  border: 2px solid $darkGrey;
+  > div
+  {
+    @extend .flex-center;
+    height: $inner-circle-size;
+    width: $inner-circle-size;
+    border-radius: $inner-circle-size;
+    background-color: $darkGrey;
+    color: white;
+  }
+}
+/*=================================================
+  SNURRA INFINITE
+ =================================================*/
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
 }

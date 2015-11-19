@@ -1,8 +1,36 @@
 .contact-info-container
 {
   color: white;
- // @extend .dark-striped-background;
+  background-color: $grey;
 }
+
+
+/*=================================================
+  ICONS
+ =================================================*/
+.contact-info-container
+{
+
+  a
+  {
+    font-size: 25px;
+
+    color: white;
+  }
+
+  .footer-icon
+  {
+    font-size: 45px;
+    margin: 0 25px 0 0;
+  }
+
+}
+
+
+
+
+
+
 
 
 /*=================================================

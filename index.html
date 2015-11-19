@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="En ny hemsida">
+    <meta name="description" content="Vilhelm Falkenmark. Front-End Utvecklare">
     <meta name="author" content="Vilhelm Falkenmark">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="icons/flaticon.css">
     <link rel="stylesheet" href="css/stylesheet.css">
     <!--endbuild-->
-    <title>Villes template</title>
+    <title>Vilhelm Falkenmark</title>
 </head>
 <body>
 
@@ -47,16 +48,14 @@
             <div class="flip-parent">
                 <div class="header-background flip" data-img-width="1500" data-img-height="1000" data-diff="100">
                     <div class="header-content">
-                        <div class="portrait"></div>
+                       <div class="portrait"></div>
                         <h1>Vilhelm Falkenmark</h1>
-
                         <p class="medium-text">Frilansande Front-End Utvecklare</p>
-
                         <p class="small-text">Verksam i Stockholm med en stor passion för design, användarvänlighet &
                             enkelhet.</p>
-
-                        <p class="small-text"><a href="#">Klicka här</a> för att läsa mer om vad jag kan hjälpa mer med.
-                        </p>
+                        <div class="center header-btn">
+                            <a href="#aboutMeTarget" class="btn dark-btn hire-me-btn">Anlita mig</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +95,7 @@
 
                 <div class="hexagon-outer">
                     <a href="#aboutMeTarget">
-                        <div class="hexagon rotate" id="servicesButton">
+                        <div class="hexagon rotate hire-me-btn" id="servicesButton">
                             <div class="hex-header">Mina tjänster</div>
                             <div class="hex-subheader">Min livshistoria i sammandrag</div>
                         </div>
@@ -236,9 +235,15 @@
                         tagit.
                     </p>
                 </div>
+
             </div>
 
-            <div class="space-50 desk-show-only"></div>
+             <div class="center to-about-me">
+                    <div class="space-50">
+
+                    <a href="#about">Tillbaka upp</a>
+                </div>
+            </div>
 
         </section>
         <!--*********************** END ABOUT ****************************-->
@@ -247,10 +252,19 @@
                  data-img-height="1000"></div>
         </section>
         <!--*********************** START PORTFOLIO ****************************-->
-        <section id="portfolio" class="section-light-grey">
+        <div id="portfolio" class="section-light-grey">
             <div class="arrow-hole"></div>
-            <h2 class="section-header">Portfolio</h2>
 
+          <!--  <div class="dashed-circle">
+                <h2>Portfolio</h2>
+            </div>-->
+          <!--  <div class="outline-circle">
+                <div>
+                    <h2>Portfolio</h2>
+                </div>
+            </div>-->
+
+            <h2 class="section-header">Portfolio</h2>
             <div class="flex-row">
                 <div class="flex-item port-desc-container">
                     <div class="light-striped-background">
@@ -279,8 +293,11 @@
                     </div>
                 </div>
             </div>
-            <div class="btn light-btn port-link-btn">Till Projekt</div>
-            <div class="port-line-divider"></div>
+            <div class="center">
+                <a href="#" class="btn dark-btn port-link-btn">Till det långa projektet</a>
+            </div>
+            <div class="dashed-line-divider"></div>
+
             <div class="flex-row">
                 <div class="flex-item port-image-container">
                     <div class="port-image-inner">
@@ -309,10 +326,16 @@
                 </div>
             </div>
 
-            <div class="btn light-btn port-link-btn">Till Projekt</div>
-            <div class="port-line-divider"></div>
+            <!--<div class="btn light-btn port-link-btn">Till Projekt</div>-->
+
+            <div class="center">
+                <a href="#" class="btn dark-btn port-link-btn">Till projekt</a>
+            </div>
+            <div class="dashed-line-divider"></div>
+
             <div class="space-100"></div>
             <div class="clear"></div>
+       
         </section>
         <!--*********************** END PORTFOLIO ****************************-->
         <section>
@@ -323,11 +346,11 @@
         <!--*********************** START CV ****************************-->
         <section class="section-light-grey" id="resume">
             <div class="arrow-hole"></div>
-            <h2 class="section-header">Färdigheter</h2>
-
+            <h2 class="section-header">CV</h2>
             <!--=======FÄRDIGHETER=======-->
-            <div class="skill-container">
 
+            <h3 class="sub-header">Färdigheter</h3>
+            <div class="skill-container">
                 <div class="inner-skill-container">
                     <div class="inline-block skill-label">
                         <div>Javascript</div>
@@ -357,11 +380,63 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="inner-skill-container">
+                    <div class="inline-block skill-label">
+                        <div>PHP</div>
+                    </div>
+                    <div class="skill-bar inline-block">
+                        <div class="skill-percentage" data-percent="50%">
+                            <div class="skill-meter-container">
+                                <div class="skill-meter">
+                                    <span class="skillCounter">5/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inner-skill-container">
+                    <div class="inline-block skill-label">
+                        <div>HTML5</div>
+                    </div>
+                    <div class="skill-bar inline-block">
+                        <div class="skill-percentage" data-percent="80%">
+                            <div class="skill-meter-container">
+                                <div class="skill-meter">
+                                    <span class="skillCounter">5/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <div class="dashed-line-divider"></div>
+
             <!--=======SLUT FÄRDIGHETER=======-->
 
+            <!--=======SNURRISNURR=======-->
+            <h3 class="sub-header">Front-End Komponenter</h3>
+            <div class="venn-container">
+                <div class="venn-name"></div>
+                <div class="dashed-circle venn-circle ux-circle">
+                    <h2>UX</h2>
+                </div>
+                <div class="dashed-circle venn-circle front-end-circle">
+                    <h2>Kodning</h2>
+                </div>
+                <div class="dashed-circle venn-circle design-circle">
+                    <h2>Design</h2>
+                </div>
+                <div class="venn-info">Man behöver allt för Front-End Utveckling</div>
+            </div>
+            <div class="dashed-line-divider"></div>
+
+
+
             <!--=======TIDSLINJE=======-->
-            <h2 class="section-header">Min Tidslinje</h2>
+            <h3 class="sub-header">Erfarenheter</h3>
 
             <!--=======SLIDE VÄNSTER=======-->
             <div class="overflow-hidden">
@@ -435,7 +510,6 @@
                         </div>
                     </div>
                     <!--=======SLIDE VÄNSTER=======-->
-                    <div class="timeline-container">
                         <div class="timeline-row">
                             <div class="timeline-left-block-container">
                                 <div class="timeline-card left-card slide-left">
@@ -466,7 +540,6 @@
                             </div>
                             <div class="timeline-right-block-container timeline-empty-block hide-mobile-small"></div>
                         </div>
-                    </div>
                 </div>
             </div>
             <div class="clear"></div>
@@ -488,7 +561,24 @@
                 <div class="row">
                     <div class="col-6-desk col-6-tab col-12-ml col-12-ms">
                         <div class="flex-center contact-info-container">
-                        <p>Vilhelm Falkenmark</p>
+                            <div>
+                            <h2>Kontakt</h2>
+                            <p><a href="#"><i class="flaticon-email5 footer-icon"></i> info@vilhelmfalkenmark.se</a></p>
+                            <p><a href="#"><i class="flaticon-iphone26 footer-icon"></i> 0705-580198</a></p>
+                            <p><a href="#"><i class="flaticon-facebook30 footer-icon"></i> Stockholm</a></p>
+                            <p>Jag finns på:</p>
+                            <p>
+                            <a href="#"><i class="flaticon-3d80 footer-icon"></i></a>
+                            <a href="#"><i class="flaticon-github10 footer-icon"></i></a>
+                            <a href="#"><i class="flaticon-linkedin1 footer-icon"></i></a>
+                            <a href="#"><i class="flaticon-facebook3 footer-icon"></i></a>
+
+
+
+                            </p>
+
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-6-desk col-6-tab col-12-ml col-12-ms">
@@ -500,9 +590,9 @@
 
         </section>
     </footer>
-    <div class="device-info-container">
-        <div class="device-info"></div>
-    </div>
+    <!--<div class="device-info-container">-->
+        <!--<div class="device-info"></div>-->
+    <!--</div>-->
 </div>
 
 <script src="js/jquery-2.1.4.min.js"></script>

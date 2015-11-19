@@ -1,4 +1,65 @@
 /*=================================================
+  PORTFOLIO
+ =================================================*/
+.port-desc-container
+{
+
+  color: $darkGrey;
+  > div
+  {
+    text-align: left;
+    min-width: 300px;
+    width: 90%;
+    max-width: 600px;
+  }
+}
+.port-link-btn
+{
+  margin: 0 auto;
+}
+
+
+.port-head-container, .port-desc-container, .port-image-container
+{
+  @extend .flex-center;
+}
+.port-image-inner
+{
+  width: 100%;
+  position: relative;
+}
+.macbook-image
+{
+  margin: 0 auto;
+  background: url(../images/macbook-flat.png) center center no-repeat;
+  width:80%;
+  overflow: hidden;
+  background-size: 100%;
+
+  max-width: 700px;
+  @extend .flex-center;
+}
+.port-screenshot
+{
+  position: relative;
+  background: url(../images/ballBusters.jpg) center center no-repeat;
+  width:100%;
+  background-size: 76.5%;
+  //background-size: 68.9%;
+  margin-bottom: 3%;
+  max-width: 700px;
+}
+
+.port-overlay
+{
+  background: rgba(0,0,0,0.3);
+  width:100%;
+  background-size: 68.9%;
+  margin-bottom: 3%;
+  max-width: 700px;
+}
+
+/*=================================================
                    MOBILE-SMALL
 =================================================*/
 @media (min-width: 1px) and (max-width: $mobile-large-break) {
@@ -115,9 +176,14 @@
 =================================================*/
 @include respond-to(desktop) {
 
-  .flex-row
+  .port-desc-container
   {
-   // min-width: 1200px;
+    > div
+    {
+      text-align: left;
+      width: 80%;
+      max-width: 600px;
+    }
   }
 
   .flex-item
@@ -145,6 +211,10 @@
   .port-link-btn {
     margin-top: 0px;
   }
+}
+.port-link-btn
+{
+  z-index: 9999;
 }
 
 

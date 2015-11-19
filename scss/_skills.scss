@@ -1,8 +1,85 @@
-$skill-bar-height: 30px;
-#resume
+$big-venn-circle:260px;
+$small-venn-circle: 160px;
+
+.venn-container
 {
- // overflow: hidden;
+  height: 435px;
+  width: 410px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
 }
+.venn-circle
+{
+  border-radius: 50%;
+  position: absolute;
+}
+.venn-circle:hover
+{
+  border: 2px dashed white;
+}
+
+.ux-circle
+{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.front-end-circle
+{
+  width: $big-venn-circle;
+  height: $big-venn-circle;
+  right: 0;
+  bottom: 0;
+}
+.design-circle
+{
+  width: 150px;
+  height: 150px;
+  left: 0;
+  bottom: 0;
+}
+.venn-info
+{
+  border-radius: 8%;
+  visibility: hidden;
+  @extend .flex-center;
+  @extend .fast-trans;
+  left: 0;
+  top: 20%;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-color: $transGrey;
+  color: white;
+}
+.venn-circle:hover
+{
+
+}
+.venn-container:hover
+{
+
+  .venn-info
+  {
+    @extend .flex-center;
+    visibility: visible;
+  }
+  .venn-circle
+  {
+    @extend .rotating;
+  }
+}
+
+
+
+
 /*================================================
  =================================================
  **************************************************
@@ -140,168 +217,3 @@ $skill-bar-height: 30px;
     width: 600px;
   }
 }
-/*================================================
- =================================================
- **************************************************
-                TIDSLINJEN
- *************************************************
- =================================================
- =================================================*/
-/*
-
-.timeline-container
-{
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.left-timeline-label, .right-timeline-label
-{
-  font-size: 16px;
-  width: 100%;
-  opacity: 0.999;
-  background-color: white; //hej
-  margin: 20px auto;
-  position: relative;
-}
-
-.left-timeline-label h3, .right-timeline-label h3
-{
-  margin: 2px auto;
-}
-.timelineIcon
-{
-  font-size: 40px;
-  margin-top: 6px;
-  color: lighten($darkGrey,0%);
-}
-.timelineIconPhone
-{
-  float: left; //
-}
-
-
-/!*  DESKTOP *!/
-$timeLineLabelColor: white;
-.timelineIconPhone
-{
-  display: none;
-}
-#timeLineContainer
-{
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.timeline-row
-{
-  margin: 0 auto;
-  height: 320px;
-  width: 100%;
-}
-.timeLine
-{
-  height: 105%;
-  width: 8px;
-  margin: 0 auto;
-  align-self: center;
-  background-color: $darkGrey; // hej
-}
-.left-timeline-label, .right-timeline-label
-{
-  vertical-align: top;
-  height: 320px;
-  width:450px;
-  background-color: $timeLineLabelColor;
-  position: relative;
-  margin-top:20px;
-}
-.left-timeline-label
-{
-  margin-left: 15px;
-}
-.right-timeline-label
-{
-  margin-left: 60px;
-}
-.left-timeline-label h3, .right-timeline-label h3
-{
-  padding-top: 0;
-}
-.left-timeline-label div, .right-timeline-label div
-{
-  padding-top: 5px;
-}
-.left-timeline-label:after
-{
-  left: 100%;
-  top: 47%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-left-color: $timeLineLabelColor;
-  border-width: 30px;
-  margin-top: -30px;
-}
-.right-timeline-label:after
-{
-  right: 100%;
-  top: 47%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  //border-color: rgba(136, 183, 213, 0);
-  border-right-color: $timeLineLabelColor;
-  border-width: 30px;
-  margin-top: -30px;
-  box-shadow: inset 10px 10px 2px 12px black; /!* X Y BLUR SPANBREDD FÄRG*!/
-}
-.third_col
-{
-  vertical-align:top;
-  height: 100%;
-  width: 47.9%;
-  display: inline-block;
-}
-.ten_col
-{
-  vertical-align:top;
-  height: 100%;
-  width: 2.9%;
-  display: inline-block;
-//  background: red;
-}
-
-$timeLine-Circle-Size: 70px;
-
-.timeLine-Circle
-{
-  height: $timeLine-Circle-Size;
-  width: $timeLine-Circle-Size;
-  border-radius: $timeLine-Circle-Size/2;
-  //border: 5px solid $darkText;
-  border: 5px solid $darkBlue;
-  background-color: white;
-  float: left;
-  margin-top: 130px;
-  margin-left: -31px;
-}
-.timeline-link-container
-{
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-}
-.ribbon-space
-{
-  display: none;
-}
-
-
-
-
-*/
