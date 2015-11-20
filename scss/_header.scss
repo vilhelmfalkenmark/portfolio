@@ -1,7 +1,3 @@
-#top
-{
-  min-height: 800px;
-}
 /*=================================================
 HEADER
 ==================================================*/
@@ -16,6 +12,21 @@ HEADER
   font-size: 30px;
   color: white;
 }
+@include respond-to(phone-device) {
+  .header-background {
+    height: 800px;
+  }
+}
+@media (min-width: 1px) and (max-width: $desktop-break) {
+ .name-container
+ {
+   display: none !important;
+ }
+
+}
+
+
+
 .main-background
 {
   background: url(../images/mountains.jpg) center center no-repeat;
@@ -42,10 +53,10 @@ HEADER
 {
   margin: 0 auto;
   display: block;
-  height: 240px;
-  width: 240px;
-  border-radius: 120px;
-  background: url(../images/villePortrait.jpg) center;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+  background: url(../images/villePortrait.jpg) center center;
 }
 
 

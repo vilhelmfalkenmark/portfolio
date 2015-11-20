@@ -186,7 +186,14 @@ $(document).ready(function () {
                 parentDistanceTop = (parentElementOffsetTop - scrollTop);
             var elementHeight = $(this).height();
             var distanceBottom = (parentDistanceTop + elementHeight);
-            var opacity = (distanceBottom / elementHeight) - 0.2;
+            var opacity = (distanceBottom / (elementHeight)) - 0.2;
+
+            if(opacity<0)
+            {
+                opacity = 0;
+            }
+
+
             var rotateSpeed = ((parentDistanceTop / 8).toFixed(2) * -1);
 
             if (rotateSpeed <= 0) {
@@ -195,11 +202,16 @@ $(document).ready(function () {
             else if (rotateSpeed >= 115) {
                 rotateSpeed = 115;
             }
-            //    $(this).find(".pixel-counter").html(distanceBottom);
             $(this).css({
                 "transform": " translateY(0px) rotateX(" + rotateSpeed + "deg)",
                 "opacity": opacity
             });
+            if(parentDistanceTop== 0)
+            {
+                $(this).css({
+                   "opacity": 1
+                });
+            }
         });
     }
 
