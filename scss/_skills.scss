@@ -3,13 +3,21 @@ $small-venn-circle: 160px;
 
 .venn-container
 {
- // display: none;
   height: 435px;
   width: 410px;
   margin: 0 auto;
   position: relative;
   cursor: pointer;
 }
+@include respond-to(phone-device)
+{
+  .venn-container
+  {
+    display: none;
+  }
+}
+
+
 .venn-circle
 {
   border-radius: 50%;

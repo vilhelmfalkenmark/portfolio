@@ -67,12 +67,13 @@
 {
   width: 80%;
   max-width: 640px;
-  min-width: 300px;
+  min-width: 292px;
   margin: 0 auto;
   display: block;
 }
 .blog-image
 {
+
   cursor: pointer;
   position: relative;
   margin: 25px auto;
@@ -82,6 +83,16 @@
   padding: 34% 0;
   max-width: 700px;
 }
+.blog-post-container:nth-child(even) // Så att den mörka bloggcontainer inte får den konstiga ljusa skuggan
+{
+  .blog-image, .blog-image-caption
+  {
+    @extend .subtle-shadow;
+  }
+}
+
+
+
 
 @include respond-to(phone-device) {
   .blog-image
@@ -107,12 +118,8 @@
     {
       background-color: $lightGrey;
       color: $darkGrey;
-
     }
   }
-
-
-
   .blog-image:hover
   {
     .blog-image-caption
@@ -159,14 +166,17 @@
 }
 .comment-section
 {
- @extend .text-content;
-
+  display: none;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
 }
 .form-container
 {
 margin: 0 auto;
-width: 70%;
-min-width: 310px;
+width: 100%;
+  max-width: 600px;
+//min-width: 300px;
 }
 
 textarea
@@ -192,13 +202,13 @@ input, textarea
 {
   margin-bottom: 15px;
   display: block;
-  width: 100%;
+  width: 98.5%;
 }
 button[type="submit"]
 {
   transition: all 0.3s ease;
   position: relative;
-  width: 101%;
+  width: 100%;
   padding: 2px;
   height: 50px;
   background: transparent;
@@ -234,6 +244,15 @@ button[type="submit"]
     }
   }
 }
+
+@include respond-to(phone-device) {
+
+  .dashed-line-divider
+  {
+    margin: 30px auto 0 auto;
+  }
+}
+
 /*=================================================
              POP-UP
  =================================================*/

@@ -26,16 +26,40 @@ $(document).ready(function () {
     });
 
 
+
+    $(".nav-link a").click(function(){
+
+            if( $(window).width() < desktopBreak)
+            {
+                menuButton.toggleClass("open");
+                $(".nav-container").toggleClass("nav-slide-in");
+                overLay.toggleClass("dark-overlay");
+            }
+    });
+
+
+
     /*=================================================
      SMOOTH-SCROLLING
      =================================================*/
+    var scrollStop;
+    if($(window).width()<desktopBreak)
+    {
+        scrollStop = 0;
+    }
+    else
+    {
+        scrollStop = 55;
+    }
 
     $('a[href^="#"]').on('click', function (e) {
         e.preventDefault();
         var target = this.hash;
         var $target = $(target);
         $('html, body').stop().animate({
-            'scrollTop': $target.offset().top - 55
+
+        'scrollTop': $target.offset().top - scrollStop
+
         }, 700, 'swing', function () {
             window.location.hash = target;
         });
@@ -48,6 +72,14 @@ $(document).ready(function () {
     $(window).resize(function () {
 
         var screenWidth = $(window).width();
+        if(screenWidth<desktopBreak)
+        {
+            scrollStop = 0;
+        }
+        else
+        {
+            scrollStop = 55;
+        }
         if (screenWidth <= mobileLargeBreak) {
             deviceInfo.html(screenWidth + " px = mobile-small");
         }
@@ -94,8 +126,8 @@ $(document).ready(function () {
      =================================================*/
     $(window).on('resize', function () {
         timeLine($(window).width(), $(window).height());
-        fullscreenFix();
-        backgroundResize();
+      //  fullscreenFix();
+       // backgroundResize();
     });
 
 
@@ -174,7 +206,7 @@ $(document).ready(function () {
     /*=================================================
      PARALLAX
      =================================================*/
-    var screenWidth = $(document).width();
+   /* var screenWidth = $(document).width();
     if (screenWidth > desktopBreak) {
         if ("ontouchstart" in window) {
             document.documentElement.className = document.documentElement.className + " touch";
@@ -250,14 +282,6 @@ $(document).ready(function () {
                     var value = (min + (max - min) * (currentWindow - top) / (bottom - top));
 
 
-                    /*  var scrollTop = $(window).scrollTop(),
-                     parentElementOffsetTop = $(this).parent().offset().top,
-                     parentDistanceTop = (parentElementOffsetTop - scrollTop);
-                     var elementHeight = $(this).height();
-                     var distanceBottom = (parentDistanceTop + elementHeight);
-                     var opacity = (distanceBottom / elementHeight);
-                     var rotateSpeed = ((parentDistanceTop / 8).toFixed(2) * -1);*/
-
                     var horizontalPosition = path.attr("data-oriz-pos");
                     horizontalPosition = horizontalPosition ? horizontalPosition : "50%";
                     $(this).css("background-position", horizontalPosition + " " + value + "px");
@@ -271,7 +295,7 @@ $(document).ready(function () {
             $(window).scroll(parallaxPosition);
             parallaxPosition();
         }
-    }
+    }*/
 
     /*=================================================
      OM-MIG SEKTIONEN

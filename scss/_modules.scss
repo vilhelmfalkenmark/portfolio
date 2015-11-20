@@ -191,7 +191,7 @@
 
 .dashed-line-divider
 {
-  margin: 60px auto 0 auto;
+  margin: 40px auto 0 auto;
   min-width: 280px;
   width: 60%;
   max-width: 700px;
@@ -579,19 +579,27 @@
     color: $beige;
   }
 }
-
 /*=================================================
-  SLUT PÅ GUTTER + GRIDS
+  SKUGGOR
  =================================================*/
+
+.box-shadow
+{
+  box-shadow: 0px 0px 15px 2px grey;
+}
+.subtle-shadow
+{
+  box-shadow: -4px 4px 10px #888888;
+
+}
+
+
 
 
 /*=================================================
  KNAPPAR!
  =================================================*/
-.box-shadow
-{
-  box-shadow: 0px 0px 15px 2px grey;
-}
+
 
 /*.btn
 {
@@ -648,9 +656,6 @@
   color: $lightGrey;
 
 }
-
-
-
 /*=================================================
  PORTFOLIO FLEX!
  =================================================*/
@@ -809,9 +814,7 @@ $inner-circle-size: 280px;
    cursor: pointer;
    @extend .flex-center;
    @extend .fast-trans;
-  // height: $big-circle-size;
-  // width: $big-circle-size;
-  // border-radius: $big-circle-size/2;
+
    border: 2px dashed $darkGrey;
  }
 .large-circle
@@ -892,4 +895,46 @@ $inner-circle-size: 280px;
   -ms-animation: rotating 2s linear infinite;
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
+}
+
+/*=================================================
+  BOUNCE
+ =================================================*/
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-2px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+
+  40% {
+    transform: translateY(-5px);
+  }
+
+
+}
+.bounce {
+  animation: bounce 2.5s infinite;
+}
+@include respond-to(large-device)
+{
+  .arrow-up-container
+  {
+    @extend .bounce;
+  }
+}
+
+
+/*=================================================
+  IKONER
+ =================================================*/
+.up-arrow
+{
+  display: block;
+  transform: rotate(270deg);
 }

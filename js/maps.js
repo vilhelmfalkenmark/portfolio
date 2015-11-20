@@ -28,11 +28,11 @@ function ZoomControl(controlDiv, map) {
 //  var deviceWidth = screen.width;
 var mapStyleLayout = [{
     "elementType": "labels.text",
-    "stylers": [{"visibility": "simplified"}, {"invert_lightness": false}, {"color": "#E5E3E0"}]}
-    , {"featureType": "landscape", "stylers": [{"color": "#E5E3E0"}]}
+    "stylers": [{"visibility": "simplified"}, {"invert_lightness": false}, {"color": "#434343"}]}
+    , {"featureType": "landscape", "stylers": [{"color": "#E3DFDA"}]}
     , {"featureType": "landscape", "elementType": "labels", "stylers": [{"visibility": "off"}]}
     , {"featureType": "road", "stylers": [{"color": "#b1b0b0"}]}
-    , {"featureType": "water", "stylers": [{"color": "#414141"}]}
+    , {"featureType": "water", "stylers": [{"color": "#434343"}]}
     , {"featureType": "road", "elementType": "labels.text", "stylers": [{"color": "#22313F"}]}
     , {"featureType": "road", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]}
     , {"featureType": "poi", "stylers": [{"visibility": "off"}]}

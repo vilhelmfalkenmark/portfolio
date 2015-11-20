@@ -26,9 +26,7 @@
     list-style-type: decimal;
     list-style-position: inside;
   }
-
 }
-
 
 @include respond-to(mobile-small) {
   .hexagon {
@@ -52,43 +50,44 @@
     margin: 30px auto 0 auto;
     text-align: center;
     a {
-      color: $darkGrey;
+      color: white;
     }
   }
   .hexagon-outer {
     display: inline-block;
-    height: 200px;
+    height: 150px;
     vertical-align: top;
   }
   .hexagon {
     position: relative;
     width: 90px;
     height: 60px;
-    background-color: $lightGrey;
-    border-left: solid 2px $darkGrey;
-    border-right: solid 2px $darkGrey;
+    background-color: $turq;
+
+   // border-left: solid 2px $darkGrey;
+   // border-right: solid 2px $darkGrey;
   }
   .hexagon:before,
   .hexagon:after {
     content: "";
     position: absolute;
     z-index: 1;
-    width: 63.42px;
+    width: 62.42px;
     height: 63.42px;
     transform: scaleY(0.5774) rotate(-45deg);
     background-color: inherit;
-    left: 12.2893px;
+    left: 14.5px;
   }
 
   .hexagon:before {
-    top: -32.7107px;
-    border-top: solid 2.8284px $darkGrey;
-    border-right: solid 2.8284px $darkGrey;
+    top: -31.7107px;
+    //border-top: solid 2.8284px $darkGrey;
+    //border-right: solid 2.8284px $darkGrey;
   }
   .hexagon:after {
-    bottom: -32.7107px;
-    border-bottom: solid 2.8284px $darkGrey;
-    border-left: solid 2.8284px $darkGrey;
+    bottom: -31.7107px;
+  //  border-bottom: solid 2.8284px $darkGrey;
+    //border-left: solid 2.8284px $darkGrey;
   }
   .hexagon div {
     position: relative;
@@ -218,6 +217,18 @@
 .to-about-me
 {
   background-color: $lightGrey;
-  padding: 20px 0 0 0;
+  padding: 50px 0 0 0;
   display: none;
+  a
+  {
+    color: $darkGrey;
+  }
+  i
+  {
+    display: block;
+    height: 56px;
+   // margin-top: 140px;
+    padding:0 0 0 40px;
+    font-size: 54px;
+  }
 }
