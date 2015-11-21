@@ -1,3 +1,97 @@
+/*=================================================
+ Form-Container
+ =================================================*/
+.footer-form-outer-container
+{
+  background-color: $lightGrey;
+}
+
+.footer-form-container
+{
+  width: 90%;
+  .check-list-container
+  {
+    color: white;
+    .left-check-item, .right-check-item
+    {
+      float: left;
+     // vertical-align: top;
+    }
+    .left-check-item
+    {
+      width: 6%;
+    }
+    .right-check-item
+    {
+      width: 94%;
+    }
+  }
+  ul
+  {
+    margin-left: 35px;
+    li:before
+    {
+      content:"";
+      height:1em;
+      width:1em;
+      display:block;
+      float:left;
+      margin-left:-2.5em;
+      color: white;
+      stroke: white;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-image: url('../images/check52.svg');
+      background-size:110%;
+    }
+    &:last-of-type
+    {
+      width: 70%;
+      padding: 0 0 0 20px;
+    }
+  }
+  li
+  {
+    list-style-type: none;
+    padding: 10px 0;
+   // margin-left: 40px;
+    i
+    {
+     // margin-right: 10px;
+    }
+
+  }
+  label
+  {
+    float: left;
+  }
+
+  h2, p, li, label
+  {
+    color: $grey;
+  }
+  form
+  {
+    input
+    {
+      width: 99%;
+    }
+    textarea
+    {
+      width: 99%;
+
+    }
+   }
+  button
+  {
+    //padding: 0;
+    border: 1px solid $grey;
+    background-color: $lightGrey;
+    width: 100%;
+  }
+}
+
+
 .contact-info-container
 {
   color: white;
@@ -29,12 +123,6 @@
     margin-right: 10px;
   }
 }
-.socialmedia-icon-container
-{
-  a i {
-    display: inline-block;
-  }
-}
 @include respond-to(large-device) {
 
   .socialmedia-icon-container
@@ -51,6 +139,20 @@
 }
 @include respond-to(phone-device) {
 
+  .footer-form-container
+  {
+    input
+    {
+      width: 95% !important;
+    }
+    button
+    {
+      width: 101%;
+    }
+
+  }
+
+
   .socialmedia-icon-container
   {
     a i {
@@ -65,6 +167,9 @@
 }
 
 @include respond-to(mobile-small) {
+
+
+
   .contact-info-container-inner
   {
     width: 90%;
@@ -72,14 +177,19 @@
 
   .socialmedia-icon-container
   {
-    margin-bottom: 10px;
+    margin: 50px auto 0 auto;
   }
   .socialmedia-icon
   {
     font-size: 40px;
-    margin: 20px 50px 0 0;
-
   }
+
+  .middle-row-icon
+  {
+    margin: 30px 25% 0 25%;
+  }
+
+
   .contact-icon
   {
     font-size: 30px;
@@ -87,7 +197,9 @@
 
   .contact-info-container
   {
-    height: 400px;
+    @extend .flex-center;
+
+    height: 410px;
     a
     {
       font-size: 19px;
@@ -113,12 +225,11 @@
 
   .socialmedia-icon-container
   {
-    margin-bottom: 10px;
+    margin: 50px auto 0 auto;
   }
   .socialmedia-icon
   {
     font-size: 40px;
-    margin: 20px 7% 0 0;
   }
   .contact-icon
   {
@@ -126,6 +237,8 @@
   }
   .contact-info-container
   {
+    @extend .flex-center;
+
     height: 400px;
   }
   .map-content
@@ -141,6 +254,18 @@
 }
 @include respond-to(tablet) {
 
+  .footer-form-container {
+    width: 90%;
+    max-width: 650px;
+    margin-top: 30px;
+  }
+
+  .socialmedia-icon-container
+  {
+
+    margin-top: 50px;
+  }
+
   .socialmedia-icon
   {
     font-size: 40px;
@@ -152,6 +277,7 @@
   }
   .contact-info-container
   {
+    @extend .flex-center;
     height: 400px;
   }
   .map-content
@@ -166,19 +292,50 @@
   }
 }
 @include respond-to(desktop) {
+  .footer-form-outer-container
+  {
+    background-color: $lightGrey;
+    height: 1150px;
+  /*  position: relative;
 
+    &:after
+    {
+      left: 100%;
+      top: 25%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-left-color: $lightGrey;
+      border-width: 20px;
+      margin-top: -20px;
+
+    }*/
+
+  }
+
+  .footer-form-container {
+    width: 90%;
+    max-width: 550px;
+    margin-top: 30px;
+  }
   .contact-info-container-inner
   {
-    //position: relative;
+    padding-top: 30px;
+   // background-color: red;
+    width: 80%;
+    margin: 0 auto;
   }
   .socialmedia-icon-container
   {
-    margin-top: 60px;
+    margin-top: 160px;
   }
   .socialmedia-icon
   {
     font-size: 40px;
-    margin: 20px 50px 0 0;
+    margin: 20px 5% 0 0;
   }
 
   .contact-icon
@@ -187,21 +344,13 @@
   }
   .contact-info-container
   {
-    height: 500px;
+    height: 575px;
   }
   #map-canvas
   {
     width: 100%;
-    height: 500px;
+    height: 575px;
   }
-}
-@include respond-to(large-device) {
-
-
-
-
-
-
 }
 
 

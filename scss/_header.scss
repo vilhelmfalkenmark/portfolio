@@ -76,15 +76,6 @@ HEADER
   }
 }
 
-.header-btn
-{
-  margin: 40px auto 0 auto;
-  font-size: 18px;
-  a
-  {
-    @extend .center;
-  }
-}
 @include respond-to(desktop) {
 
   .menu-button-wrapper {

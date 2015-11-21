@@ -206,10 +206,14 @@ $(document).ready(function () {
                 "transform": " translateY(0px) rotateX(" + rotateSpeed + "deg)",
                 "opacity": opacity
             });
-            if(parentDistanceTop== 0)
+           // console.log(parentDistanceTop)
+
+            if(parentDistanceTop>= -19)
             {
                 $(this).css({
-                   "opacity": 1
+                    "transform": " translateY(0px) rotateX(" + 0 + "deg)",
+
+                    "opacity": 1
                 });
             }
         });

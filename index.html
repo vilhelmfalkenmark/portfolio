@@ -82,7 +82,7 @@
                             enkelhet.</p>
 
                         <div class="center header-btn">
-                            <a href="#aboutMeTarget" class="btn dark-btn hire-me-btn">Anlita mig</a>
+                            <a href="#footer" class="white-btn">Anlita mig</a>
                         </div>
                     </div>
 
@@ -228,6 +228,8 @@
                             student
                             så är jag billigare än om ni skulle kontakta en webbyrå.</i>
                         </h4>
+                            <div class="space-20"></div>
+                                <a class="white-btn center about-me-btn" href="#footer">Kontakta mig!</a>
                     </article>
                 </div>
 
@@ -299,9 +301,7 @@
                         <h3 class="medium-text">Ballbusters</h3>
 
                         <p class="small-text">Kategori: Skolarbete - <i>Javascript 2</i></p>
-
                         <p class="small-text">Använda tekniker: <i>Javascript, HTML5</i></p>
-
                         <p>Ett spel som jag har programmerat och designat tillsammans med Fredrik Löfgren.
                             Spelet är inspirerat av ett gammalt arkadspel som heter Pang.
                             Spelmotorn utgår från prototypbaserad och objektorienterad Javascript.
@@ -315,7 +315,8 @@
                 <div class="flex-item port-image-container">
                     <div class="port-image-inner">
                         <div class="macbook-image">
-                            <div class="port-screenshot">
+                            <div class="port-screenshot flex-center" style="background-image:url(images/ballBusters.jpg);">
+                                <a href="#" class="port-screenshot-teaser">Ballbusters!</a>
                             </div>
                         </div>
                     </div>
@@ -330,7 +331,9 @@
                 <div class="flex-item port-image-container">
                     <div class="port-image-inner">
                         <div class="macbook-image">
-                            <div class="port-screenshot"></div>
+                            <div class="port-screenshot flex-center" style="background-image:url(images/ballBusters.jpg);">
+                                <a href="#" class="port-screenshot-teaser">Ballbusters!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -882,25 +885,88 @@
     <footer>
         <section class="section-focus" id="footer">
             <div class="row">
+                <div class="col-6-desk col-12-tab col-12-ml col-12-ms flex-center footer-form-outer-container">
+                    <div class="footer-form-container">
+                        <h2>Kontaktformulär</h2>
+                        <p>Om ni har ett litet till medelstort företag/verksamhet/förening etc. så hjälper jag er gärna med att
+                            bygga en ny hemsida alternativt uppdatera en befintlig.
+                            Jag arbetar med moderna tekniker för att er hemsida ska bli:
+                        </p>
+
+
+                        <ul>
+                            <li>Responsiv - Så att sidan skalar om innehållet beroende på vilken enhet besökaren använder.</li>
+                            <li>Sökmotoroptimerad - Så att exempelvis Google lätt hittar er.</li>
+                            <li>Lätt att skala upp om ni vill lägga till mer innehåll i framtiden.</li>
+                            <li>Lätt att underhålla.</li>
+                        </ul>
+                        <p>Använd gärna kontaktformuläret nedan och beskriv ert ärende kortfattat så svarar jag direkt med en offert.</p>
+
+                        <form method="get" action="#footer">
+                                <label for="your-name">Ditt namn*</label>
+                                <input type="text" id="your-name" placeholder="Ditt namn" required>
+                                <label for="your-mail">Din E-post adress*</label>
+                                <input type="email" id="your-mail" placeholder="Din E-post adress" required>
+                                <label for="your-number">Ditt telefonnummer*</label>
+                                <input type="number" id="your-number" placeholder="Ditt telefonnummer">
+                                <label for="your-business">Ditt ärende*</label>
+                                <textarea id="your-business" placeholder="Ditt ärende" required></textarea>
+                                <button type="submit" name="contact-me">Kontakta mig</button>
+                            </form>
+                        <p>Jag är godkänd för F-Skatt</p>
+                        <p class="x-small-text">Den här sidan är kodad med <i class="flaticon-heart13"></i> av Vilhelm Falkenmark i november 2015. Inga ramverk är använda förrutom Normalize.css och jQuery.js.<br>
+                          Använda tekniker: SASS, Gulp, MySQL, PHP, Javascript & jQuery, HTML5, CSS3.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6-desk col-12-tab col-12-ml col-12-ms"></div>
+                </div>
+
+
+
+            <div class="row">
                 <div class="col-6-desk col-12-tab col-12-ml col-12-ms">
-                    <div class="flex-center contact-info-container">
+                    <div class="contact-info-container">
                         <div class="contact-info-container-inner">
                             <h2>Kontakt</h2>
-
                             <div class="contact-icon-container">
                                 <a href="mailto:info@vilhelmfalkenmark.se"><i class="flaticon-email5 contact-icon"></i> info@vilhelmfalkenmark.se</a>
                                 <a href="tel:0705580198"><i class="flaticon-iphone26 contact-icon"></i> 0705-580198</a>
                                 <a href="https://sv.wikipedia.org/wiki/Stockholm" target="_blank"><i class="flaticon-facebook30 contact-icon"></i> Stockholm</a>
                             </div>
-                            <div class="socialmedia-icon-container">
+
+                            <div class="row socialmedia-icon-container">
+                                <div class="col-2-desk col-2-tab col-2-ml col-2-ms">
+                                    <a href="http://codepen.io/villefalkenmark/" target="_blank"><i class="flaticon-3d80 socialmedia-icon"></i></a>
+                                </div>
+                                <div class="col-2-desk col-2-tab col-2-ml col-2-ms">
+                                    <a href="https://github.com/vilhelmfalkenmark" target="_blank"><i class="flaticon-github10 socialmedia-icon"></i></a>
+                                </div>
+                                <div class="col-2-desk col-2-tab col-2-ml col-2-ms">
+                                    <a href="https://www.linkedin.com/hp/?dnr=imMPcqK9gJcQP8xvipIrB9S5l_wiHx3Mk5-f&trk=nav_responsive_tab_home" target="_blank"><i class="flaticon-linkedin1 socialmedia-icon"></i></a>
+                                </div>
+                                <div class="col-2-desk col-2-tab col-2-ml col-2-ms">
+                                    <a href="https://www.facebook.com/ville.falkenmark" target="_blank"><i class="flaticon-facebook3 socialmedia-icon"></i></a>
+                                </div>
+                                <div class="col-2-desk col-2-tab col-2-ml col-2-ms">
+                                    <a href="https://www.instagram.com/villefalkenmark/" target="_blank"><i class="flaticon-instagram19 socialmedia-icon"></i></a>
+                                </div>
+                                <div class="col-2-desk col-2-tab col-2-ml col-2-ms">
+                                    <a href="https://open.spotify.com/user/vilhelmfalkenmark" target="_blank"><i class="flaticon-spotify10 socialmedia-icon"></i></a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+
+
+                        <!--    <div class="socialmedia-icon-container">
                                 <a href="http://codepen.io/villefalkenmark/" target="_blank"><i class="flaticon-3d80 socialmedia-icon"></i></a>
-                                <a href="https://github.com/vilhelmfalkenmark" target="_blank"><i class="flaticon-github10 socialmedia-icon"></i></a>
+                                <a href="https://github.com/vilhelmfalkenmark" target="_blank"><i class="flaticon-github10 socialmedia-icon middle-row-icon"></i></a>
                                 <a href="https://www.linkedin.com/hp/?dnr=imMPcqK9gJcQP8xvipIrB9S5l_wiHx3Mk5-f&trk=nav_responsive_tab_home" target="_blank"><i class="flaticon-linkedin1 socialmedia-icon"></i></a>
                                 <a href="https://www.facebook.com/ville.falkenmark" target="_blank"><i class="flaticon-facebook3 socialmedia-icon"></i></a>
-                                <a href="https://www.instagram.com/villefalkenmark/" target="_blank"><i class="flaticon-instagram19 socialmedia-icon"></i></a>
+                                <a href="https://www.instagram.com/villefalkenmark/" target="_blank"><i class="flaticon-instagram19 socialmedia-icon middle-row-icon"></i></a>
                                 <a href="https://open.spotify.com/user/vilhelmfalkenmark" target="_blank"><i class="flaticon-spotify10 socialmedia-icon"></i></a>
-                            </div>
-
+                            </div>-->
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@
 .port-screenshot
 {
   position: relative;
-  background: url(../images/ballBusters.jpg) center center no-repeat;
+  background: center center no-repeat;
   width:100%;
   background-size: 76.5%;
   //background-size: 68.9%;
@@ -57,6 +57,25 @@
   margin-bottom: 3%;
   max-width: 700px;
 }
+.port-screenshot-teaser
+{
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  display: block;
+  padding: 20px 60px;
+  color: transparent;
+  font-size: 18px;
+  background-color: transparent;
+}
+.port-screenshot-teaser:hover
+{
+  color: $darkGrey;
+  background-color: white;
+}
+
+
+
+
 
 /*=================================================
                    MOBILE-SMALL
@@ -139,6 +158,14 @@
                     TABLET
 =================================================*/
 @include respond-to(tablet) {
+
+  .port-screenshot-teaser:hover
+  {
+    opacity: 1;
+  }
+
+
+
   .flex-item {
     width:100%;
   }
@@ -185,6 +212,7 @@
     }
   }
 
+
   .flex-item
   {
     height: $desk-item-h;
@@ -193,6 +221,7 @@
   .port-screenshot {
     height: 390px;
   }
+
   .port-desc-container > div
   {
     position: relative;

@@ -60,6 +60,7 @@
       height: 0;
       width: 0;
       position: absolute;
+
       border-left-color:  $stripedGrey;
       border-width: 30px;
       margin-top: -30px;
@@ -654,8 +655,24 @@
 
   background-color: lighten($darkGrey,5%);
   color: $lightGrey;
-
 }
+.white-btn
+{
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  display: block;
+  padding: 20px 40px;
+  color: $darkGrey;
+  font-size: 18px;
+  background-color: white;
+}
+.white-btn:hover
+{
+  color: white;
+  background-color: $grey;
+}
+
+
 /*=================================================
  PORTFOLIO FLEX!
  =================================================*/

@@ -332,6 +332,12 @@ width: 100%;
 //min-width: 300px;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 textarea
 {
   height: 200px;
@@ -398,6 +404,11 @@ button[type="submit"]
 
 .dark-blog-post
 {
+
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, .7);
+
+
+
   button[type="submit"]
   {
     border: 1px solid white;
