@@ -141,6 +141,11 @@ a
   {
     display: none;
   }
+  .desk-hide
+  {
+    display: block;
+
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px)
 {
@@ -151,6 +156,11 @@ a
   .large-dev-show
   {
     display: none;
+  }
+  .desk-hide
+  {
+    display: block;
+
   }
   .desk-show-only
   {
@@ -163,6 +173,13 @@ a
 }
 @media (min-width: 1024px)
 {
+
+  .desk-hide
+  {
+    display: none;
+
+  }
+
   .small-dev-show
   {
     display: none;

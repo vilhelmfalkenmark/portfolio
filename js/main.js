@@ -60,7 +60,7 @@ $(document).ready(function () {
 
         'scrollTop': $target.offset().top - scrollStop
 
-        }, 700, 'swing', function () {
+        }, 400, 'swing', function () {
             window.location.hash = target;
         });
     });
@@ -93,14 +93,6 @@ $(document).ready(function () {
             deviceInfo.html(screenWidth + " px =Desktop");
         }
     });
-
-    /*=================================================
-     NY FUNKTION HÄR!!!!
-     =================================================*/
-    $('.gtr').each(function () {
-        //  $(this).find(".flex-center").html($(this).attr('class'));
-    });
-
     /*=================================================
      SKROLL-BASERADE EFFEKTER!
      =================================================*/
@@ -126,10 +118,7 @@ $(document).ready(function () {
      =================================================*/
     $(window).on('resize', function () {
         timeLine($(window).width(), $(window).height());
-      //  fullscreenFix();
-       // backgroundResize();
     });
-
 
     var sectionFocusArray = $(".section-focus");
     var navLinks = $(".nav-link");
@@ -161,9 +150,6 @@ $(document).ready(function () {
             {
                 navLinks[0].className = "nav-links";
             }
-
-
-
         });
       }
     function navBar(screenWidth, scrollTop) {
@@ -192,8 +178,6 @@ $(document).ready(function () {
             {
                 opacity = 0;
             }
-
-
             var rotateSpeed = ((parentDistanceTop / 8).toFixed(2) * -1);
 
             if (rotateSpeed <= 0) {
@@ -211,108 +195,13 @@ $(document).ready(function () {
             if(parentDistanceTop>= -19)
             {
                 $(this).css({
-                    "transform": " translateY(0px) rotateX(" + 0 + "deg)",
+                   // "transform": " translateY(0px) rotateX(" + 0 + "deg)",
 
-                    "opacity": 1
+                  "opacity": 1
                 });
             }
         });
     }
-
-    /*=================================================
-     PARALLAX
-     =================================================*/
-   /* var screenWidth = $(document).width();
-    if (screenWidth > desktopBreak) {
-        if ("ontouchstart" in window) {
-            document.documentElement.className = document.documentElement.className + " touch";
-        }
-        if (!$("html").hasClass("touch")) {
-            $(".parallax").css("background-attachment", "fixed");
-        }
-        function fullscreenFix() {
-            var h = $('body').height();
-            // set .fullscreen height
-            $(".content-b").each(function (i) {
-                if ($(this).innerHeight() <= h) {
-                    $(this).closest(".fullscreen").addClass("not-overflow");
-                }
-            });
-        }
-
-        $(window).resize(fullscreenFix);
-        $(window).resize(backgroundResize);
-
-        fullscreenFix();
-
-        function backgroundResize() {
-            var windowH = $(window).height();
-            $(".background").each(function (i) {
-                var path = $(this);
-                var contW = path.width();
-                var contH = path.height();
-                var imgW = path.attr("data-img-width");
-                var imgH = path.attr("data-img-height");
-                var ratio = imgW / imgH;
-                var diff = parseFloat(path.attr("data-diff"));
-                diff = diff ? diff : 0;
-                var remainingH = 0;
-                if (path.hasClass("parallax") && !$("html").hasClass("touch")) {
-                    remainingH = windowH - contH;
-                }
-                imgH = contH + remainingH + diff;
-                imgW = imgH * ratio;
-                // fix when too large
-                if (contW > imgW) {
-                    imgW = contW;
-                    imgH = imgW / ratio;
-                }
-                //
-                path.data("resized-imgW", imgW);
-                path.data("resized-imgH", imgH);
-                path.css("background-size", imgW + "px " + imgH + "px");
-            });
-        }
-
-        $(window).focus(backgroundResize);
-        backgroundResize();
-
-        function parallaxPosition(e) {
-            var heightWindow = $(window).height();
-            var topWindow = $(window).scrollTop();
-            var bottomWindow = topWindow + heightWindow;
-            var currentWindow = (topWindow + bottomWindow) / 2;
-            $(".parallax").each(function (i) {
-                var path = $(this);
-                var height = path.height();
-                var top = path.offset().top;
-                var bottom = top + height;
-                if (bottomWindow > top && topWindow < bottom) {
-                    var imgW = path.data("resized-imgW");
-                    var imgH = path.data("resized-imgH");
-                    var min = 0;
-                    var max = -imgH + heightWindow;
-                    var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow; // fix height on overflow
-                    top = top - overflowH;
-                    bottom = bottom + overflowH;
-                    var value = (min + (max - min) * (currentWindow - top) / (bottom - top));
-
-
-                    var horizontalPosition = path.attr("data-oriz-pos");
-                    horizontalPosition = horizontalPosition ? horizontalPosition : "50%";
-                    $(this).css("background-position", horizontalPosition + " " + value + "px");
-                }
-            });
-        }
-
-        if (!$("html").hasClass("touch")) {
-            $(window).resize(parallaxPosition);
-            //$(window).focus(parallaxPosition);
-            $(window).scroll(parallaxPosition);
-            parallaxPosition();
-        }
-    }*/
-
     /*=================================================
      OM-MIG SEKTIONEN
      =================================================*/
@@ -343,18 +232,17 @@ $(document).ready(function () {
     });
 
 
-    /*=================================================
-     KUGGHJULS SEKTIONEN
-     =================================================*/
-    $('.venn-circle').each(function () {
-        $(this).mouseover(function () {
-            //     $(".venn-circle").addClass("rotating");
-        });
-        $(this).mouseout(function () {
-            //   $(".venn-circle").removeClass("rotating");
-
-        });
-    });
+    ///*=================================================
+    // KUGGHJULS SEKTIONEN
+    // =================================================*/
+    //$('.venn-circle').each(function () {
+    //    $(this).mouseover(function () {
+    //        //     $(".venn-circle").addClass("rotating");
+    //    });
+    //    $(this).mouseout(function () {
+    //
+    //    });
+    //});
 
     /*=================================================
      SKILLBARS SEKTIONEN
@@ -489,12 +377,22 @@ $(document).ready(function () {
                 var elementHeight = $(this).innerHeight();
                 var distanceBottom = (windowHeight - (distanceTop + elementHeight));
                 var $opacity = (distanceBottom) / 280;
+                if($opacity>=1)
+                {
+                    $opacity = 1;
+                }
+                else if($opacity<=0)
+                {
+                    $opacity = 0;
+                }
                 $(this).css({"opacity": $opacity});
+
+
+
             });
 
         }
     }
-
     /*=================================================
      BLOG-SEKTIONEN
      =================================================*/
@@ -504,25 +402,25 @@ $(document).ready(function () {
         });
     });
 
-    $(".close-pop-up").on("click", function () {
+    $(".close-cross").on("click", function () {
         $(".pop-up").fadeOut("fast");
     });
 
     /*===========  VALIDERING OCH POP-UP ========== */
-    $('.form-btn').each(function () {
-        $(this).on("click", function () {
-            if ($(this).siblings("input").val().length > 0 && $(this).siblings("textarea").val().length) {
-                $(".fail-container").hide();
-                $(".pop-up").fadeIn("fast");
-                $(".success-container").fadeIn("fast");
-            }
-            else {
-                $(".success-container").hide();
-                $(".pop-up").fadeIn("fast");
-                $(".fail-container").fadeIn("fast");
-            }
-        });
-    });
+    //$('.form-btn').each(function () {
+    //    $(this).on("click", function () {
+    //        if ($(this).siblings("input").val().length > 0 && $(this).siblings("textarea").val().length) {
+    //            $(".fail-container").hide();
+    //            $(".pop-up").fadeIn("fast");
+    //            $(".success-container").fadeIn("fast");
+    //        }
+    //        else {
+    //            $(".success-container").hide();
+    //            $(".pop-up").fadeIn("fast");
+    //            $(".fail-container").fadeIn("fast");
+    //        }
+    //    });
+    //});
 
 
 }); // End jQuery

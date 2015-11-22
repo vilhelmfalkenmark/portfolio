@@ -297,7 +297,15 @@
 
 
 
-
+.blog-post-container article a
+{
+  text-decoration: underline;
+  font-size: 1em;
+}
+.blog-post-container article a:hover
+{
+  color: $green !important;
+}
 
 
 
@@ -469,6 +477,18 @@ button[type="submit"]
       width: 95%;
       margin: 0 auto;
     }
+    .close-cross
+    {
+      cursor: pointer;
+      float: left;
+      font-weight: bold;
+      color: $grey;
+      transform: rotate(45deg);
+      font-size: 54px;
+      position: absolute;
+      left: 15px;
+      top: 10px;
+    }
   }
 }
 .success-container
@@ -479,12 +499,12 @@ button[type="submit"]
 {
   color: $red;
 }
-.close-pop-up
-{
-  cursor: pointer;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
+//.close-pop-up
+//{
+//  cursor: pointer;
+//  position: absolute;
+//  bottom: 10px;
+//  left: 0;
+//  right: 0;
+//  margin: 0 auto;
+//}

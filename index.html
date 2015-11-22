@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Vilhelm Falkenmark. Front-End Utvecklare">
     <meta name="author" content="Vilhelm Falkenmark">
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
-    <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="icons/flaticon.css">
+    <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/stylesheet.css">
     <!--endbuild-->
     <title>Vilhelm Falkenmark</title>
@@ -15,33 +14,31 @@
 <body>
 <div class="pop-up">
     <div class="success-container">
+        <i class="flaticon-add121 close-cross"></i>
         <h2>Hej!</h2>
-        <p>Sorry. Jag vet att Pop-ups är fruktansvärt störiga men jag vill bara tacka för din kommentar!
+        <p>Jag vet att Pop-ups är fruktansvärt störiga men jag vill bara tacka för din kommentar!
             <br><br>För ordningens skull måste den godkännas innan den publiceras!
             <br><br>
-            Ha en kanondag! <i class="flaticon-heart13"> </i>
-        </p>
+            Ha en bra dag!
         <div class="space-20"></div>
         <p>/ Vilhelm Falkenmark</p>
-        <div class="close-pop-up">Stäng fönster</div>
     </div>
     <div class="fail-container">
+        <i class="flaticon-add121 close-cross"></i>
+
         <h2>Hej!</h2>
         <p>Något gick tyvärr fel när du la in din kommentar.
             Sannolikt missade du att fylla i ett av fälten.
-            <br><br>Försök gärna igen och ha en kanondag! <i class="flaticon-heart13"> </i>
+            <br><br>Försök gärna igen och ha en fin dag!
         </p>
         <div class="space-20"></div>
             <p>/ Vilhelm Falkenmark</p>
-        <div class="close-pop-up">Stäng fönster</div>
     </div>
 
 </div>
 <div class="container">
     <div class="nav-container">
-
         <div class="desktop-menu-background"></div>
-
         <div class="nav-container-inner">
             <div class="menu-button-wrapper">
                 <div class="menu-button">
@@ -54,7 +51,7 @@
             <nav>
                 <ul>
                     <li class="nav-link chosen"><a class="underline-link" href="#top">Hem</a></li>
-                    <li class="nav-link chosen"><a class="underline-link" href="#about">Om mig</a></li>
+                    <li class="nav-link chosen"><a class="underline-link" href="#about">Om</a></li>
                     <li class="nav-link chosen"><a class="underline-link" href="#portfolio">Portfolio</a></li>
                     <li class="nav-link chosen"><a class="underline-link" href="#resume">CV</a></li>
                     <li class="nav-link chosen"><a class="underline-link" href="#blog">Blogg</a></li>
@@ -74,14 +71,14 @@
                 <div class="header-background flip" data-img-width="1500" data-img-height="1000" data-diff="100">
                     <div class="header-content">
                         <div class="portrait"></div>
-                        <h1>Vilhelm Falkenmark</h1>
+                        <h1 class="fade-1 fade">Vilhelm Falkenmark</h1>
 
-                        <p class="medium-text">Frilansande Front-End Utvecklare</p>
+                        <p class="small-text fade-2 fade">Frilansande Front-End Utvecklare</p>
 
-                        <p class="small-text">Verksam i Stockholm med en stor passion för design, användarvänlighet &
+                        <p class="small-text fade-3 fade">Verksam i Stockholm med stor passion för design, användarvänlighet &
                             enkelhet.</p>
 
-                        <div class="center header-btn">
+                        <div class="center header-btn fade-4 fade">
                             <a href="#footer" class="white-btn">Anlita mig</a>
                         </div>
                     </div>
@@ -99,15 +96,15 @@
     <main>
         <section id="about" class="section-light-grey section-focus">
             <div class="arrow-hole"></div>
-            <h2 class="section-header">Om mig</h2>
+            <h2 class="section-header">Om</h2>
 
             <div class="hex-container">
 
                 <div class="hexagon-outer">
                     <a href="#aboutMeTarget">
                         <div class="hexagon rotate" id="interestButton">
-                            <div class="hex-header">Mina intressen</div>
-                            <div class="hex-subheader">Min livshistoria i sammandrag</div>
+                            <div class="hex-header">Front-End Utveckling</div>
+                            <div class="hex-subheader">Vad är det?</div>
                         </div>
                     </a>
                 </div>
@@ -115,7 +112,7 @@
                 <div class="hexagon-outer">
                     <a href="#aboutMeTarget">
                         <div class="hexagon rotate" id="aboutButton">
-                            <div class="hex-header">Om mig</div>
+                            <div class="hex-header">Mig</div>
                             <div class="hex-subheader">Min livshistoria i sammandrag</div>
                         </div>
                     </a>
@@ -125,7 +122,7 @@
                     <a href="#aboutMeTarget">
                         <div class="hexagon rotate hire-me-btn" id="servicesButton">
                             <div class="hex-header">Mina tjänster</div>
-                            <div class="hex-subheader">Min livshistoria i sammandrag</div>
+                            <div class="hex-subheader">Vad jag kan göra</div>
                         </div>
                     </a>
                 </div>
@@ -133,53 +130,54 @@
 
             <div id="aboutMeTarget">
                 <div class="space-50 small-dev-show"></div>
-                <div class="text-content hide" id="interestContent">
+                <div class="hide" id="interestContent">
                     <article>
-                        <h2>Mina Intressen</h2>
-                        <p>Uppebarligen är kod och programmering det roligaste som finns men det finns även andra roliga
-                            saker man kan göra när man behöver ta en paus från editorn. Exempelvis: </p>
+                       <div class="text-content">
+                        <h3 class="sub-header">Front-End Utveckling</h3>
 
-                        <h3>Musik</h3>
+                        <p>För de flesta är begreppet är <i>Front-End</i> något
+                            diffust men det kan kortfattat beskrivas som som all kod som genrerar det man ser på en webbtjänst, exempelvis en hemsida. Med andra ord
+                            färgerna, strukturen, animationerna etc.
+                            Jag har goda kunskaper HTML5, CSS3 och JavaScript, dvs. det som utgör modern Front-End
+                            utveckling. Jag behärskar även back-end programmering (det som händer bakom kulisserna, exempelvis sökfunktionalitet, sortering kommunikation med servern etc).
 
-                        <p>Musik har alltid legat mig väldigt varmt om hjärtat och varit min huvudsakliga hobby hela
-                            mitt
-                            liv.
-                        </p>
+                            Min ambition är att skapa lättanvända, estetiskt tilltalande och välfungerande hemsidor
+                            och webbtjänster</p>
+                        </div>
+                        <h3>Front-End Komponenter</h3>
 
-                        <h3>Gitarr</h3>
+                        <div class="row front-end-components-container">
+                            <div class="col col-6-desk col-12-tab col-12-ml col-12-ms">
+                                <p>Front end utveckling kräver kunskap inom flera områden för att få en välfungerande slutprodukt, det som traditionellt kallas för "En hemsida".</p>
+                                <ul class="check-list">
+                                    <li>UX (User-Experience) - Att sidan är logiskt och intiutivt strukturerad så att besökaren lätt kan navigera oavsett förkunskaper och oavsett vilken enhet (telefon, surfplatta, dator etc.) besökaren använder.</li>
+                                    <li>Design - Att sidan har en tilltalande design som passar ändamålet med en konsekvent layout och en tydlig grafisk profil.</li>
+                                    <li>Kod - Att sidan är bra kodad så att den renderas snabbt på alla sorters enheter. En korrekt kodad hemsida följer också en logisk semantik som gör att sökmotorer lättare hittar den. Att den är kodad efter <i>best-practice</i> har också stor betydelse den dagen
+                                        man bestämmer sig att man vill lägga till eller ändra något. Fuskbygger man något så kan det se bra ut från utsidan men börjar man lyfta på saker och vill ändra något kan allt falla ihop.</li>
+                                </ul>
+                            </div>
+                            <div class="col col-6-desk col-12-tab col-12-ml col-12-ms desk-show-only">
+                                <div class="venn-container">
+                                    <div class="dashed-circle venn-circle ux-circle">
+                                        <h2>UX</h2>
+                                    </div>
 
-                        <p>Jag har spelat gitarr sen jag var 13 år gammal och är lycklig ägare till tre fina gitarrer
-                            som
-                            jag spelar på tills min flickvän ber mig sluta</p>
+                                    <div class="dashed-circle venn-circle front-end-circle">
+                                        <h2>Kod</h2>
+                                    </div>
 
-                        <h3>Cykling</h3>
+                                    <div class="dashed-circle venn-circle design-circle">
+                                        <h2>Design</h2>
+                                    </div>
+                                </div>
 
-                        <p>Jag cyklar vart jag än ska. Speciellt landsvägscykling i medvind är roligt.</p>
 
-                        <h3>Mat</h3>
+                            </div>
 
-                        <p>Min mamma är antagligen den bästa kocken jag träffat. Jag har henne och hennes fantastiska
-                            mat
-                            att tacka för mitt matintresse.</p>
 
-                        <h3>Resa</h3>
+                        </div>
 
-                        <p>Lite klyschigt intresse ja. Men det är kul att resa. </p>
-
-                        <h3>Dator & TV-spel</h3>
-
-                        <p>Jag fick mitt första Nintendo 8-bitars när jag var fyra år gammal och på den vägen är det.
-                            För
-                            tillfället spelar jag framförallt på mitt Playstation 4 så ofta jag hinner.</p>
-
-                        <h3>De fem bästa Spelen</h3>
-                        <ol>
-                            <li>Last of Us - Playstation 4</li>
-                            <li>Super Mario 3 - Nintendo 8 Bitar</li>
-                            <li>Starcraft 2 - PC</li>
-                            <li>Halflife 2 - PC</li>
-                            <li>GTA Vice City - Playstation 2</li>
-                        </ol>
+                        <div class="clear"></div>
                     </article>
                 </div>
 
@@ -187,17 +185,6 @@
                     <article>
                         <h2>Mina tjänster</h2>
 
-                        <h3>Front-End Utveckling</h3>
-
-                        <p>Jag älskar att koda Front-End. För de flesta är begreppet är <i>Front-End</i> något
-                            diffust men det kan kortfattat beskrivas som allt man ser på en hemsida. Med andra ord
-                            färgerna, strukturen & effekterna på en hemsida.
-                            Jag har goda kunskaper HTML5, CSS3 och JavaScript, dvs. det som utgör modern Front-End
-                            utveckling. Jag behärskar även back-end programmering (det man som besökare inte ser).
-                            Exempelvis är hela den här portfoliosidan byggd på
-                            PHP med ett tillhörande egenkomponerat admin-system.
-                            Min ambition är att skapa lättanvända, estetiskt tilltalande och välfungerande hemsidor
-                            och webbtjänster</p>
 
                         <h3>Responsivitet</h3>
 
@@ -218,7 +205,7 @@
 
                         <h3>Grafisk Layout</h3>
 
-                        <p>Jag har haft en passion för estetik och design så länge jag minnas. Jag kan sitta i
+                        <p> Jag har haft en passion för estetik och design så länge jag minnas. Jag kan sitta i
                             timmar med en liten detalj tills jag blir nöjd. Jag har arbetat profesionellt med
                             Photoshop där jag gör 99 % av allt grafiskt arbete.
                         </p>
@@ -229,7 +216,7 @@
                             så är jag billigare än om ni skulle kontakta en webbyrå.</i>
                         </h4>
                             <div class="space-20"></div>
-                                <a class="white-btn center about-me-btn" href="#footer">Kontakta mig!</a>
+                                <a class="dark-btn btn center about-me-btn" href="#footer">Kontakta mig!</a>
                     </article>
                 </div>
 
@@ -272,6 +259,8 @@
                             Jag ansökte till utbildningen Front-End utveckling vid Nackademin
                             i absolut sista sekund och kom in. Det är ett av de absolut bästa besluten jag någonsin
                             tagit.
+                            <br><br>
+                            För tillfället praktiserar jag på Webbyrån Ottoboni och driver min enskilda firma.
                         </p>
                     </article>
                 </div>
@@ -445,23 +434,6 @@
 
             <!--=======SLUT FÄRDIGHETER=======-->
 
-            <!--=======SNURRISNURR=======-->
-            <h3 class="sub-header">Front-End Komponenter</h3>
-
-            <div class="venn-container">
-                <div class="venn-name"></div>
-                <div class="dashed-circle venn-circle ux-circle">
-                    <h2>UX</h2>
-                </div>
-                <div class="dashed-circle venn-circle front-end-circle">
-                    <h2>Kodning</h2>
-                </div>
-                <div class="dashed-circle venn-circle design-circle">
-                    <h2>Design</h2>
-                </div>
-                <div class="venn-info">Man behöver allt för Front-End Utveckling</div>
-            </div>
-            <div class="dashed-line-divider"></div>
             <!--=======TIDSLINJE=======-->
             <h3 class="sub-header">Erfarenheter</h3>
             <!--=======SLIDE VÄNSTER=======-->
@@ -579,7 +551,7 @@
             <div class="clear"></div>
             <div class="space-50"></div>
         </section>
-        <!--*********************** END CV ****************************-->
+        <!--*********************** SLUT CV ****************************-->
         <section>
             <div class="third-background-divider parallax"></div>
         </section>
@@ -608,7 +580,7 @@
 
                     <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
                         truck tacos.
-                        Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
+                        Literally chia whatever raw denim, <a href="#">Här är en blogg länk!</a> listicle squid brooklyn gluten-free. Bicycle rights retro
                         cold-pressed kogi. Bitters stumptown crucifix plaid beard. Lumbersexual chicharrones tote bag,
                         portland williamsburg venmo wolf chia shabby chic distillery next level occupy stumptown
                         sartorial.
@@ -696,7 +668,7 @@
                         vinyl, echo park pabst mlkshk retro humblebrag.
                     </p>
 
-                    <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
+                    <p>Flexitarian meditation seitan, small batch cray  <a href="#">Här är en blogg länk!</a> listicle swag master cleanse locavore hoodie food
                         truck tacos.
                         Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
                         cold-pressed kogi. Bitters stumptown crucifix plaid beard. Lumbersexual chicharrones tote bag,
@@ -767,11 +739,8 @@
                     <a class="blog-label" href="#">234234234 2</a>
                 </div>
             </div>
-
             <div class="blog-post-container">
                 <h3 class="sub-header">Blogginlägg 1</h3>
-
-
                 <article>
                     <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
                         truck tacos.
@@ -783,7 +752,6 @@
                         scenester
                         vinyl, echo park pabst mlkshk retro humblebrag.
                     </p>
-
                     <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
                         truck tacos.
                         Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
@@ -802,7 +770,6 @@
                             </div>
                         </div>
                     </a>
-
                     <p>Flexitarian meditation seitan, small batch cray listicle swag master cleanse locavore hoodie food
                         truck tacos.
                         Literally chia whatever raw denim, listicle squid brooklyn gluten-free. Bicycle rights retro
@@ -871,15 +838,15 @@
             </div>
 
         </section>
-        <!--*********************** END BLOG ****************************-->
+        <!--*********************** SLUT BLOG ****************************-->
 
         <section>
-            <div class="third-background-divider fullscreen background parallax" data-diff="100" data-img-width="1500"
+            <div class="fourth-background-divider fullscreen background parallax" data-diff="100" data-img-width="1500"
                  data-img-height="1000"></div>
         </section>
 
     </main>
-    <!--*********************** END MAIN ****************************-->
+    <!--*********************** SLUT MAIN ****************************-->
 
     <!--*********************** START FOOTER ****************************-->
     <footer>
@@ -892,9 +859,7 @@
                             bygga en ny hemsida alternativt uppdatera en befintlig.
                             Jag arbetar med moderna tekniker för att er hemsida ska bli:
                         </p>
-
-
-                        <ul>
+                        <ul class="check-list">
                             <li>Responsiv - Så att sidan skalar om innehållet beroende på vilken enhet besökaren använder.</li>
                             <li>Sökmotoroptimerad - Så att exempelvis Google lätt hittar er.</li>
                             <li>Lätt att skala upp om ni vill lägga till mer innehåll i framtiden.</li>
@@ -914,15 +879,11 @@
                                 <button type="submit" name="contact-me">Kontakta mig</button>
                             </form>
                         <p>Jag är godkänd för F-Skatt</p>
-                        <p class="x-small-text">Den här sidan är kodad med <i class="flaticon-heart13"></i> av Vilhelm Falkenmark i november 2015. Inga ramverk är använda förrutom Normalize.css och jQuery.js.<br>
-                          Använda tekniker: SASS, Gulp, MySQL, PHP, Javascript & jQuery, HTML5, CSS3.
-                        </p>
+
                     </div>
                 </div>
                 <div class="col-6-desk col-12-tab col-12-ml col-12-ms"></div>
                 </div>
-
-
 
             <div class="row">
                 <div class="col-6-desk col-12-tab col-12-ml col-12-ms">
@@ -956,17 +917,6 @@
                                 </div>
                             </div>
                             <div class="clear"></div>
-
-
-
-                        <!--    <div class="socialmedia-icon-container">
-                                <a href="http://codepen.io/villefalkenmark/" target="_blank"><i class="flaticon-3d80 socialmedia-icon"></i></a>
-                                <a href="https://github.com/vilhelmfalkenmark" target="_blank"><i class="flaticon-github10 socialmedia-icon middle-row-icon"></i></a>
-                                <a href="https://www.linkedin.com/hp/?dnr=imMPcqK9gJcQP8xvipIrB9S5l_wiHx3Mk5-f&trk=nav_responsive_tab_home" target="_blank"><i class="flaticon-linkedin1 socialmedia-icon"></i></a>
-                                <a href="https://www.facebook.com/ville.falkenmark" target="_blank"><i class="flaticon-facebook3 socialmedia-icon"></i></a>
-                                <a href="https://www.instagram.com/villefalkenmark/" target="_blank"><i class="flaticon-instagram19 socialmedia-icon middle-row-icon"></i></a>
-                                <a href="https://open.spotify.com/user/vilhelmfalkenmark" target="_blank"><i class="flaticon-spotify10 socialmedia-icon"></i></a>
-                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -976,14 +926,17 @@
                     </div>
                 </div>
             </div>
+            <div class="clear"></div>
 
+            <div class="copy">  <p class="x-small-text text-content">Den här sidan är kodad med <i class="flaticon-heart13"></i> av Vilhelm Falkenmark i november 2015. Inga ramverk är använda förrutom Normalize.css och jQuery.js.<br>
+                Använda tekniker: SASS, Gulp, MySQL, PHP, Javascript & jQuery, HTML5, CSS3.
+            </p> </div>
         </section>
     </footer>
    <!-- <div class="device-info-container">
          <div class="device-info"></div>
     </div>-->
 </div>
-
 <script src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6_rInsv9YWvF9-lCvjAlvnNTrICDVv-c">

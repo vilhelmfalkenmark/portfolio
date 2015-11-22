@@ -637,17 +637,17 @@
   text-align: center;
   max-width: 180px;
   padding: 17px 45px;
-  border-radius: 8px;
-  border: 1px solid $darkGrey;
+  //border-radius: 8px;
+  //border: 1px solid $darkGrey;
 }
 .dark-btn
 {
   background-color: $grey;
-  border: 1px solid $grey;
-  color: $lightGrey;
+  //border: 1px solid $grey;
+  color: white;
 }
 .dark-btn:hover {
-  background-color: $lightGrey;
+  background-color: white;
   color: $grey;
 }
 .dark-btn:active {
@@ -670,6 +670,11 @@
 {
   color: white;
   background-color: $grey;
+}
+.white-btn:active
+{
+  @extend .box-shadow;
+
 }
 
 
@@ -953,4 +958,42 @@ $inner-circle-size: 280px;
 {
   display: block;
   transform: rotate(270deg);
+}
+
+/*=================================================
+ Checklist!
+ =================================================*/
+
+.check-list
+{
+  margin-left: 25px;
+  list-style-type: none;
+  padding: 10px 0;
+
+  li
+  {
+    margin-top: 10px;
+  }
+
+
+  li:before
+  {
+    content:"";
+    height:1em;
+    width:1em;
+    display:block;
+    float:left;
+    margin-left:-2em;
+    color: white;
+    stroke: white;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-image: url('../images/check52.svg');
+    background-size:110%;
+  }
+  &:last-of-type
+  {
+   // width: 70%;
+    padding: 0 0 0 20px;
+  }
 }

@@ -26,41 +26,7 @@
       width: 94%;
     }
   }
-  ul
-  {
-    margin-left: 35px;
-    li:before
-    {
-      content:"";
-      height:1em;
-      width:1em;
-      display:block;
-      float:left;
-      margin-left:-2.5em;
-      color: white;
-      stroke: white;
-      background-position:center;
-      background-repeat:no-repeat;
-      background-image: url('../images/check52.svg');
-      background-size:110%;
-    }
-    &:last-of-type
-    {
-      width: 70%;
-      padding: 0 0 0 20px;
-    }
-  }
-  li
-  {
-    list-style-type: none;
-    padding: 10px 0;
-   // margin-left: 40px;
-    i
-    {
-     // margin-right: 10px;
-    }
 
-  }
   label
   {
     float: left;
@@ -412,4 +378,17 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 #zoomOutButton
 {
   font-size: 38px;
+}
+
+
+.copy
+{
+  background-color: $grey;
+  color: $lightGrey;
+
+  p
+  {
+    padding: 10px 0 10px 0;
+  }
+
 }

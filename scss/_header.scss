@@ -3,10 +3,10 @@ HEADER
 ==================================================*/
 .header-background
 {
-  background: url(../images/mountains.jpg) center center no-repeat;
+  background: url(../images/mountains.jpg) center center;
   margin: 0 auto;
   width: 100%;
-  height: 1000px;
+  height: 900px;
   background-size: cover;
   @extend .flex-center;
   font-size: 30px;
@@ -25,40 +25,40 @@ HEADER
 
 }
 
-
-
-.main-background
-{
-  background: url(../images/mountains.jpg) center center no-repeat;
-  margin: 0 auto;
-  min-height: 800px;
-  @extend .flex-center;
-  font-size: 30px;
-  color: white;
-}
 .header-content
 {
   min-width: 300px;
   width: 70%;
-  max-width: 400px;
+  max-width: 390px;
   text-align: center;
 
   h1
   {
-    font-size: 30px;
+    font-size: 26px;
   }
+  p, h1
+  {
+    margin: 10px auto;
+    max-width: 400px;
+    background-color: white;
+    padding: 10px;
+    color: $grey;
+  //  @extend .box-shadow;
+  }
+
 }
+
+
 
 .portrait
 {
   margin: 0 auto;
   display: block;
-  height: 220px;
-  width: 220px;
+  height: 240px;
+  width: 240px;
   border-radius: 50%;
   background: url(../images/villePortrait.jpg) center center;
 }
-
 
 
 
@@ -75,10 +75,49 @@ HEADER
     color: darken(white, 10%);
   }
 }
+.header-btn
+{
+  //max-width: 300px;
+
+  .white-btn
+  {
+    font-size: 22px;
+
+  }
+}
+@include respond-to(phone-device)
+{
+  .header-content
+  {
+  h1
+  {
+    font-size: 20px;
+  }
+  p
+  {
+    font-size: 16px;
+
+  }
+  p, h1
+  {
+    margin: 10px auto;
+  }
+
+  }
+}
+
+
+
 
 @include respond-to(desktop) {
 
-  .menu-button-wrapper {
+  .header-content {
+    min-width: 300px;
+    width: auto;
+    text-align: center;
+  }
+
+    .menu-button-wrapper {
     display: none;
   }
   .nav-container {
@@ -112,8 +151,12 @@ HEADER
     a
     {
       color: $darkGrey !important;
-
     }
+    &:hover
+    {
+     // color: black !important;
+    }
+
   }
 
 
@@ -132,7 +175,7 @@ HEADER
     display: none;
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 22px;
     color: white;
     font-size: 20px;
     float: right;
@@ -153,7 +196,14 @@ HEADER
     top: 20px;
     right: 20px;
   }
-
+  .fade-1, .fade-2, .fade-3, .fade-4
+  {
+   // opacity: 0;
+  }
+  .opacity-1
+  {
+    //opacity: 1 !important;
+  }
 
 
 }
