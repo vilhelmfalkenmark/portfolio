@@ -28,8 +28,6 @@ $desktop-break:1024px;
   }
  }
 
-
-
  @else if $breakpoint == "large-device" {
   @media (min-width: $tablet-break+1) {
    @content;
@@ -57,6 +55,8 @@ $turq: rgb(0,165,183);
 //$darkGrey: rgb(56, 56, 56);
 $darkGrey: rgb(52, 52, 52);
 $grey: #434343;
+$mediumGrey: lighten($grey,20%);
+
 $beige: rgb(254,248,227);
 $lightBeige: rgb(251,249,245);
 $lightGrey: rgb(227, 223, 218);
@@ -99,7 +99,6 @@ $ms-item-h: 300px;
 /*=================================================
  TIMELINE
  =================================================*/
-
 $timeLine-circle-size: 75px;
 $zoomButtonSize: 36px;
 /*=================================================

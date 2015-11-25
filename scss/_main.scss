@@ -81,44 +81,107 @@ HEADER
 
 .first-background-divider
 {
-  background: url(../images/ny.jpeg) no-repeat center center; //
-  background-size: cover;
-  width: 100%; //
+  background: url(../images/sill7.jpg) no-repeat center center;
+  background-size: 60% auto;
+  background-color: $grey;
+}
+
+@include respond-to(mobile-large)
+{
+  .first-background-divider
+  {
+    background-size: 60% auto;
+  }
+}
+
+@include respond-to(mobile-small)
+{
+  .first-background-divider
+  {
+    background-size: 80% auto;
+  }
 }
 .second-background-divider
 {
-  background: url(../images/skate.jpeg) no-repeat center center; //
   width: 100%; //
   background-size: cover;
 
 }
 .third-background-divider
 {
-  background: url(../images/niceStuff.jpg) no-repeat center center; //
   background-size: cover;
   width: 100%;
 }
 .fourth-background-divider
 {
-  background: url(../images/citybackground.jpg) no-repeat center center; //
   background-size: cover;
   width: 100%;
 }
+
+
 @include respond-to(phone-device) {
   .first-background-divider, .second-background-divider, .third-background-divider, .fourth-background-divider
   {
-    height: 300px;
+    height: 350px;
   }
+
+
+
+
+  .second-background-divider
+  {
+    background: url(../images/skate-small.jpg) no-repeat center center; //
+  }
+  .third-background-divider
+  {
+    background: url(../images/niceStuff-small.jpg) no-repeat center center; //
+    //background-size: 80% auto;
+
+  }
+  .fourth-background-divider
+  {
+    background: url(../images/citybackground-small.jpg) no-repeat center center; //
+  }
+
 }
-
-
 
 @include respond-to(large-device) {
   .first-background-divider, .second-background-divider, .third-background-divider, .fourth-background-divider
   {
-    background-attachment: fixed;
     height: 450px;
   }
+  .first-background-divider
+  {
+    background-attachment: fixed;
+  }
+
+
+
+  .second-background-divider
+  {
+    background: url(../images/skate.jpeg) no-repeat center center fixed; //
+    background-size: cover;
+
+  }
+  .third-background-divider
+  {
+    background: url(../images/niceStuff.jpg) no-repeat center center fixed; //
+    background-size: cover;
+
+
+  }
+  .fourth-background-divider
+  {
+    background: url(../images/citybackground.jpg) no-repeat center center fixed; //
+    background-size: cover;
+
+
+  }
+
+
+
+
+
 }
 
 

@@ -5,6 +5,24 @@
 ::-webkit-scrollbar-thumb {
   background: $lightGrey;
 }
+
+
+/*=================================================
+ FADE-IN PÅ SCROLL
+ =================================================*/
+@media (min-width: 768px) {
+
+  .fade-in, .fade-in-blog
+  {
+    opacity: 0;
+    transition: all 1.6s ease;
+  }
+  .fade-in-now
+  {
+    opacity: 1;
+  }
+}
+
 /*=================================================
  TEXT-ALIGNMENT
  =================================================*/
@@ -601,83 +619,97 @@
  KNAPPAR!
  =================================================*/
 
-
-/*.btn
-{
-  margin: 20px auto;
-  cursor: pointer;
-  height: 50px;
-  width: 250px;
-  @extend .flex-center;
-  @extend .medium-trans;
-}
-.light-btn
-{
-  border: 1px solid $grey;
-  color: $grey;
-}
-.light-btn:hover {
-  background-color: $grey;
-  color: $lightGrey;
-}
-.dark-btn
-{
-  background-color: $grey;
-  border: 1px solid $grey;
-  color: $lightGrey;
-}
-.dark-btn:hover {
-  background-color: transparent;
-  color: $grey;
-}*/
-
 .btn
 {
-  display: block;
   text-align: center;
-  max-width: 180px;
-  padding: 17px 45px;
-  //border-radius: 8px;
-  //border: 1px solid $darkGrey;
-}
-.dark-btn
-{
-  background-color: $grey;
-  //border: 1px solid $grey;
-  color: white;
-}
-.dark-btn:hover {
-  background-color: white;
-  color: $grey;
-}
-.dark-btn:active {
-  @extend .box-shadow;
-
-  background-color: lighten($darkGrey,5%);
-  color: $lightGrey;
-}
-.white-btn
-{
-  cursor: pointer;
-  transition: all 0.1s ease-in;
+ // max-width: 310px;
   display: block;
   padding: 20px 40px;
-  color: $darkGrey;
   font-size: 18px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  position: relative;
+  transition-duration: 0.3s;
+  transition-property: color;
+  text-decoration: none;
+}
+
+.btn:before
+{
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.white-btn
+{
+  color: $darkGrey;
   background-color: white;
 }
-.white-btn:hover
+
+.white-btn:before
 {
+  background: $darkGrey;
+}
+.white-btn:hover {
   color: white;
-  background-color: $grey;
+}
+.white-btn:hover:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 .white-btn:active
 {
-  @extend .box-shadow;
-
+  &:before
+  {
+    background: black;
+  }
 }
 
 
+.dark-btn
+{
+  background: $grey;
+  margin: .4em;
+  padding: 1em;
+  color: white;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.dark-btn:before
+{
+  background: white;
+
+}
+.dark-btn:hover {
+  color: $grey;
+}
+.dark-btn:hover:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.dark-btn:active
+{
+  color: white;
+  &:before
+  {
+    background: black;
+  }
+}
 /*=================================================
  PORTFOLIO FLEX!
  =================================================*/
@@ -969,7 +1001,6 @@ $inner-circle-size: 280px;
   margin-left: 25px;
   list-style-type: none;
   padding: 10px 0;
-
   li
   {
     margin-top: 10px;
@@ -993,7 +1024,69 @@ $inner-circle-size: 280px;
   }
   &:last-of-type
   {
-   // width: 70%;
     padding: 0 0 0 20px;
   }
+}
+
+
+/*=================================================
+ POP-UP
+ =================================================*/
+.pop-up
+{
+  display: none;
+  text-align: center;
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $transGrey;
+  >div
+  {
+    // @extend .flex-center;
+  }
+  .success-container, .fail-container, .mail-success-container
+  {
+    top: 15%;
+    display: none;
+    margin: 0 auto;
+    //opacity: 0;
+    position: relative;
+    min-width: 250px;
+    width: 70%;
+    max-width: 600px;
+    height: 320px;
+    background-color: white;
+    @extend .light-striped-background;
+    h2
+    {
+      padding-top: 40px;
+    }
+    p
+    {
+      max-width: 400px;
+      width: 95%;
+      margin: 0 auto;
+    }
+    .close-cross
+    {
+      cursor: pointer;
+      float: left;
+      font-weight: bold;
+      color: $grey;
+      transform: rotate(45deg);
+      font-size: 54px;
+      position: absolute;
+      left: 15px;
+      top: 10px;
+    }
+  }
+}
+.success-container, .mail-success-container
+{
+  color: $green;
+}
+.fail-container
+{
+  color: $red;
 }

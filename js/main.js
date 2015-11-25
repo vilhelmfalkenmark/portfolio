@@ -25,9 +25,7 @@ $(document).ready(function () {
         $(this).toggleClass("dark-overlay");
     });
 
-
-
-    $(".nav-link a").click(function(){
+    $(".nav-link").click(function(){
 
             if( $(window).width() < desktopBreak)
             {
@@ -112,6 +110,11 @@ $(document).ready(function () {
         skillBars(windowHeight, scrollTop);
         navBar(screenWidth, scrollTop);
 
+        if(screenWidth>tabletBreak)
+        {
+            fadeInScroll(windowHeight, scrollTop)
+        }
+
     });
     /*=================================================
      JUSTERING AV FÖNSTERSTORLEK
@@ -130,13 +133,6 @@ $(document).ready(function () {
         var offsetTop = $(this).offset().top;
         var distanceTopVP = offsetTop-scrollTop ;
         var distanceBottomVP = (offsetTop-scrollTop)+elementHeight ;
-     /*   $(this).find(".counter").html("Elementet är "+elementHeight+ "Pixlar högt." +
-            "<br> Avståndet upp är "+offsetTop+"" +
-            "<br> ScrollTop är "+scrollTop+"" +
-            "<br> och fönstret är "+windowHeight+" pixlar högt"+
-            "<br> VP är "+distanceTopVP+
-            "<br> bottomVP är"+distanceBottomVP
-        );*/
             var sectionFocusIndex = sectionFocusArray.index(this);
             if((distanceTopVP<=windowHeight/2) && (distanceBottomVP>=0))
             {
@@ -162,6 +158,42 @@ $(document).ready(function () {
             $(".name-container").fadeOut("slow");
         }
     }
+
+    /*=================================================
+     FADEIN på Scroll
+     =================================================*/
+
+    function fadeInScroll(windowHeight,scrollTop)
+    {
+        $('.fade-in').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + ($(this).outerHeight()/1.5);
+            var bottom_of_window = scrollTop + windowHeight;
+            if( bottom_of_window > bottom_of_object)
+            {
+               // $(this).addClass({'opacity':'1'},800);
+                $(this).addClass("fade-in-now");
+            }
+        });
+
+        $('.fade-in-blog').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + ($(this).outerHeight()/3);
+            var bottom_of_window = scrollTop + windowHeight;
+            if( bottom_of_window > bottom_of_object)
+            {
+                // $(this).addClass({'opacity':'1'},800);
+                $(this).addClass("fade-in-now");
+            }
+        });
+
+
+
+
+    }
+
+
+
 
     /*=================================================
      ROTERA BAKGRUND PÅ X-AXELN

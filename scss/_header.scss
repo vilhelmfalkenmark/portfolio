@@ -7,8 +7,12 @@ HEADER
   margin: 0 auto;
   width: 100%;
   height: 900px;
+  background-color: $grey;
+  background-repeat: no-repeat;
   background-size: cover;
   @extend .flex-center;
+
+
   font-size: 30px;
   color: white;
 }
@@ -29,8 +33,12 @@ HEADER
 {
   min-width: 300px;
   width: 70%;
-  max-width: 390px;
   text-align: center;
+  float: left;
+  .white-btn
+  {
+    margin: 0 auto;
+  }
 
   h1
   {
@@ -43,25 +51,26 @@ HEADER
     background-color: white;
     padding: 10px;
     color: $grey;
-  //  @extend .box-shadow;
   }
 
 }
-
-
-
 .portrait
 {
+  cursor: pointer;
   margin: 0 auto;
   display: block;
   height: 240px;
   width: 240px;
   border-radius: 50%;
   background: url(../images/villePortrait.jpg) center center;
+  background-size: 100%;
+  @extend .fast-trans;
 }
+.portrait:hover
+{
+  background-size: 110%;
 
-
-
+}
 .nav-container
 {
   .underline-link
@@ -77,10 +86,9 @@ HEADER
 }
 .header-btn
 {
-  //max-width: 300px;
-
   .white-btn
   {
+    max-width: 340px;
     font-size: 22px;
 
   }
@@ -107,8 +115,6 @@ HEADER
 }
 
 
-
-
 @include respond-to(desktop) {
 
   .header-content {
@@ -131,33 +137,66 @@ HEADER
 
     }
     li {
-      padding: 20px 40px;
+       // padding:20px 0;
 
-      list-style-type: none;
       display: inline-block;
-    //  margin: 0 30px;
+      vertical-align: top;
+      list-style-type: none;
       a {
-       // padding: 25px;
+
+        display: inline-block;
+        cursor: pointer;
+        padding: 18px 45px;
         color: white;
-        font-size: 20px;
+        font-size: 18px;
+
+        &:hover
+        {
+          color: lighten($grey,20%);
+        }
+
+
       }
+
+
+
+
     }
   }
+  .chosen {
 
-  .chosen
-  {
-   // padding: 20px 20px 20px 20px;
     background-color: white;
-    a
-    {
-      color: $darkGrey !important;
-    }
-    &:hover
-    {
-     // color: black !important;
-    }
-
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+    color: $darkGrey !important;
   }
+  .chosen:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $grey;
+    height: 4px;
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .chosen:hover:before, .chosen:focus:before, .chosen:active:before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
 
 
   .nav-background
@@ -175,7 +214,7 @@ HEADER
     display: none;
     position: absolute;
     right: 20px;
-    top: 22px;
+    top: 20px;
     color: white;
     font-size: 20px;
     float: right;
@@ -186,7 +225,7 @@ HEADER
     display: none;
     position: fixed;
     width: 100%;
-    height: 62px;
+    height: 58px;
     background-color: $grey;
   }
 
@@ -196,14 +235,5 @@ HEADER
     top: 20px;
     right: 20px;
   }
-  .fade-1, .fade-2, .fade-3, .fade-4
-  {
-   // opacity: 0;
-  }
-  .opacity-1
-  {
-    //opacity: 1 !important;
-  }
-
 
 }

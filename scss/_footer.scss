@@ -40,19 +40,19 @@
   {
     input
     {
-      width: 99%;
+      width: 99.5%;
     }
     textarea
     {
-      width: 99%;
+      width: 99.5%;
 
     }
    }
   button
   {
     //padding: 0;
-    border: 1px solid $grey;
-    background-color: $lightGrey;
+    border: 1px solid $mediumGrey;
+    background-color: white;
     width: 100%;
   }
 }
@@ -94,11 +94,13 @@
   .socialmedia-icon-container
   {
     a i {
-
+    display: block;
+      width: 45px;
     transition: all 0.4s ease;
     &:hover
     {
-      transform: scale(1.3) rotate(360deg);
+      color: grey;
+      transform:  rotate(360deg) scale(1.3);
     }
   }
 }
@@ -109,11 +111,11 @@
   {
     input
     {
-      width: 95% !important;
+      width: 99% !important;
     }
     button
     {
-      width: 101%;
+      width: 100%;
     }
 
   }
@@ -262,24 +264,6 @@
   {
     background-color: $lightGrey;
     height: 1150px;
-  /*  position: relative;
-
-    &:after
-    {
-      left: 100%;
-      top: 25%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-left-color: $lightGrey;
-      border-width: 20px;
-      margin-top: -20px;
-
-    }*/
-
   }
 
   .footer-form-container {

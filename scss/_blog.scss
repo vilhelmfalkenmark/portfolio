@@ -159,7 +159,7 @@
   display: inline-block;
   margin: 5px 20px 10px 30px;
   position: relative;
-  padding: 20px 15px 20px 0;
+  padding: 13px 15px 13px 0;
 
   &:after
   {
@@ -180,14 +180,14 @@
 
     color: white !important;
     background-color: $grey;
-
+    $var: 23px;
     &:after {
       @extend .fast-trans;
       right: 100%;
-      top: 30px;
+      top: -$var;
       border-right-color: $grey;
-      border-width: 30px;
-      margin-top: -30px;
+      border-width: $var;
+      margin-top: $var;
     }
     &:hover
     {
@@ -204,7 +204,10 @@
 .blog-info-container
 {
  width: 315px;
-   margin: 10px auto 0 auto;
+   margin: 10px auto 0 30px;
+
+
+
   .blog-label {
     color: white !important;
     background-color: $grey;
@@ -212,10 +215,10 @@
     &:after {
       @extend .fast-trans;
       right: 100%;
-      top: 39px;
+      top: 32px;
       border-right-color: $grey;
-      border-width: 39px;
-      margin-top: -39px;
+      border-width: 32px;
+      margin-top: -32px;
     }
     &:hover
     {
@@ -231,10 +234,15 @@
 }
 @include respond-to(mobile-small) {
   .blog-info-container {
+
+
+
+    margin: 10px auto 0 auto;
+
     .blog-label {
 
-      margin-left: 60px;
-      $big-label-mobile: 39px;
+      margin-left: 50px;
+      $big-label-mobile: 32px;
       &:after {
         @extend .fast-trans;
         right: 100%;
@@ -250,7 +258,7 @@
   .category-label-container
   {
     margin: 30px auto 0 auto;
-    $small-label-mobile: 30px;
+    $small-label-mobile: 22.95px;
     .blog-label {
 
       &:after {
@@ -360,6 +368,7 @@ form
   margin: 0 auto;
 }
 
+
 input
 {
   height: 50px;
@@ -367,9 +376,11 @@ input
 
 input, textarea
 {
+  border: 1px solid $mediumGrey;
+  padding: 0;
   margin-bottom: 15px;
   display: block;
-  width: 98.5%;
+  width: 99%;
 }
 
 
@@ -378,11 +389,11 @@ button[type="submit"]
 {
   transition: all 0.3s ease;
   position: relative;
-  width: 100%;
+  width: 99%;
   padding: 2px;
   height: 50px;
-  background: transparent;
-  border: 1px solid $darkGrey;
+  background: white;
+  border: 1px solid $mediumGrey;
   color: $darkGrey;
   span
   {
@@ -395,7 +406,6 @@ button[type="submit"]
 
   &:hover
   {
-    border: 1px solid $lightGrey;
     color: $lightGrey;
     background: $darkGrey;
   }
@@ -404,7 +414,7 @@ button[type="submit"]
 {
   input[type="text"]
   {
-    width: 94%;
+ //   width: 99%;
   }
 }
 
@@ -415,17 +425,15 @@ button[type="submit"]
 
   box-shadow: 0 -2px 10px rgba(0, 0, 0, .7);
 
-
-
   button[type="submit"]
   {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid $darkGrey;
+    color: $darkGrey;
     &:hover
     {
-      border: 1px solid $darkGrey;
-      color: $darkGrey;
-      background: $lightGrey;
+      border: 1px solid white;
+      color: white;
+      background: $grey;
     }
   }
 }
@@ -437,74 +445,3 @@ button[type="submit"]
     margin: 30px auto 0 auto;
   }
 }
-
-/*=================================================
-             POP-UP
- =================================================*/
-.pop-up
-{
-  display: none;
-  text-align: center;
-  z-index: 999;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: $transGrey;
-  >div
-  {
-   // @extend .flex-center;
-  }
-  .success-container, .fail-container
-  {
-    top: 15%;
-    display: none;
-    margin: 0 auto;
-    //opacity: 0;
-    position: relative;
-    min-width: 250px;
-    width: 70%;
-    max-width: 600px;
-    height: 320px;
-    background-color: white;
-    @extend .light-striped-background;
-    h2
-    {
-      padding-top: 40px;
-    }
-    p
-    {
-      max-width: 400px;
-      width: 95%;
-      margin: 0 auto;
-    }
-    .close-cross
-    {
-      cursor: pointer;
-      float: left;
-      font-weight: bold;
-      color: $grey;
-      transform: rotate(45deg);
-      font-size: 54px;
-      position: absolute;
-      left: 15px;
-      top: 10px;
-    }
-  }
-}
-.success-container
-{
-  color: $green;
-}
-.fail-container
-{
-  color: $red;
-}
-//.close-pop-up
-//{
-//  cursor: pointer;
-//  position: absolute;
-//  bottom: 10px;
-//  left: 0;
-//  right: 0;
-//  margin: 0 auto;
-//}
