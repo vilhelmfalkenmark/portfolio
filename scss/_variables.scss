@@ -39,6 +39,11 @@ $desktop-break:1024px;
    @content;
   }
  }
+ @else if $breakpoint == "not-desktop" {
+  @media (min-width: 1px) and (max-width: $desktop-break) {
+   @content;
+  }
+ }
 }
 
 /*=================================================
@@ -105,3 +110,5 @@ $zoomButtonSize: 36px;
  SKILLBARS
  =================================================*/
 $skill-bar-height: 30px;
+
+$arrowsize: 25px;

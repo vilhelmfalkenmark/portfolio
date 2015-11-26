@@ -31,11 +31,6 @@
   margin-top: -40px;
   padding-bottom: 40px;
 }
-.blog-info-container
-{
- // background-color: red;
- // width: 200px;
-}
 .dark-blog-post
 {
   background-color: $grey;
@@ -83,7 +78,7 @@
   padding: 34% 0;
   max-width: 700px;
 }
-.blog-post-container:nth-child(even) // Så att den mörka bloggcontainer inte får den konstiga ljusa skuggan
+.bright-blog-post // Så att den mörka bloggcontainer inte får den konstiga ljusa skuggan
 {
   .blog-image, .blog-image-caption
   {
@@ -160,7 +155,7 @@
   margin: 5px 20px 10px 30px;
   position: relative;
   padding: 13px 15px 13px 0;
-
+  text-decoration: none !important;
   &:after
   {
     border: solid transparent;

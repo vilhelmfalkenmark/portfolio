@@ -79,16 +79,12 @@ $timeline-row-height: 350px;
  STYLING AV KORTEN
  =================================================*/
 
-
-
 .right-card, .left-card
 {
   position: relative;
   @extend .light-striped-background;
-  @extend .subtle-shadow;
+//  @extend .subtle-shadow;
 }
-
-
 .ribbon {
   margin: 0 auto;
   padding-top: 10px;
@@ -128,11 +124,13 @@ $timeline-row-height: 350px;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 140px;
+  width: 100%;
   bottom: 10px;
-
   a
   {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
     @extend .fast-trans;
     font-size: 18px;
     color: $grey;
@@ -140,12 +138,20 @@ $timeline-row-height: 350px;
   a:hover
   {
     color: $red;
- //   text-decoration: underline;
   }
-
-
-
 }
+
+// SÅ ATT INTE SKUGGORNA HAKAR PÅ I STÖRRE VIEWPORT
+@media (min-width: 1px) and (max-width: $tablet-break)
+{
+  .timeline-card
+  {
+    box-shadow: -5px 12px 6px -12px rgba(0, 0, 0, 0.55)
+  }
+}
+
+
+
 
 
 /*========= mobile-small ========= */
@@ -194,9 +200,11 @@ $timeline-row-height: 350px;
   }
   .timeline-card
   {
+    width: 90%;
     height: auto;
-    margin: 0 auto 20px auto;
-    width: 97%;
+    margin: 0 auto 20px auto !important;
+    opacity: 0.999 !important;
+    padding: 0 10px;
   }
   .timeline-vertical-line-container
   {
@@ -220,17 +228,14 @@ $timeline-row-height: 350px;
   {
     padding-bottom: 70px;
   }
-
 }
 /*========= Tablet ========= */
 @include respond-to(tablet)
 {
-
   .timeline-row
   {
     height: 400px;
   }
-
   .timeline-left-block-container, .timeline-right-block-container
   {
     margin-bottom: 40px;
@@ -266,8 +271,6 @@ $timeline-row-height: 350px;
   {
     height: $timeline-row-height;
   }
-
-
   .timeline-icon-circle
   {
     top: 38%;
@@ -282,39 +285,36 @@ $timeline-row-height: 350px;
    FULHACK FÖR PILARNA SOM STRULADE I OVAN BREAKPOINTS
  =================================================*/
 @media (min-width: $tablet-break) and (max-width: $desktop-break) {
-  .right-card
+  .right-card, .left-card
   {
     position: relative;
-    &:after
+    box-shadow: 16px 14px 20px -19px rgba(0, 0, 0, 0.75);
+    .timeline-inner-container
     {
-      right: 100%;
-      top: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      border-right-color: $stripedGrey;
-      border-width: 30px;
-      margin-top: -30px;
+      padding-left: $arrowsize;
     }
-  }
-
-  .left-card
-  {
-    position: relative;
     &:after
     {
-      right: 100%;
-      top: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
+      top: 0;
+      left: 0;
+      border-right: $arrowsize solid $lightGrey;
+      border-top: $arrowsize solid transparent;
+      content: '';
       position: absolute;
-      border-right-color: $stripedGrey;
-      border-width: 30px;
-      margin-top: -30px;
+      transform: rotate(180deg);
+      height: 50%;
+      box-sizing: border-box;
+    }
+    &:before
+    {
+      left: 0;
+      border-left: $arrowsize solid $lightGrey;
+      border-top: $arrowsize solid transparent;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      box-sizing: border-box;
     }
   }
 }
@@ -323,35 +323,82 @@ $timeline-row-height: 350px;
   .right-card
   {
     position: relative;
+    box-shadow: 16px 14px 20px -19px rgba(0, 0, 0, 0.75);
+    .timeline-link-container
+    {
+      left: $arrowsize*2;
+      a
+      {
+        text-align: left;
+      }
+    }
+    .timeline-inner-container
+    {
+      padding-left: $arrowsize;
+    }
+
     &:after
     {
-      right: 100%;
-      top: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
+      top: 0;
+      left: 0;
+      border-right: $arrowsize solid $lightGrey;
+      border-top: $arrowsize solid transparent;
+      content: '';
       position: absolute;
-      border-right-color: $stripedGrey;
-      border-width: 30px;
-      margin-top: -30px;
+      transform: rotate(180deg);
+      height: 50%;
+      box-sizing: border-box;
+    }
+    &:before
+    {
+      left: 0;
+      border-left: $arrowsize solid $lightGrey;
+      border-top: $arrowsize solid transparent;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      box-sizing: border-box;
     }
   }
   .left-card
   {
     position: relative;
+    box-shadow: -16px 14px 20px -19px rgba(0, 0, 0, 0.75);
+    .timeline-link-container
+    {
+      left: $arrowsize;
+      a
+      {
+        text-align: left;
+      }
+    }
+    .timeline-inner-container
+    {
+      padding-right: $arrowsize;
+    }
     &:after
     {
-      left: 100%;
-      top: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
+      top:0;
+      right: 0;
+      border-left: $arrowsize solid $lightGrey;
+      border-top: $arrowsize solid transparent;
+      content: '';
       position: absolute;
-      border-left-color:  $stripedGrey;
-      border-width: 30px;
-      margin-top: -30px;
+      transform: rotate(180deg);
+      height: 50%;
+      box-sizing: border-box;
+    }
+    &:before
+    {
+      right: 0;
+      border-right: $arrowsize solid $lightGrey;
+      border-top: $arrowsize solid transparent;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      box-sizing: border-box;
     }
   }
 }

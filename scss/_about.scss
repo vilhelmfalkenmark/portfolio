@@ -218,25 +218,58 @@
     }
   }
 }
+
+
 .to-about-me
 {
-  background-color: $lightGrey;
-  padding: 70px 0 0 0;
   display: none;
-  width: 60px;
+  background-color: $lightGrey;
+  padding: 40px 0 0 0;
   a
-  {
-    color: $darkGrey;
-  }
+     {
+       color: $darkGrey;
+     }
   i
   {
     display: block;
-    height: 56px;
-   // margin-top: 140px;
-    padding:0 0 0 40px;
     font-size: 54px;
   }
 }
+
+@include respond-to(large-device)
+{
+  .arrow-up-container
+  {
+  @extend .bounce;
+  }
+}
+  .arrow-up-container
+  {
+    color: $darkGrey;
+    cursor: pointer;
+    padding: 10px 20px;
+
+  .arrow-up
+  {
+    margin: 0 auto;
+    height: 55px;
+    width: 56px;
+    background-image: url(../images/leftarrow1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+  .close-about-container
+  {
+    a:hover
+    {
+      text-decoration: underline;
+    }
+  }
+
+
+
+
 
 /*=================================================
 OM FRONT-END UTVECKLING MED VENN-SNURRET

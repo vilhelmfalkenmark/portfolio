@@ -100,7 +100,7 @@ $(document).ready(function () {
         var screenWidth = $(window).width();
         var scrollTop = $(window).scrollTop();
 
-        if (screenWidth >= mobileLargeBreak) {
+        if (screenWidth >= tabletBreak) {
             timeLine(screenWidth, windowHeight, scrollTop);
         }
         if (screenWidth > desktopBreak) {
@@ -240,6 +240,12 @@ $(document).ready(function () {
 
     $(".hide").hide();
 
+    $(".close-about-container").click(function()
+    {
+        $(".hide").hide();
+        $(".to-about-me").hide();
+    });
+
     $('#aboutButton').click(function () {
         $('#aboutMeContent').show("slow");
         $('#servicesContent').hide("slow");
@@ -258,6 +264,8 @@ $(document).ready(function () {
 
     $('.hexagon-outer').click(function () {
         $(".to-about-me").show();
+        $(".close-about-container").show();
+
     });
     $('.hire-me-btn').click(function () {
         $(".to-about-me").show();

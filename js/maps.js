@@ -48,13 +48,7 @@ var  myMapOption = {
     draggable: true,
     styles: mapStyleLayout
 };
-/* var dragMap = false;
- document.getElementById("map-canvas").addEventListener("click", draggable);
- function draggable()
- {
- dragMap = true;
- return dragMap;
- }*/
+
 function initialize() {
 
     var mapOptions = myMapOption;
