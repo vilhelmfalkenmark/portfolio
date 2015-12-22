@@ -16,12 +16,16 @@ $(document).ready(function () {
 
         $(this).toggleClass("open");
         $(".nav-container").toggleClass("nav-slide-in");
+        $(".container").toggleClass("container-slide-out");
+
         overLay.toggleClass("dark-overlay");
     });
 
     overLay.click(function () {
         menuButton.toggleClass("open");
         $(".nav-container").toggleClass("nav-slide-in");
+        $(".container").toggleClass("container-slide-out");
+
         $(this).toggleClass("dark-overlay");
     });
 
@@ -31,11 +35,10 @@ $(document).ready(function () {
             {
                 menuButton.toggleClass("open");
                 $(".nav-container").toggleClass("nav-slide-in");
+                $(".container").toggleClass("container-slide-out");
                 overLay.toggleClass("dark-overlay");
             }
     });
-
-
 
     /*=================================================
      SMOOTH-SCROLLING
@@ -155,7 +158,7 @@ $(document).ready(function () {
         }
         else {
             $('.desktop-menu-background').fadeOut(300);
-            $(".name-container").fadeOut("slow");
+          $(".name-container").fadeOut("slow");
         }
     }
 
@@ -315,6 +318,11 @@ $(document).ready(function () {
      =================================================*/
 
     function timeLine(windowWidth, windowHeight, scrollTop) {
+
+        var offsetDesktop = 15;
+        var offsetTablet = 110;
+
+
         if (windowWidth > mobileLargeBreak) // Animationen såg för taskig ut på smartphones.
         {
             // Scrolla in Diven från Vänster
@@ -323,7 +331,7 @@ $(document).ready(function () {
                     distanceTop = (elementOffsetTop - scrollTop);
                 var elementHeight = $(this).innerHeight(); // Höjden på elementet. I det här fallet Den vita diven som ska flyga in
                 var distanceBottom = (windowHeight - (distanceTop + elementHeight));
-                var $opacity = (distanceBottom + 100) / 200; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
+                var $opacity = (distanceBottom + 100) / 50; // Täljaren bestämmer när på inscrollet som diven ska visas och nämnaren hur snabbt animationen ska gå.
 
                 if ($opacity >= 0.999) {
                     $opacity = 0.999; // Flaggan försvinner av jätteoklar anledning när opacity sätts till 1. Kan bero på position absolute?
@@ -339,22 +347,22 @@ $(document).ready(function () {
                     $scrollInFromLeft = -1000;
                 }
 
-                if ($scrollInFromLeft >= -45 && windowWidth > desktopBreak) {
-                    $scrollInFromLeft = -45;
+                if ($scrollInFromLeft >= -offsetDesktop && windowWidth > desktopBreak) {
+                    $scrollInFromLeft = -offsetDesktop;
                 }
                 $(this).css({"opacity": $opacity, "margin-left": $scrollInFromLeft});
                 if (windowWidth < desktopBreak && windowWidth > mobileLargeBreak) {
 
                     if (windowWidth > tabletBreak) {
-                        if ($scrollInFromLeft > -145) {
-                            $scrollInFromLeft = -145;
+                        if ($scrollInFromLeft > -offsetTablet) {
+                            $scrollInFromLeft = -offsetTablet;
                         }
                     }
-                    else {
-                        if ($scrollInFromLeft > -10) {
-                            $scrollInFromLeft = -10;
-                        }
-                    }
+                    //else {
+                    //    if ($scrollInFromLeft > -10) {
+                    //        $scrollInFromLeft = -10;
+                    //    }
+                    //}
                     $(this).css({
                         "opacity": $opacity,
                         "margin-left": $scrollInFromLeft * (-1)
@@ -382,8 +390,8 @@ $(document).ready(function () {
                     $scrollInFromRight = 1000;
                 }
 
-                if ($scrollInFromRight <= 45 && windowWidth >= desktopBreak) {
-                    $scrollInFromRight = 45;
+                if ($scrollInFromRight <= offsetDesktop && windowWidth >= desktopBreak) {
+                    $scrollInFromRight = offsetDesktop;
                 }
 
                 if (windowWidth >= desktopBreak) {
@@ -393,20 +401,19 @@ $(document).ready(function () {
                 /*  TABLET AND LARGE-PHONE  */
                 if (windowWidth < desktopBreak && windowWidth > mobileLargeBreak) {
 
-                    if (windowWidth > tabletBreak) {
-                        if ($scrollInFromRight <= 145) {
-                            $scrollInFromRight = 145;
+                    if (windowWidth >= tabletBreak) {
+                        if ($scrollInFromRight <= offsetTablet) {
+                            $scrollInFromRight = offsetTablet;
                         }
                     }
-                    else if (windowWidth <= tabletBreak) {
-                        if ($scrollInFromRight <= 10) {
-                            $scrollInFromRight = 10;
-                        }
-
-                    }
-
+                    //else
+                    //if (windowWidth <= tabletBreak) {
+                    //    if ($scrollInFromRight <= 10) {
+                    //        $scrollInFromRight = 10;
+                    //    }
+                    //
+                    //}
                     $(this).css({"opacity": $opacity, "margin-left": $scrollInFromRight});
-
                 }
 
             });
@@ -464,4 +471,3 @@ $(document).ready(function () {
 
 
 }); // End jQuery
-

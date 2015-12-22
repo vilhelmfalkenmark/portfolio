@@ -5,7 +5,7 @@
     position: fixed;
     // left: 0;
     transition: all 0.3s ease;
-    width: 300px;
+    width: $mobMenuWidth;
     background: repeating-linear-gradient(
                     135deg,
                     black,
@@ -13,7 +13,7 @@
                     $darkGrey 2px,
                     black 4px
     );
-    left: -300px;
+    left: -$mobMenuWidth;
     display:flex;
     justify-content:center;
     align-items:center;

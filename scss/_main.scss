@@ -24,10 +24,7 @@ body
   font-weight: 300;
   background-color: $darkGrey;
   color: $darkGrey;
-  //overflow: hidden;
-
- // overflow-y: scroll;
-
+  overflow-x: hidden;
 }
 *
 {
@@ -36,16 +33,38 @@ body
 
 .container
 {
-  overflow: hidden;
   width: 100%;
   margin: 0 auto;
   position: relative;
+  left:0;
+  transition: all 0.3s ease;
 }
+.container-slide-out
+{
+  left: $mobMenuWidth;
+}
+
+
+
 a
 {
   text-decoration: none;
   @extend .fast-trans;
 }
+
+input-placeholder
+{
+  padding: 20px;
+}
+
+input::-webkit-input-placeholder
+{
+  padding: 0 0 0 4px;
+}
+textarea::-webkit-input-placeholder {
+   padding: 8px 0 0 4px;
+}
+
 
 /*=================================================
 HEADER
@@ -63,15 +82,7 @@ HEADER
   }
 }
 
-.portrait
-{
-  margin: 0 auto;
-  display: block;
-  height: 240px;
-  width: 240px;
-  border-radius: 120px;
-  background: url(../images/villePortrait.jpg) center;
-}
+
 
 
 .parallax
@@ -183,7 +194,3 @@ HEADER
 
 
 }
-
-
-
-

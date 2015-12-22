@@ -43,7 +43,11 @@
   }
 }
 
-
+.hexagon
+{
+  background-color: white;
+  color: $darkGrey;
+}
 
 
 
@@ -54,7 +58,7 @@
     margin: 30px auto 0 auto;
     text-align: center;
     a {
-      color: white;
+    //  color:$darkGrey;
     }
   }
   .hexagon-outer {
@@ -66,11 +70,11 @@
     position: relative;
     width: 90px;
     height: 60px;
-    background-color: $turq;
-
+    //background-color: $turq;
    // border-left: solid 2px $darkGrey;
    // border-right: solid 2px $darkGrey;
   }
+
   .hexagon:before,
   .hexagon:after {
     content: "";
@@ -132,7 +136,7 @@
     margin: 0 auto;
     text-align: center;
     a {
-      color: $darkGrey;
+    //  color: $darkGrey;
     }
   }
   .hexagon-outer {
@@ -145,8 +149,8 @@
     width: 198px;
     height: 100px;
     margin: 70px auto 0 auto;
-    color: white;
-   background-color: $turq;
+    //color: white;
+    //background-color: $turq;
     // background-color: $lightGrey;
     // border-left: solid 2px $darkGrey;
     // border-right: solid 2px $darkGrey;
@@ -267,10 +271,6 @@
     }
   }
 
-
-
-
-
 /*=================================================
 OM FRONT-END UTVECKLING MED VENN-SNURRET
  =================================================*/
@@ -288,7 +288,6 @@ $small-venn-circle: 160px;
 
 .venn-container
 {
-  // background-color: red;
   height: 435px;
   //width: 410px;
   margin: 0 auto;
@@ -302,9 +301,6 @@ $small-venn-circle: 160px;
     display: none;
   }
 }
-
-
-
 .venn-circle
 {
   border-radius: 50%;
@@ -348,6 +344,3 @@ $small-venn-circle: 160px;
     @extend .rotating;
   }
 }
-
-
-

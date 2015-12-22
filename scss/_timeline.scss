@@ -122,7 +122,6 @@ $timeline-row-height: 350px;
 {
   position: absolute;
   left: 0;
-  right: 0;
   margin: 0 auto;
   width: 100%;
   bottom: 10px;
@@ -263,6 +262,17 @@ $timeline-row-height: 350px;
   {
     display: none;
   }
+  .timeline-link-container {
+    width: 475px;
+
+    left: 25px;
+
+  }
+
+
+
+
+
 }
 /*========= Desktop ========= */
 @include respond-to(desktop)
@@ -277,10 +287,30 @@ $timeline-row-height: 350px;
   }
   .timeline-container
   {
-
   width: 1100px;
   }
+  .timeline-link-container
+  {
+    width: 475px;
+    height: 20px;
+  }
+  .left-card
+  {
+    .timeline-link-container
+    {
+      left: 0;
+    }
+  }
+  .right-card
+  {
+    .timeline-link-container
+    {
+      left: $arrowsize;
+    }
+  }
 }
+
+
 /*=================================================
    FULHACK FÖR PILARNA SOM STRULADE I OVAN BREAKPOINTS
  =================================================*/
@@ -324,14 +354,7 @@ $timeline-row-height: 350px;
   {
     position: relative;
     box-shadow: 16px 14px 20px -19px rgba(0, 0, 0, 0.75);
-    .timeline-link-container
-    {
-      left: $arrowsize*2;
-      a
-      {
-        text-align: left;
-      }
-    }
+
     .timeline-inner-container
     {
       padding-left: $arrowsize;
@@ -365,14 +388,7 @@ $timeline-row-height: 350px;
   {
     position: relative;
     box-shadow: -16px 14px 20px -19px rgba(0, 0, 0, 0.75);
-    .timeline-link-container
-    {
-      left: $arrowsize;
-      a
-      {
-        text-align: left;
-      }
-    }
+
     .timeline-inner-container
     {
       padding-right: $arrowsize;
